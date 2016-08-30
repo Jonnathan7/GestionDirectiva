@@ -27,15 +27,7 @@
                                     <label>@PlanAsignaturaResource.EtiquetaPeriodoAcademico:</label>
                                     <select id="slcPeriodoAcademico" name="value" class="form-control">
                                         <option value="0">@GenericResource.EtiquetaSeleccionar</option>
-                                        @{
-                                            if (Model.ListaPeriodoAcademico != null)
-                                            {
-                                                foreach (var item in Model.ListaPeriodoAcademico)
-                                                {
-                                                    <option value="@item.Id_Periodo">@item.Periodo</option>
-                                                }
-                                            }
-                                        }
+                                        
                                     </select>
                                 </div>
                             </div>

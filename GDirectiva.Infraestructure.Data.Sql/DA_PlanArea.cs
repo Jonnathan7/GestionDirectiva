@@ -27,12 +27,12 @@ namespace GDirectiva.Infraestructure.Data.Sql
             }
         }
 
-        public GD_Plan_Area obtener(GD_Plan_Area planArea)
+        public PlanArea obtener(PlanArea planArea)
         {
-            using (GESTION_DIRECTIVAEntities contexto = new GESTION_DIRECTIVAEntities())
+            using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
             {
-                GD_Plan_Area objeto = (from x in contexto.GD_Plan_Area
-                                       where x.Id_Plan_Area.Equals(planArea.Id_Plan_Area)
+                PlanArea objeto = (from x in contexto.PlanArea
+                                       where x.Id_PlanArea.Equals(planArea.Id_PlanArea)
                                        select x).FirstOrDefault();
                 return objeto;
             }

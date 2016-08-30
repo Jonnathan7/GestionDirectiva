@@ -45,11 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Base\GenericController.cs" />
+    <Compile Include="Controllers\General\PlanAreaController.cs" />
     <Compile Include="Controllers\General\PlanAsignaturaController.cs" />
     <Compile Include="Controllers\General\PlanAsignaturaCronogramaController.cs" />
     <Compile Include="Helpers\CustomHtmlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\Base\GenericViewModel.cs" />
+    <Compile Include="ViewModel\General\PlanAreaBusquedaModel.cs" />
+    <Compile Include="ViewModel\General\PlanAreaRegistroModel.cs" />
     <Compile Include="ViewModel\General\PlanAsignaturaBusquedaModel.cs" />
     <Compile Include="ViewModel\General\PlanAsignaturaCronogramaActividadRegistroModel.cs" />
     <Compile Include="ViewModel\General\PlanAsignaturaCronogramaBusquedaModel.cs" />

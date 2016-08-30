@@ -16,6 +16,6 @@ namespace GDirectiva.Presentacion.Core.ViewModel.General
 
         }
 
-        public List<GD_Periodo_Academico> ListaPeriodoAcademico { get; set; }
+        
     }
 }
