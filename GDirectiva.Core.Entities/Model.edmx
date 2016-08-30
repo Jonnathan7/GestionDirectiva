@@ -507,7 +507,7 @@
           <Property Name="Criterios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Requisitos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Documento" Type="Binary" MaxLength="500" FixedLength="false" />
+          <Property Name="Documento" Type="String" />
           <Property Name="Id_PeriodoAcademico" Type="Int32" />
           <Property Name="Id_PlanEstudio" Type="Int32" />
           <Property Name="Id_Grado" Type="Int32" />

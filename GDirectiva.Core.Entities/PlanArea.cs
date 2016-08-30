@@ -25,7 +25,7 @@ namespace GDirectiva.Core.Entities
         public string Criterios { get; set; }
         public string Requisitos { get; set; }
         public string Estado { get; set; }
-        public byte[] Documento { get; set; }
+        public string Documento { get; set; }
         public Nullable<int> Id_PeriodoAcademico { get; set; }
         public Nullable<int> Id_PlanEstudio { get; set; }
         public Nullable<int> Id_Grado { get; set; }
