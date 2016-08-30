@@ -9,12 +9,12 @@ namespace GDirectiva.Infraestructure.Data.Sql
 {
     public class DA_PlanArea
     {
-        public List<Core.Entities.GD_Plan_Area> listar(GD_Plan_Area planArea)
+        public List<Core.Entities.PlanArea> listar(PlanArea planArea)
         {
-            using (GESTION_DIRECTIVAEntities contexto = new GESTION_DIRECTIVAEntities())
+            using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
             {
-                List<GD_Plan_Area> objeto = (from x in contexto.GD_Plan_Area
-                                             where x.GD_Periodo_Academico_Id_Periodo.Equals(planArea.GD_Periodo_Academico_Id_Periodo)
+                List<PlanArea> objeto = (from x in contexto.PlanArea
+                                             where x.Id_PeriodoAcademico.Equals(planArea.Id_PeriodoAcademico)
                                                    select x).ToList();
                 if (objeto.Count>0)
                 {

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_INNOVASCHOOLSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_INNOVASCHOOLSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Empleado">
           <Key>
             <PropertyRef Name="Id_Empleado" />
@@ -86,7 +86,7 @@
           <Property Name="Criterios" Type="varchar(max)" Nullable="false" />
           <Property Name="Requisitos" Type="varchar(max)" Nullable="false" />
           <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Documento" Type="binary" MaxLength="1" />
+          <Property Name="Documento" Type="varchar" MaxLength="500" />
           <Property Name="Id_PeriodoAcademico" Type="int" />
           <Property Name="Id_PlanEstudio" Type="int" />
           <Property Name="Id_Grado" Type="int" />
@@ -406,8 +406,7 @@
             <End Role="PlanProyectoPedagogico" EntitySet="PlanProyectoPedagogico" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_INNOVASCHOOLSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -508,7 +507,7 @@
           <Property Name="Criterios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Requisitos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Documento" Type="Binary" MaxLength="1" FixedLength="true" />
+          <Property Name="Documento" Type="Binary" MaxLength="500" FixedLength="false" />
           <Property Name="Id_PeriodoAcademico" Type="Int32" />
           <Property Name="Id_PlanEstudio" Type="Int32" />
           <Property Name="Id_Grado" Type="Int32" />
