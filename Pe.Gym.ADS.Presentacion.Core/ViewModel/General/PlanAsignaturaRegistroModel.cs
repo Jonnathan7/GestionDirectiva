@@ -9,10 +9,6 @@ namespace GDirectiva.Presentacion.Core.ViewModel.General
     {
         public PlanAsignaturaRegistroModel()
         {
-            this.planAsignatura = new EN_PlanAsignatura();
         }
-
-        public EN_PlanAsignatura planAsignatura { get; set; }
-        public List<GD_SP_PERIODO_ACADEMICO_LISTA_Result> ListaPeriodoAcademico { get; set; }
     }
 }
