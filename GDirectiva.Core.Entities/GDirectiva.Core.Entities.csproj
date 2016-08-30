@@ -94,6 +94,7 @@
     <Compile Include="GD_SP_PLAN_ASIGNATURA_SEL_Result.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="General\EN_PlanArea.cs" />
     <Compile Include="General\EN_PlanAsignatura.cs" />
     <Compile Include="GRMS_Empleado.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
