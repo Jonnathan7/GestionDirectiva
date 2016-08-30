@@ -64,7 +64,6 @@
     <Compile Include="Empleado.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="General\EN_PlanArea.cs" />
     <Compile Include="General\EN_PlanAsignatura.cs" />
     <Compile Include="Grado.cs">
       <DependentUpon>Model.tt</DependentUpon>
