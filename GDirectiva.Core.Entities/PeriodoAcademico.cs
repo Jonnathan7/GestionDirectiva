@@ -12,18 +12,20 @@ namespace GDirectiva.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class GD_Periodo_Academico
+    public partial class PeriodoAcademico
     {
-        public GD_Periodo_Academico()
+        public PeriodoAcademico()
         {
-            this.GD_Plan_Area = new HashSet<GD_Plan_Area>();
+            this.PlanArea = new HashSet<PlanArea>();
+            this.PlanProyectoPedagogico = new HashSet<PlanProyectoPedagogico>();
         }
     
-        public int Id_Periodo { get; set; }
+        public int Id_PeriodoAcademico { get; set; }
         public string Periodo { get; set; }
-        public Nullable<System.DateTime> Fecha_Inicio { get; set; }
-        public Nullable<System.DateTime> Fecha_Fin { get; set; }
+        public Nullable<System.DateTime> FechaInicio { get; set; }
+        public Nullable<System.DateTime> FechaFin { get; set; }
     
-        public virtual ICollection<GD_Plan_Area> GD_Plan_Area { get; set; }
+        public virtual ICollection<PlanArea> PlanArea { get; set; }
+        public virtual ICollection<PlanProyectoPedagogico> PlanProyectoPedagogico { get; set; }
     }
 }

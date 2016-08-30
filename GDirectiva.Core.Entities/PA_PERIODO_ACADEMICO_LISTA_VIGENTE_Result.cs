@@ -10,15 +10,12 @@
 namespace GDirectiva.Core.Entities
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class GD_Observacion
+    public partial class PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result
     {
-        public int Id_Observacion { get; set; }
-        public string Observacion { get; set; }
-        public string Tipo { get; set; }
-        public int GD_Plan_Asignatura_Id_Plan_Asignatura { get; set; }
-    
-        public virtual GD_Plan_Asignatura GD_Plan_Asignatura { get; set; }
+        public int ID_PERIODOACADEMICO { get; set; }
+        public string PERIODO { get; set; }
+        public Nullable<System.DateTime> FECHA_INICIO { get; set; }
+        public Nullable<System.DateTime> FECHA_FIN { get; set; }
     }
 }

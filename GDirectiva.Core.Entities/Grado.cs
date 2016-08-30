@@ -12,16 +12,19 @@ namespace GDirectiva.Core.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class GD_Grado
+    public partial class Grado
     {
-        public GD_Grado()
+        public Grado()
         {
-            this.GD_Plan_Area = new HashSet<GD_Plan_Area>();
+            this.PlanArea = new HashSet<PlanArea>();
+            this.PlanProyectoPedagogico = new HashSet<PlanProyectoPedagogico>();
         }
     
         public int Id_Grado { get; set; }
-        public string Grado { get; set; }
+        public string Nombre { get; set; }
+        public string Niveles { get; set; }
     
-        public virtual ICollection<GD_Plan_Area> GD_Plan_Area { get; set; }
+        public virtual ICollection<PlanArea> PlanArea { get; set; }
+        public virtual ICollection<PlanProyectoPedagogico> PlanProyectoPedagogico { get; set; }
     }
 }

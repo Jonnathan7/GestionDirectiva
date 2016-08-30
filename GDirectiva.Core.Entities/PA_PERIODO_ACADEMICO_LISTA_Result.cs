@@ -11,9 +11,9 @@ namespace GDirectiva.Core.Entities
 {
     using System;
     
-    public partial class GD_SP_PERIODO_ACADEMICO_LISTA_Result
+    public partial class PA_PERIODO_ACADEMICO_LISTA_Result
     {
-        public int ID_PERIODO { get; set; }
+        public int ID_PERIODOACADEMICO { get; set; }
         public string PERIODO { get; set; }
         public Nullable<System.DateTime> FECHA_INICIO { get; set; }
         public Nullable<System.DateTime> FECHA_FIN { get; set; }
