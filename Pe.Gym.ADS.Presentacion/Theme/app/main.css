@@ -1,0 +1,48 @@
+﻿/**********************************************
+Theme Name: UI GYM
+Author: Diego Guadalupe, Sebastian Yabiku
+Version: 1.0
+/**********************************************/
+
+/**********************************************
+File : main.css;
+-----------------------------------------------
+Description:
+   - Agregaremos todos los estilos html,
+     globales reutilizables.
+-----------------------------------------------
+Assigned to: Sebastian Yabiku        
+/*********************************************/
+
+
+
+/*----global*/
+/*********************************************/
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: #2a2d30;
+}
+a,
+a:hover{
+    text-decoration:none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+
+}
+
+
+
+
+
+
+
+
+
+

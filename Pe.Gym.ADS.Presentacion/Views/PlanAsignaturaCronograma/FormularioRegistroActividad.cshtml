@@ -1,0 +1,78 @@
+﻿@using GDirectiva.Presentacion.Resource.Base
+@using GDirectiva.Presentacion.Resource.General
+@using GDirectiva.Presentacion.Resource.Mensaje
+@model GDirectiva.Presentacion.Core.ViewModel.General.PlanAsignaturaCronogramaActividadRegistroModel
+
+@{
+    ViewBag.Title = "FormularioRegistroActividad";
+}
+
+@Html.Hidden("hdnFormularioRegistroId_Actividad", Model.actividad.Id_Actividad, new { id = "hdnFormularioRegistroId_Actividad" })
+@Html.Hidden("hdnFormularioRegistroPlanAsignatura", Model.actividad.GD_Plan_Asignatura_Id_Plan_Asignatura, new { id = "hdnFormularioRegistroPlanAsignatura" })
+<div class="content-body">
+    <div class="main-colum">
+        <form id="frmPlanAsignaturaCronogramaRegistro" action="@Url.Action("General", "PlanAsignaturaCronograma")">
+            <!-- wrap -->
+            <div class="box-wrap-main">
+                <div class="box-wrap-body">
+                    <div class="box-form">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaCronogramaResource.EtiquetaNombreActividad:</label>
+                                    <input class="form-control" type="text" id="txtNombreActividad" value="@Model.actividad.Actividad" maxlength="120" validable="required EtiquetaNombreActividad" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaCronogramaResource.EtiquetaFechaInicio:</label>
+                                    <input class="form-control" type="text" id="txtFechaInicio" value="@Model.actividad.Fecha_Inicio" validable="required EtiquetaFechaInicio" />
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaCronogramaResource.EtiquetaFechaFin:</label>
+                                    <input class="form-control" type="text" id="txtFechaFin" value="@Model.actividad.Fecha_Fin" validable="required EtiquetaFechaFin" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaCronogramaResource.EtiquetaPorcentaje:</label>
+                                    <input class="form-control" type="text" id="txtPorcentaje" value="@Model.actividad.Porcentaje_Avance" validable="required EtiquetaPorcentaje" @((Model.actividad.Id_Actividad == 0) ? "disabled" : "") />
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaCronogramaResource.EtiquetaResponsables:</label>
+                                    <select class="form-control" id="slcResponsables" validable="required EtiquetaResponsables">
+                                        <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                                        @{
+                                            if (Model.ListaResponsables != null)
+                                            {
+                                                foreach (var item in Model.ListaResponsables)
+                                                {
+                                                    <option value="@item.ID_EMPLEADO" @((Model.actividad.GRMS_Empleado_Id_Empleado == item.ID_EMPLEADO) ? "selected" : "")>@item.NOMBRE_EMPLEADO</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cierra wrap -->
+        </form>
+    </div>
+    <div id="divGrdResultActividades">
+    </div>
+</div>
+<div class="comp-Modal-footer">
+    <button class="btn btn-default" id="btnFrmCancelarActividad">@GenericResource.BotonCerrar</button>
+    <button class="btn-s btn-add" id="btnFrmGrabarActividad">@GenericResource.BotonGrabar</button>
+</div>

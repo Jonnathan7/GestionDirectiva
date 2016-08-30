@@ -1,0 +1,64 @@
+﻿@using GDirectiva.Presentacion.Resource.Base
+@using GDirectiva.Presentacion.Resource.General
+@using GDirectiva.Presentacion.Resource.Mensaje
+@model GDirectiva.Presentacion.Core.ViewModel.General.PlanAsignaturaCronogramaRegistroModel
+
+@{
+    ViewBag.Title = "FormularioRegistro";
+}
+@Html.Hidden("hdnFormularioRegistroCodigo", Model.planAsignatura.ID_PLAN_ASIGNATURA, new { id = "hdnFormularioRegistroCodigo" })
+<div class="content-body">
+    <div class="main-colum">
+        <form id="frmPlanAsignaturaCronogramaBusqueda" action="@Url.Action("General", "PlanAsignaturaCronograma")">
+            <!-- wrap -->
+            <div class="box-wrap-main">
+                <div class="box-wrap-body">
+                    <div class="box-form">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaResource.EtiquetaPeriodoAcademico:</label>
+                                    <input class="form-control" type="text" value="@Model.planAsignatura.PERIODO" disabled="disabled" readonly="readonly" />
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaResource.EtiquetaPlanArea:</label>
+                                    <input class="form-control" type="text" value="@Model.planAsignatura.NOMBRE_PLAN_AREA" disabled="disabled" readonly="readonly" />
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaResource.EtiquetaAsignatura:</label>
+                                    <input class="form-control" type="text" value="@Model.planAsignatura.NOMBRE_CURSO" disabled="disabled" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaResource.EtiquetaMetas:</label>
+                                    <textarea class="form-control" rows="4" cols="4000" type="text" disabled="disabled" readonly="readonly">@Model.planAsignatura.META</textarea>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaResource.EtiquetaMetodologias:</label>
+                                    <textarea class="form-control" rows="4" cols="4000" type="text" disabled="disabled" readonly="readonly">@Model.planAsignatura.METODOLOGIA</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cierra wrap -->
+        </form>
+    </div>
+    <div id="divGrdResultActividades">
+    </div>
+</div>
+<div class="comp-Modal-footer">
+    <button class="btn btn-default" id="btnFrmCancelarCronograma">@GenericResource.BotonCerrar</button>
+    <button class="btn-s btn-add" id="btnFrmGrabarCronograma">@GenericResource.BotonGrabar</button>
+    <button class="btn-s btn-add" id="btnAgregarCronograma">@GenericResource.BotonAgregar</button>
+</div>

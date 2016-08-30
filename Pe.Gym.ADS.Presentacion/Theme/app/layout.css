@@ -1,0 +1,375 @@
+﻿/**********************************************
+File : layout.css;
+-----------------------------------------------
+Description:
+   - Reglas para la distribucion
+     de los elementos principales.
+-----------------------------------------------
+Assigned to: Sebastian Yabiku        
+/*********************************************/
+
+/*----.GmdWrap*/
+/*********************************************/
+
+
+/*----.GmdHeader*/
+/*********************************************/
+.Gmd-logo {
+    float: left;
+    display: block;
+    margin: 11px 11px 11px 14px;
+    position: relative;
+}
+
+    .Gmd-logo:before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background: #ccc;
+        position: absolute;
+        right: -14px;
+    }
+
+.lay-GmdHeader {
+    height: 52px;
+    border-top: 1px solid #dddedf;
+    /*border-bottom: 1px solid #dddedf;*/
+    /*background: #3f4347;*/
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+    .lay-GmdHeader:before {
+        content: '';
+        display: block;
+        background: #DFDFDF;
+        height: 4px;
+        position: absolute;
+        left: 58px;
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .lay-GmdHeader:after {
+        content: '';
+        display: block;
+        background: #3f4347;
+        height: 4px;
+        position: absolute;
+        width: 58px;
+        left: 0px;
+        bottom: 0px;
+    }
+
+    .lay-GmdHeader .logo {
+        display: block;
+        float: left;
+        margin-top: 12px;
+        margin-left: 22px;
+        min-width: 102px;
+        border-right: 1px solid #d9d9d9;
+    }
+
+    .lay-GmdHeader h1 {
+        float: left;
+        margin: 13px;
+        font-weight: bold;
+        color: #FFFFFF;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-top: 16px;
+    }
+
+/*----.GmdBody*/
+/*********************************************/
+.lay-PullBody {
+    padding-left: 58px;
+    overflow: hidden;
+}
+
+.lay-MainContent {
+    background: white;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.lay-GmdBody {
+    padding: 52px 0 0;
+}
+
+    .lay-GmdBody .main-content {
+        background: #fff;
+        min-height: 950px;
+        position: relative;
+    }
+
+.GmdBody-header {
+    border-bottom: 1px solid #d4d4d4;
+    padding: 10px 14px;
+}
+
+    .GmdBody-header h2 {
+        margin: 0px;
+        font-size: 20px;
+        color: #333333;
+    }
+
+        .GmdBody-header h2 a {
+            color: #000;
+        }
+        
+.GmdBody-body {
+    /*padding: 15px 15px 52px 15px;*/
+    padding: 15px 15px 15px 15px;
+}
+
+
+/*----.DataTable*/
+/*********************************************/
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 0 !important;
+  border: none !important;
+}
+
+/*----.Dashboard*/
+/*********************************************/
+.box-dashboard-circle {
+    display: block;
+    overflow: hidden;
+    margin: -14px -14px 0px -14px;
+}
+
+    .box-dashboard-circle .left-dashboard {
+        width: 450px;
+        border: 1px solid #eee;
+        background: #F2F2F2;
+        border: 1px solid #dadada;
+        padding: 12px 12px 12px 12px;
+        float: left;
+        display:table;
+    }
+
+        .box-dashboard-circle .left-dashboard label {
+            font-size: 13px !important;
+            font-family: Arial, Tahoma, Verdana !important;
+            color:#656565;
+        }
+
+    .box-dashboard-circle .right-dashboard {
+        margin: 0px 0px 0px 454px;
+    }
+
+.box-fecha {
+    display:table-cell;
+    width: 230px;
+    padding: 18px 20px 20px 0px;
+}
+
+.date-cuadro {
+    display: block;
+    overflow: hidden;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    margin-left: -12px;
+    margin-right: -21px;
+    margin-top: 5px;
+    padding: 13px 0px 12px 0px;
+    position: relative;
+}
+
+    .date-cuadro:before {
+        content:'';
+        width: 1px;
+        background: #dadada;
+        position:absolute;
+        top:0px;
+        bottom: 0px;
+        left: 49%;
+    }
+
+    .date-cuadro span {
+        width: 49%;
+        text-align:center;
+        display:inline-block;
+        *display:inline;
+        zoom:1;
+        
+    }
+
+        .date-cuadro span label {
+            margin-bottom: 0px;
+        }
+
+.und-date {
+    color: rgb(227, 22, 33) !important;
+}
+
+.print-reporte {
+    display:block;
+    text-align:center;
+    padding-top: 24px;
+}
+
+    .print-reporte a {
+        padding: 10px 12px;
+        vertical-align:middle;
+        border-top: 1px solid #c3c3c3;
+        border-right: 1px solid #c3c3c3;
+        border-bottom: 2px solid #c3c3c3;
+        border-radius: 6px;
+        color: #555;
+        font-weight:bold;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3f3f3+0,d6d6d6+100 */
+        background: #f3f3f3; /* Old browsers */
+        background: -moz-linear-gradient(top,  #f3f3f3 0%, #d6d6d6 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f3f3), color-stop(100%,#d6d6d6)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #f3f3f3 0%,#d6d6d6 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #f3f3f3 0%,#d6d6d6 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #f3f3f3 0%,#d6d6d6 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #f3f3f3 0%,#d6d6d6 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f3', endColorstr='#d6d6d6',GradientType=0 ); /* IE6-9 */
+        border-left: 1px solid #c3c3c3;
+        display:inline-block;
+        display:inline;
+        zoom:1;
+    }
+
+        .print-reporte a:hover {
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6d6d6+0,f3f3f3+100 */
+            background: #d6d6d6; /* Old browsers */
+            background: -moz-linear-gradient(top,  #d6d6d6 0%, #f3f3f3 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d6d6d6), color-stop(100%,#f3f3f3)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #d6d6d6 0%,#f3f3f3 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #d6d6d6 0%,#f3f3f3 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #d6d6d6 0%,#f3f3f3 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #d6d6d6 0%,#f3f3f3 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#f3f3f3',GradientType=0 ); /* IE6-9 */
+
+        }
+
+        .print-reporte a i {
+            color: #E31621 !important;
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+
+.box-estado {
+    border-top: 1px solid #dadada;
+    border-left: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    margin: 5px -12px 0px -12px;
+    display:table-cell;
+    width: 230px;
+    background:#F4F4F4;
+    vertical-align: top;
+}
+
+.box-estado .title-estado {
+    font-weight:bold;
+    padding: 12px 0px 12px 15px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid #dadada;
+}
+
+    .box-estado .title-estado label {
+        font-size: 14px !important;
+        margin-bottom: 0px;
+    }
+
+    .box-estado .area-date {
+        font-weight:bold;
+        padding: 12px 0px 12px 15px;
+        border-top: 1px solid white;
+        border-bottom: 1px solid #dadada;
+        text-align:left;
+    }
+
+    .box-estado .area-date label {
+        margin-bottom: 0px;
+        display:inline-block;
+        *display:inline;
+        zoom:1;
+    }
+
+.label-normal {
+    font-weight:normal !important;
+    /*color: #909090 !important;*/
+    color: rgb(227, 22, 33) !important;
+}
+
+.box-dashboard-acumulado {
+  border-top: 1px solid #e2e2e2;
+  margin: 4px 0px 0px -15px;
+}
+
+.lay-msj {
+    padding-top: 50px;
+    text-align:center;
+    /*font-size: 13px;
+    padding: 10px 15px 10px 15px;
+    background: rgb(169, 115, 115);
+    border: 1px solid #C3C3C3;*/
+}
+
+    .lay-msj .alert {
+        width: 300px;
+        margin: 0px auto;
+    }
+
+/*----.GmdFooter*/
+/*********************************************/
+.lay-GmdFooter {
+    background: #28282a;
+    color: #fff;
+    font-size: 12px;
+    height: 52px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 9;
+}
+
+    .lay-GmdFooter ul {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .lay-GmdFooter a,
+    .lay-GmdFooter p {
+        color: #fff;
+        font-size: 12px;
+    }
+
+    .lay-GmdFooter li {
+        list-style: none;
+    }
+
+    .lay-GmdFooter .pull-left {
+        margin: 18px 0 0 15px;
+    }
+
+    .lay-GmdFooter .pull-right {
+        margin: 18px 15px 0 0;
+    }
+
+        .lay-GmdFooter .pull-right li {
+            display: inline-block;
+        }
+
+        .lay-GmdFooter .pull-right .title {
+            margin-right: 10px;
+        }
+
+        .lay-GmdFooter .pull-right a {
+            display: block;
+            position: relative;
+            top: -2px;
+        }
+
+/*----Extensión clases Time Picker*/
+.table-condensed {
+    text-align:center;
+}
