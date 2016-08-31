@@ -327,8 +327,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="PA_AREA_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
+        <Function Name="PA_GRADO_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
         <Function Name="PA_PERIODO_ACADEMICO_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
         <Function Name="PA_PERIODO_ACADEMICO_LISTA_VIGENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
+        <Function Name="PA_PLAN_AREA_SEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+          <Parameter Name="PlanAreaId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PA_PLAN_ESTUDIO_SEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
+        <Function Name="usp_gd_PlanArea_Listar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+          <Parameter Name="PeriodoAcademicoId" Type="int" Mode="In" />
+          <Parameter Name="GradoId" Type="int" Mode="In" />
+          <Parameter Name="AreaId" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="DB_INNOVASCHOOLSModelStoreContainer">
           <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActividadPlanAsignatura" EntityType="Self.ActividadPlanAsignatura" Schema="gd" store:Type="Tables" />
@@ -507,7 +518,7 @@
           <Property Name="Criterios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Requisitos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Documento" Type="String" />
+          <Property Name="Documento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="Id_PeriodoAcademico" Type="Int32" />
           <Property Name="Id_PlanEstudio" Type="Int32" />
           <Property Name="Id_Grado" Type="Int32" />
@@ -840,9 +851,29 @@
             <End Role="PlanEstudio" EntitySet="PlanEstudio" />
             <End Role="PlanProyectoPedagogico" EntitySet="PlanProyectoPedagogico" />
           </AssociationSet>
+          <FunctionImport Name="PA_AREA_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_AREA_LISTA_Result)" />
+          <FunctionImport Name="PA_GRADO_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_GRADO_LISTA_Result)" />
           <FunctionImport Name="PA_PERIODO_ACADEMICO_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PERIODO_ACADEMICO_LISTA_Result)" />
           <FunctionImport Name="PA_PERIODO_ACADEMICO_LISTA_VIGENTE" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result)" />
+          <FunctionImport Name="usp_gd_PlanArea_Listar" ReturnType="Collection(DB_INNOVASCHOOLSModel.usp_gd_PlanArea_Listar_Result)">
+            <Parameter Name="PeriodoAcademicoId" Mode="In" Type="Int32" />
+            <Parameter Name="GradoId" Mode="In" Type="Int32" />
+            <Parameter Name="AreaId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PA_PLAN_AREA_SEL" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_AREA_SEL_Result)">
+          <Parameter Name="PlanAreaId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PA_PLAN_ESTUDIO_SEL" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_ESTUDIO_SEL_Result)" />
         </EntityContainer>
+        <ComplexType Name="PA_AREA_LISTA_Result">
+          <Property Type="Int32" Name="ID_AREA" Nullable="false" />
+          <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="PA_GRADO_LISTA_Result">
+          <Property Type="Int32" Name="ID_GRADO" Nullable="false" />
+          <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="NIVELES" Nullable="true" MaxLength="255" />
+        </ComplexType>
         <ComplexType Name="PA_PERIODO_ACADEMICO_LISTA_Result">
           <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="false" />
           <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="255" />
@@ -854,6 +885,43 @@
           <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="255" />
           <Property Type="DateTime" Name="FECHA_INICIO" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="FECHA_FIN" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="usp_gd_PlanArea_Listar_Result">
+          <Property Type="Int32" Name="Id_PlanArea" Nullable="false" />
+          <Property Type="String" Name="NombrePlanArea" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="Objetivos" Nullable="false" />
+          <Property Type="String" Name="Criterios" Nullable="false" />
+          <Property Type="String" Name="Requisitos" Nullable="false" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Documento" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Id_PeriodoAcademico" Nullable="true" />
+          <Property Type="String" Name="Periodo" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="Id_PlanEstudio" Nullable="true" />
+          <Property Type="Int32" Name="Id_Grado" Nullable="true" />
+          <Property Type="String" Name="NombreGrado" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="Id_Area" Nullable="true" />
+          <Property Type="String" Name="NombreArea" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="PA_PLAN_AREA_SEL_Result">
+          <Property Type="Int32" Name="ID_PLANAREA" Nullable="false" />
+          <Property Type="String" Name="NOMBRE_PLANAREA" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="OBJETIVOS" Nullable="false" />
+          <Property Type="String" Name="CRITERIOS" Nullable="false" />
+          <Property Type="String" Name="REQUISITOS" Nullable="false" />
+          <Property Type="String" Name="ESTADO_PLANAREA" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="DOCUMENTO_PLANAREA" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="true" />
+          <Property Type="Int32" Name="ID_PLANESTUDIO" Nullable="true" />
+          <Property Type="Int32" Name="ANIO_PLANESTUDIO" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCION_PLANESTUDIO" Nullable="false" />
+          <Property Type="Int32" Name="GRADO" Nullable="true" />
+          <Property Type="Int32" Name="ID_AREA" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="PA_PLAN_ESTUDIO_SEL_Result">
+          <Property Type="Int32" Name="ID_PLANESTUDIO" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCION" Nullable="false" />
+          <Property Type="Int32" Name="ANIO" Nullable="false" />
+          <Property Type="String" Name="DOCUMENTO" Nullable="false" MaxLength="255" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1002,6 +1070,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PA_AREA_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_AREA_LISTA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_AREA_LISTA_Result">
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PA_GRADO_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_GRADO_LISTA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_GRADO_LISTA_Result">
+                <ScalarProperty Name="ID_GRADO" ColumnName="ID_GRADO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="NIVELES" ColumnName="NIVELES" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="PA_PERIODO_ACADEMICO_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PERIODO_ACADEMICO_LISTA">
             <ResultMapping>
               <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PERIODO_ACADEMICO_LISTA_Result">
@@ -1019,6 +1104,55 @@
                 <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
                 <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
                 <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_gd_PlanArea_Listar" FunctionName="DB_INNOVASCHOOLSModel.Store.usp_gd_PlanArea_Listar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.usp_gd_PlanArea_Listar_Result">
+                <ScalarProperty Name="Id_PlanArea" ColumnName="Id_PlanArea" />
+                <ScalarProperty Name="NombrePlanArea" ColumnName="NombrePlanArea" />
+                <ScalarProperty Name="Objetivos" ColumnName="Objetivos" />
+                <ScalarProperty Name="Criterios" ColumnName="Criterios" />
+                <ScalarProperty Name="Requisitos" ColumnName="Requisitos" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="Id_PeriodoAcademico" ColumnName="Id_PeriodoAcademico" />
+                <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+                <ScalarProperty Name="Id_PlanEstudio" ColumnName="Id_PlanEstudio" />
+                <ScalarProperty Name="Id_Grado" ColumnName="Id_Grado" />
+                <ScalarProperty Name="NombreGrado" ColumnName="NombreGrado" />
+                <ScalarProperty Name="Id_Area" ColumnName="Id_Area" />
+                <ScalarProperty Name="NombreArea" ColumnName="NombreArea" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PA_PLAN_AREA_SEL" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_AREA_SEL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_AREA_SEL_Result">
+                <ScalarProperty Name="ID_PLANAREA" ColumnName="ID_PLANAREA" />
+                <ScalarProperty Name="NOMBRE_PLANAREA" ColumnName="NOMBRE_PLANAREA" />
+                <ScalarProperty Name="OBJETIVOS" ColumnName="OBJETIVOS" />
+                <ScalarProperty Name="CRITERIOS" ColumnName="CRITERIOS" />
+                <ScalarProperty Name="REQUISITOS" ColumnName="REQUISITOS" />
+                <ScalarProperty Name="ESTADO_PLANAREA" ColumnName="ESTADO_PLANAREA" />
+                <ScalarProperty Name="DOCUMENTO_PLANAREA" ColumnName="DOCUMENTO_PLANAREA" />
+                <ScalarProperty Name="ID_PERIODOACADEMICO" ColumnName="ID_PERIODOACADEMICO" />
+                <ScalarProperty Name="ID_PLANESTUDIO" ColumnName="ID_PLANESTUDIO" />
+                <ScalarProperty Name="ANIO_PLANESTUDIO" ColumnName="ANIO_PLANESTUDIO" />
+                <ScalarProperty Name="DESCRIPCION_PLANESTUDIO" ColumnName="DESCRIPCION_PLANESTUDIO" />
+                <ScalarProperty Name="GRADO" ColumnName="GRADO" />
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PA_PLAN_ESTUDIO_SEL" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ESTUDIO_SEL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_ESTUDIO_SEL_Result">
+                <ScalarProperty Name="ID_PLANESTUDIO" ColumnName="ID_PLANESTUDIO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ANIO" ColumnName="ANIO" />
+                <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

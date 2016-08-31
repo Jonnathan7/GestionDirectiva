@@ -39,6 +39,16 @@ namespace GDirectiva.Core.Entities
         public virtual DbSet<PlanEstudio> PlanEstudio { get; set; }
         public virtual DbSet<PlanProyectoPedagogico> PlanProyectoPedagogico { get; set; }
     
+        public virtual ObjectResult<PA_AREA_LISTA_Result> PA_AREA_LISTA()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_AREA_LISTA_Result>("PA_AREA_LISTA");
+        }
+    
+        public virtual ObjectResult<PA_GRADO_LISTA_Result> PA_GRADO_LISTA()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_GRADO_LISTA_Result>("PA_GRADO_LISTA");
+        }
+    
         public virtual ObjectResult<PA_PERIODO_ACADEMICO_LISTA_Result> PA_PERIODO_ACADEMICO_LISTA()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_PERIODO_ACADEMICO_LISTA_Result>("PA_PERIODO_ACADEMICO_LISTA");
@@ -47,6 +57,37 @@ namespace GDirectiva.Core.Entities
         public virtual ObjectResult<PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result> PA_PERIODO_ACADEMICO_LISTA_VIGENTE()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result>("PA_PERIODO_ACADEMICO_LISTA_VIGENTE");
+        }
+    
+        public virtual ObjectResult<usp_gd_PlanArea_Listar_Result> usp_gd_PlanArea_Listar(Nullable<int> periodoAcademicoId, Nullable<int> gradoId, Nullable<int> areaId)
+        {
+            var periodoAcademicoIdParameter = periodoAcademicoId.HasValue ?
+                new ObjectParameter("PeriodoAcademicoId", periodoAcademicoId) :
+                new ObjectParameter("PeriodoAcademicoId", typeof(int));
+    
+            var gradoIdParameter = gradoId.HasValue ?
+                new ObjectParameter("GradoId", gradoId) :
+                new ObjectParameter("GradoId", typeof(int));
+    
+            var areaIdParameter = areaId.HasValue ?
+                new ObjectParameter("AreaId", areaId) :
+                new ObjectParameter("AreaId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_gd_PlanArea_Listar_Result>("usp_gd_PlanArea_Listar", periodoAcademicoIdParameter, gradoIdParameter, areaIdParameter);
+        }
+    
+        public virtual ObjectResult<PA_PLAN_AREA_SEL_Result> PA_PLAN_AREA_SEL(Nullable<int> planAreaId)
+        {
+            var planAreaIdParameter = planAreaId.HasValue ?
+                new ObjectParameter("PlanAreaId", planAreaId) :
+                new ObjectParameter("PlanAreaId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_PLAN_AREA_SEL_Result>("PA_PLAN_AREA_SEL", planAreaIdParameter);
+        }
+    
+        public virtual ObjectResult<PA_PLAN_ESTUDIO_SEL_Result> PA_PLAN_ESTUDIO_SEL()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_PLAN_ESTUDIO_SEL_Result>("PA_PLAN_ESTUDIO_SEL");
         }
     }
 }

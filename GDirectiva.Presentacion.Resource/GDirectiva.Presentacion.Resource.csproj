@@ -44,10 +44,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GenericResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="General\PlanEstudioResource.Designer.cs">
+      <DependentUpon>PlanEstudioResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="General\PlanAsignaturaCronogramaResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PlanAsignaturaCronogramaResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="General\PlanAreaResource.Designer.cs">
+      <DependentUpon>PlanAreaResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="General\PlanAsignaturaResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -66,9 +76,17 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GenericResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="General\PlanEstudioResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PlanEstudioResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="General\PlanAsignaturaCronogramaResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PlanAsignaturaCronogramaResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\PlanAreaResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PlanAreaResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="General\PlanAsignaturaResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

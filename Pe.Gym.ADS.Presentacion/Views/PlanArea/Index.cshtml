@@ -1,7 +1,121 @@
-﻿
+﻿@using GDirectiva.Presentacion.Resource.Base
+@using GDirectiva.Presentacion.Resource.General
+
+@using GDirectiva.Presentacion.Core.Helpers
+@model GDirectiva.Presentacion.Core.ViewModel.General.PlanAreaBusquedaModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Plan Área";
 }
+<div class="content-body">
+    <div class="main-colum">
+        <form id="frmPlanAreaBusqueda" action="@Url.Action("General", "PlanArea")">
+            <!-- wrap -->
+            <div class="box-wrap-main">
+                <div class="box-wrap-header">
+                    <div class="pull-left">
+                        <div class="title-main">
+                            PLAN DE ÁREA - BÚSQUEDA
+                        </div>
+                    </div>
+                </div>
+                <div class="box-wrap-body">
+                    <h3 class="title-form">FILTROS DE BÚSQUEDA</h3>
+                    <div class="box-form">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAreaResource.EtiquetaPeriodoAcademico:</label>
+                                    <select id="slcPeriodoAcademico" name="value" class="form-control">
+                                        <option value="0">@GenericResource.EtiquetaSeleccionar</option>
+                                        @{
+                                            if (Model.ListaPeriodoAcademico != null)
+                                            {
+                                                foreach (var item in Model.ListaPeriodoAcademico)
+                                                {
+                                                    <option value="@item.ID_PERIODOACADEMICO">@item.PERIODO</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAreaResource.EtiquetaGrado:</label>
+                                    <select id="slcGrado" name="value" class="form-control">
+                                        <option value="0">@GenericResource.EtiquetaSeleccionar</option>
+                                        @{
+                                            if (Model.ListaGrados != null)
+                                            {
+                                                foreach (var item in Model.ListaGrados)
+                                                {
+                                                    <option value="@item.ID_GRADO">@item.NIVELES - @item.NOMBRE</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAreaResource.EtiquetaArea:</label>
+                                    <select id="slcArea" name="value" class="form-control">
+                                        <option value="0">@GenericResource.EtiquetaSeleccionar</option>
+                                        @{
+                                            if (Model.ListaAreas != null)
+                                            {
+                                                foreach (var item in Model.ListaAreas)
+                                                {
+                                                    <option value="@item.ID_AREA">@item.NOMBRE</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-acciones">
+                        <div class="pull-right">
+                            <button type="button" id="btnBuscar" class="btn-s btn-search">Buscar</button>
+                            <button type="reset" class="btn-s btn-clean">@GenericResource.BotonLimpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cierra wrap -->
+        </form>
+    </div>
+    <div id="divGrdResult">
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button id="btnAgregar" class="btn-s btn-add">@GenericResource.BotonRegistrar</button>
+        </div>
+    </div>
+</div>
 
-<h2>Index</h2>
+@section scripts
+{
+    <script type="text/javascript">
 
+    ns('GDirectiva.Presentacion.General.PlanArea.Actions')
+    GDirectiva.Presentacion.General.PlanArea.Actions.Buscar = '@Url.Action("Buscar", "PlanArea", new { Area = "General" })';
+    GDirectiva.Presentacion.General.PlanArea.Actions.FormularioRegistro = '@Url.Action("FormularioRegistro", "PlanArea", new { Area = "General" })';
+    GDirectiva.Presentacion.General.PlanArea.Actions.Registrar = '@Url.Action("Registrar", "PlanArea", new { Area = "General" })';
+    GDirectiva.Presentacion.General.PlanArea.Actions.Eliminar = '@Url.Action("Eliminar", "PlanArea", new { Area = "General" })';
+
+    ns('GDirectiva.Presentacion.General.PlanArea.Resource')
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaTituloFormulario = '@PlanAreaResource.EtiquetaTituloFormulario';
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaPeriodoAcademico = '@PlanAreaResource.EtiquetaPeriodoAcademico';
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaGrado = '@PlanAreaResource.EtiquetaGrado';
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaArea = '@PlanAreaResource.EtiquetaArea';
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaObjetivos = '@PlanAreaResource.EtiquetaObjetivos';
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaCriterios = '@PlanAreaResource.EtiquetaCriterios';
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaRequisitos = '@PlanAreaResource.EtiquetaRequisitos';
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaDocumento = '@PlanAreaResource.EtiquetaDocumento';
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaNombre = '@PlanAreaResource.EtiquetaNombre';
+
+</script>
+    @CustomHtmlHelper.RenderViewJs("generalplanareaformularioregistro")
+}

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\UPC\Nivel 13\Taller de Proyectos 3\Trabajo\GestionDirectiva\Solucion\GDirectiva\GDirectiva.Core.Entities\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\CodeGitHub\GDirectiva.Core.Entities\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

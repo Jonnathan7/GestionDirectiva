@@ -40,6 +40,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -109,12 +117,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -401,6 +403,9 @@
     <Content Include="Scripts\bootstrap-jquery-ui\js\bootstrap.js" />
     <Content Include="Scripts\bootstrap-jquery-ui\js\jquery-ui-1.10.3.custom.min.js" />
     <Content Include="Scripts\bootstrap-jquery-ui\js\jquery-ui.js" />
+    <Content Include="Scripts\General\PlanArea\FormularioRegistro\Controller.js" />
+    <Content Include="Scripts\General\PlanArea\Index\Controller.js" />
+    <Content Include="Scripts\General\PlanArea\Index\Index.js" />
     <Content Include="Scripts\General\PlanAsignaturaCronograma\FormularioRegistroActividad\Controller.js" />
     <Content Include="Scripts\General\PlanAsignaturaCronograma\FormularioRegistro\Controller.js" />
     <Content Include="Scripts\General\PlanAsignaturaCronograma\Index\Controller.js" />

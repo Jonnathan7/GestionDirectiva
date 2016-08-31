@@ -1,7 +1,120 @@
-﻿
-@{
-    ViewBag.Title = "FormularioRegistro";
-}
+﻿@using GDirectiva.Presentacion.Resource.General
+@using GDirectiva.Presentacion.Resource.Base
+@using GDirectiva.Presentacion.Resource.Mensaje
+@model GDirectiva.Presentacion.Core.ViewModel.General.PlanAreaRegistroModel
 
-<h2>FormularioRegistro</h2>
+@Html.Hidden("hdnFormularioRegistroCodigo", Model.planArea.Id_Area, new { id = "hdnFormularioRegistroCodigo" })
+@Html.Hidden("hdnFormularioCodigoPlanEstudio", Model.planEstudio.ID_PLANESTUDIO, new { id = "hdnFormularioCodigoPlanEstudio" })
+<form id="frmRegistrarPlanArea">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtAnioPlanEstudioForm">@PlanEstudioResource.EtiquetaAnio</label>
+                <input type="text" class="form-control" id="txtAnioPlanEstudio" readonly="readonly" disabled="disabled" value="@Model.planEstudio.ANIO" />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtDocumentoPlanEstudioForm">@PlanEstudioResource.EtiquetaDocumento</label>
+                <input type="text" class="form-control" id="txtDocumentoPlanEstudio" readonly="readonly" disabled="disabled" value="@Model.planEstudio.DOCUMENTO" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtPeriodoAcademico">@PlanAreaResource.EtiquetaPeriodoAcademico</label>
+                <select class="form-control" id="slcPeriodoAcademicoForm" validable="required EtiquetaPeriodoAcademico" >
+                    <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                    @{
+                        if (Model.ListaPeriodoAcademico != null)
+                        {
+                            foreach (var item in Model.ListaPeriodoAcademico)
+                            {
+                                <option value="@item.ID_PERIODOACADEMICO">@item.PERIODO</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtPlanArea">@PlanAreaResource.EtiquetaGrado</label>
+                <select class="form-control" id="slcGradoForm" validable="required EtiquetaGrado" >
+                    <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                    @{
+                        if (Model.ListaGrados != null)
+                        {
+                            foreach (var item in Model.ListaGrados)
+                            {
+                                <option value="@item.ID_GRADO">@item.NIVELES - @item.NOMBRE</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
 
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtArea">@PlanAreaResource.EtiquetaArea</label>
+                <select class="form-control" id="slcAreaForm" validable="required EtiquetaArea" >
+                    <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                    @{
+                        if (Model.ListaAreas != null)
+                        {
+                            foreach (var item in Model.ListaAreas)
+                            {
+                                <option value="@item.ID_AREA">@item.NOMBRE</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtNombre">@PlanAreaResource.EtiquetaNombre</label>
+                <input type="text" class="form-control" id="txtNombreForm" value="@Model.planArea.Nombre" validable="required EtiquetaNombre" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="txtObjetivos">@PlanAreaResource.EtiquetaObjetivos</label>
+                <textarea class="form-control" maxlength="1024" id="txtObjetivosForm" rows="4" validable="required EtiquetaObjetivos"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="txtCriterios">@PlanAreaResource.EtiquetaCriterios</label>
+                <textarea class="form-control" maxlength="1024" id="txtCriteriosForm" rows="4" validable="required EtiquetaCriterios"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="txtRequisitos">@PlanAreaResource.EtiquetaRequisitos</label>
+                <textarea class="form-control" maxlength="1024" id="txtRequisitosForm" rows="4" validable="required EtiquetaRequisitos"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="txtDocumento">@PlanAreaResource.EtiquetaDocumento</label>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="comp-Modal-footer">
+    <button class="btn btn-default" id="btnFrmCancelar">@GenericResource.BotonCerrar</button>
+    <button class="btn-s btn-add" id="btnFrmGrabar">@GenericResource.BotonGrabar</button>
+</div>

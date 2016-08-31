@@ -50,12 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DA_Area.cs" />
     <Compile Include="DA_Asignatura.cs" />
     <Compile Include="DA_Empleado.cs" />
+    <Compile Include="DA_Grado.cs" />
     <Compile Include="DA_PeriodoAcademico.cs" />
     <Compile Include="DA_PlanArea.cs" />
     <Compile Include="DA_PlanAsignatura.cs" />
     <Compile Include="DA_PlanAsignatura_Actividad.cs" />
+    <Compile Include="DA_PlanEstudio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

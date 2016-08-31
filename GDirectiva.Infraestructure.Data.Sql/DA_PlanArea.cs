@@ -9,33 +9,78 @@ namespace GDirectiva.Infraestructure.Data.Sql
 {
     public class DA_PlanArea
     {
-        public List<Core.Entities.PlanArea> listar(PlanArea planArea)
+        public List<usp_gd_PlanArea_Listar_Result> ListarPlanArea(int periodoacademicoId, int gradoId, int areaId)
         {
             using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
             {
-                List<PlanArea> objeto = (from x in contexto.PlanArea
-                                             where x.Id_PeriodoAcademico.Equals(planArea.Id_PeriodoAcademico)
-                                                   select x).ToList();
-                if (objeto.Count>0)
-                {
-                    return objeto;
-                }
-                else {
-                    return null;
-                }
-                
+                List<usp_gd_PlanArea_Listar_Result> objeto = new List<usp_gd_PlanArea_Listar_Result>();
+                objeto = contexto.usp_gd_PlanArea_Listar(periodoacademicoId, gradoId, areaId).ToList();
+                return objeto;
             }
         }
 
-        public PlanArea obtener(PlanArea planArea)
+        public PlanArea InsertarPlanArea(PlanArea planArea)
+        {
+            using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
+            {
+                PlanArea objeto = contexto.PlanArea.Add(planArea);
+                if (contexto.SaveChanges() > 0)
+                {
+                    return objeto;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public bool ActualizarPlanArea(PlanArea planArea)
         {
             using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
             {
                 PlanArea objeto = (from x in contexto.PlanArea
-                                       where x.Id_PlanArea.Equals(planArea.Id_PlanArea)
-                                       select x).FirstOrDefault();
-                return objeto;
+                                   where x.Id_PlanArea == planArea.Id_PlanArea
+                                   select x).FirstOrDefault();
+
+                objeto.Nombre = planArea.Nombre;
+                objeto.Objetivos = planArea.Objetivos;
+                objeto.Criterios = planArea.Criterios;
+                objeto.Requisitos = planArea.Requisitos;
+                objeto.Estado = planArea.Estado;
+                objeto.Documento = planArea.Documento;
+                objeto.FechaModificacion = planArea.FechaModificacion;
+
+                if (contexto.SaveChanges() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-        } 
+        }
+
+        public bool EliminarPlanArea(PlanArea planArea)
+        {
+            using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
+            {
+                PlanArea objeto = (from x in contexto.PlanArea
+                                   where x.Id_PlanArea == planArea.Id_PlanArea
+                                   select x).FirstOrDefault();
+
+                objeto.Estado = "ELIMINADO";
+
+                if (contexto.SaveChanges() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }
