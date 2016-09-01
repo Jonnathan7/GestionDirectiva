@@ -12,11 +12,11 @@ namespace GDirectiva.Presentacion.Core.ViewModel.General
     {
         public PlanAreaRegistroModel()
         {
-            this.planArea = new PlanArea();
+            this.planArea = new PA_PLAN_AREA_SEL_Result();
             this.planEstudio = new PA_PLAN_ESTUDIO_SEL_Result();
         }
 
-        public PlanArea planArea { get; set; }
+        public PA_PLAN_AREA_SEL_Result planArea { get; set; }
 
         public PA_PLAN_ESTUDIO_SEL_Result planEstudio { get; set; }
 

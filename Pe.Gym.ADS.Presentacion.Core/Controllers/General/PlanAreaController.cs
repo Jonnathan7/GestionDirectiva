@@ -4,6 +4,7 @@ using GDirectiva.Presentacion.Core.Controllers.Base;
 using GDirectiva.Presentacion.Core.ViewModel.General;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,8 +42,14 @@ namespace GDirectiva.Presentacion.Core.Controllers.General
             var bl_PlanEstudio = new BL_PlanEstudio();
             if (pId_Plan_Area > 0)
             {
-                //model.planArea = bl_PlanArea.obtener(pId_Plan_Asignatura).Result;
-                
+                model.planArea = bl_PlanArea.ObtenerPlanArea(pId_Plan_Area).Result;
+                model.planEstudio = new PA_PLAN_ESTUDIO_SEL_Result()
+                {
+                    ID_PLANESTUDIO = (int)model.planArea.ID_PLANESTUDIO,
+                    ANIO = model.planArea.ANIO_PLANESTUDIO,
+                    DOCUMENTO = model.planArea.DOCUMENTO_PLANESTUDIO,
+                    DESCRIPCION = model.planArea.DESCRIPCION_PLANESTUDIO
+                };
             }
             else
             {
@@ -71,7 +78,7 @@ namespace GDirectiva.Presentacion.Core.Controllers.General
         public JsonResult Buscar(int periodoacademicoId, int gradoId, int areaId)
         {
             var bl_PlanArea = new BL_PlanArea();
-            var proceso = bl_PlanArea.ListarPlanArea(periodoacademicoId, gradoId, areaId);
+            var proceso = bl_PlanArea.ListarPlanArea(periodoacademicoId, gradoId, areaId,0, 10);
             return Json(proceso);
         }
         /// <summary>
@@ -89,10 +96,38 @@ namespace GDirectiva.Presentacion.Core.Controllers.General
             }
             else
             {
-                planArea.FechaModificacion = DateTime.Now;
-                //resultado = bl_PlanArea.actualizar(planAsignatura);
+                resultado = bl_PlanArea.ActualizarPlanArea(planArea);
             }
             return Json(resultado);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="planArea"></param>
+        /// <returns></returns>
+        public JsonResult Eliminar(int pId_PlanArea)
+        {
+            ProcessResult<PlanArea> resultado = new ProcessResult<PlanArea>();
+            var bl_PlanArea = new BL_PlanArea();
+            resultado = bl_PlanArea.EliminarPlanArea(pId_PlanArea);
+            return Json(resultado);
+        }
+
+        [HttpPost]
+        public ActionResult SubirArchivo(PlanArea planArea)
+        {
+            var model = new ResultadoDocumentoImportarModel();
+
+            try
+            {
+                var file = Request.Files[0];
+                var fileName = Path.GetFileName(file.FileName.ToString().Replace(' ', '_'));
+            }
+            catch (Exception e)
+            {
+
+            }
+            return PartialView(model);
         }
         #endregion
     }

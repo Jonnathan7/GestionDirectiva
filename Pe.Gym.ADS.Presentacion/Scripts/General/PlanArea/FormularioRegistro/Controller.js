@@ -9,12 +9,16 @@ GDirectiva.Presentacion.General.PlanArea.FormularioRegistro.Controller = functio
     var base = this;
 
     base.Ini = function () {
+        
         base.Event.GrabarSuccess = (opts.GrabarSuccess != null && opts.GrabarSuccess) ? opts.GrabarSuccess : null;
         base.Control.BtnGrabar().click(base.Event.BtnGrabarClick);
         base.Control.BtnCancelar().click(base.Event.BtnCancelarClick);
         base.Control.ValRegistro = new GDirectiva.Presentacion.Web.Components.Validator({
             form: base.Control.FormRegistro(),
             messages: GDirectiva.Presentacion.General.PlanArea.Resource
+        });
+        base.Control.TxtFile().on('change', function () {
+            base.Function.beforeSubmit();
         });
     };
     base.Mostrar = function (pIdPlanArea) {
@@ -28,6 +32,24 @@ GDirectiva.Presentacion.General.PlanArea.FormularioRegistro.Controller = functio
                 }
             }
         );
+    };
+    base.Function = {
+        beforeSubmit: function () {
+            var $ufile = base.Control.TxtFile();
+            var value = $ufile.val();
+            if (value != "") {
+                if (!(/\.(doc|docx)$/i.test(value))) {
+
+                    alert(GDirectiva.Presentacion.General.PlanArea.Resource.ErrorDeExtension);
+                    base.Control.TxtFile().val('');
+
+                    return false;
+                }
+            } else {
+                alert(GDirectiva.Presentacion.General.PlanArea.Resource.MensajeDebeSeleccionarArchivoWord);
+                return false;
+            }
+        }
     };
     base.Control = {
         Mensaje: new GDirectiva.Presentacion.Web.Components.Message(),
@@ -50,7 +72,9 @@ GDirectiva.Presentacion.General.PlanArea.FormularioRegistro.Controller = functio
         TxtAnioPlanEstudioForm: function () { return $('#txtAnioPlanEstudioForm'); },
         TxtDocumentoPlanEstudioForm: function () { return $('#txtDocumentoPlanEstudioForm'); },
         HdnFormularioCodigoPlanEstudio: function () { return $('#hdnFormularioCodigoPlanEstudio'); },
-        HdnCodigo: function () { return $('#hdnFormularioRegistroCodigo'); }
+        HdnCodigo: function () { return $('#hdnFormularioRegistroCodigo'); },
+        TxtFile: function () { return $('#txtFile'); },
+        ajaxform: function () { return $('#ajaxform_Archivo'); },
     };
 
     base.Event = {
@@ -69,6 +93,11 @@ GDirectiva.Presentacion.General.PlanArea.FormularioRegistro.Controller = functio
                 };
                 base.Ajax.AjaxRegistrar.submit();
             }
+            /*if (base.Control.TxtFile().val() != "") {
+                base.Control.ajaxform().submit();
+            } else {
+                alert(GDirectiva.Presentacion.General.PlanArea.Resource.MensajeDebeSeleccionarArchivoWord);
+            }*/
         },
         BtnCancelarClick: function () {
             base.Control.DlgFormulario.close();

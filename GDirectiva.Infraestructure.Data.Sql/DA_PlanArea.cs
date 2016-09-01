@@ -9,12 +9,22 @@ namespace GDirectiva.Infraestructure.Data.Sql
 {
     public class DA_PlanArea
     {
-        public List<usp_gd_PlanArea_Listar_Result> ListarPlanArea(int periodoacademicoId, int gradoId, int areaId)
+        public List<PA_PLAN_AREA_LISTA_Result> ListarPlanArea(int periodoacademicoId, int gradoId, int areaId, int pAGINA_INICIO, int tAMANIO_PAGINA)
         {
             using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
             {
-                List<usp_gd_PlanArea_Listar_Result> objeto = new List<usp_gd_PlanArea_Listar_Result>();
-                objeto = contexto.usp_gd_PlanArea_Listar(periodoacademicoId, gradoId, areaId).ToList();
+                List<PA_PLAN_AREA_LISTA_Result> objeto = new List<PA_PLAN_AREA_LISTA_Result>();
+                objeto = contexto.PA_PLAN_AREA_LISTA(periodoacademicoId, gradoId, areaId, pAGINA_INICIO, tAMANIO_PAGINA).ToList();
+                return objeto;
+            }
+        }
+
+        public PA_PLAN_AREA_SEL_Result ObtenerPlanArea(int pIdPlanArea)
+        {
+            using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
+            {
+                PA_PLAN_AREA_SEL_Result objeto = new PA_PLAN_AREA_SEL_Result();
+                objeto = contexto.PA_PLAN_AREA_SEL(pIdPlanArea).ToList().FirstOrDefault();
                 return objeto;
             }
         }
@@ -70,7 +80,8 @@ namespace GDirectiva.Infraestructure.Data.Sql
                                    where x.Id_PlanArea == planArea.Id_PlanArea
                                    select x).FirstOrDefault();
 
-                objeto.Estado = "ELIMINADO";
+                objeto.Id_PlanArea = planArea.Id_PlanArea;
+                objeto.Estado = planArea.Estado;
 
                 if (contexto.SaveChanges() > 0)
                 {

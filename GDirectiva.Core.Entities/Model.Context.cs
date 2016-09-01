@@ -59,21 +59,29 @@ namespace GDirectiva.Core.Entities
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result>("PA_PERIODO_ACADEMICO_LISTA_VIGENTE");
         }
     
-        public virtual ObjectResult<usp_gd_PlanArea_Listar_Result> usp_gd_PlanArea_Listar(Nullable<int> periodoAcademicoId, Nullable<int> gradoId, Nullable<int> areaId)
+        public virtual ObjectResult<PA_PLAN_AREA_LISTA_Result> PA_PLAN_AREA_LISTA(Nullable<int> iD_PERIODOACADEMICO, Nullable<int> iD_GRADO, Nullable<int> iD_AREA, Nullable<int> pAGINA_INICIO, Nullable<int> tAMANIO_PAGINA)
         {
-            var periodoAcademicoIdParameter = periodoAcademicoId.HasValue ?
-                new ObjectParameter("PeriodoAcademicoId", periodoAcademicoId) :
-                new ObjectParameter("PeriodoAcademicoId", typeof(int));
+            var iD_PERIODOACADEMICOParameter = iD_PERIODOACADEMICO.HasValue ?
+                new ObjectParameter("ID_PERIODOACADEMICO", iD_PERIODOACADEMICO) :
+                new ObjectParameter("ID_PERIODOACADEMICO", typeof(int));
     
-            var gradoIdParameter = gradoId.HasValue ?
-                new ObjectParameter("GradoId", gradoId) :
-                new ObjectParameter("GradoId", typeof(int));
+            var iD_GRADOParameter = iD_GRADO.HasValue ?
+                new ObjectParameter("ID_GRADO", iD_GRADO) :
+                new ObjectParameter("ID_GRADO", typeof(int));
     
-            var areaIdParameter = areaId.HasValue ?
-                new ObjectParameter("AreaId", areaId) :
-                new ObjectParameter("AreaId", typeof(int));
+            var iD_AREAParameter = iD_AREA.HasValue ?
+                new ObjectParameter("ID_AREA", iD_AREA) :
+                new ObjectParameter("ID_AREA", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_gd_PlanArea_Listar_Result>("usp_gd_PlanArea_Listar", periodoAcademicoIdParameter, gradoIdParameter, areaIdParameter);
+            var pAGINA_INICIOParameter = pAGINA_INICIO.HasValue ?
+                new ObjectParameter("PAGINA_INICIO", pAGINA_INICIO) :
+                new ObjectParameter("PAGINA_INICIO", typeof(int));
+    
+            var tAMANIO_PAGINAParameter = tAMANIO_PAGINA.HasValue ?
+                new ObjectParameter("TAMANIO_PAGINA", tAMANIO_PAGINA) :
+                new ObjectParameter("TAMANIO_PAGINA", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_PLAN_AREA_LISTA_Result>("PA_PLAN_AREA_LISTA", iD_PERIODOACADEMICOParameter, iD_GRADOParameter, iD_AREAParameter, pAGINA_INICIOParameter, tAMANIO_PAGINAParameter);
         }
     
         public virtual ObjectResult<PA_PLAN_AREA_SEL_Result> PA_PLAN_AREA_SEL(Nullable<int> planAreaId)

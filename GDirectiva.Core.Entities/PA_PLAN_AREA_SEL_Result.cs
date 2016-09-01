@@ -13,6 +13,10 @@ namespace GDirectiva.Core.Entities
     
     public partial class PA_PLAN_AREA_SEL_Result
     {
+        public int ANIO_PLANESTUDIO { get; set; }
+        public int ID_PLANESTUDIO { get; set; }
+        public string DESCRIPCION_PLANESTUDIO { get; set; }
+        public string DOCUMENTO_PLANESTUDIO { get; set; }
         public int ID_PLANAREA { get; set; }
         public string NOMBRE_PLANAREA { get; set; }
         public string OBJETIVOS { get; set; }
@@ -21,10 +25,7 @@ namespace GDirectiva.Core.Entities
         public string ESTADO_PLANAREA { get; set; }
         public string DOCUMENTO_PLANAREA { get; set; }
         public Nullable<int> ID_PERIODOACADEMICO { get; set; }
-        public Nullable<int> ID_PLANESTUDIO { get; set; }
-        public int ANIO_PLANESTUDIO { get; set; }
-        public string DESCRIPCION_PLANESTUDIO { get; set; }
-        public Nullable<int> GRADO { get; set; }
+        public Nullable<int> ID_GRADO { get; set; }
         public Nullable<int> ID_AREA { get; set; }
     }
 }

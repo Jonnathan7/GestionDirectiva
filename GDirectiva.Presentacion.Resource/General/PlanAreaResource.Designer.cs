@@ -61,6 +61,15 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error de extensión: Archivo Inválido, solo se acepta archivos de tipo Word..
+        /// </summary>
+        public static string ErrorDeExtension {
+            get {
+                return ResourceManager.GetString("ErrorDeExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Área Curricular.
         /// </summary>
         public static string EtiquetaArea {
@@ -106,6 +115,15 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nombre Plan Área.
+        /// </summary>
+        public static string EtiquetaNombrePlanArea {
+            get {
+                return ResourceManager.GetString("EtiquetaNombrePlanArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Objetivos.
         /// </summary>
         public static string EtiquetaObjetivos {
@@ -142,6 +160,15 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Seleccione un archivo.
+        /// </summary>
+        public static string EtiquetaSeleccioneUnArchivo {
+            get {
+                return ResourceManager.GetString("EtiquetaSeleccioneUnArchivo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Formulario de Plan Área.
         /// </summary>
         public static string EtiquetaTituloFormulario {
@@ -156,6 +183,15 @@ namespace GDirectiva.Presentacion.Resource.General {
         public static string EtiquetaTituloPrincipal {
             get {
                 return ResourceManager.GetString("EtiquetaTituloPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debe seleccionar el archivo Excel (.doc | .docx)..
+        /// </summary>
+        public static string MensajeDebeSeleccionarArchivoWord {
+            get {
+                return ResourceManager.GetString("MensajeDebeSeleccionarArchivoWord", resourceCulture);
             }
         }
     }

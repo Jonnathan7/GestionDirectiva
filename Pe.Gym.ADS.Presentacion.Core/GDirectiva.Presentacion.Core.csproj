@@ -58,6 +58,7 @@
     <Compile Include="ViewModel\General\PlanAsignaturaCronogramaBusquedaModel.cs" />
     <Compile Include="ViewModel\General\PlanAsignaturaCronogramaRegistroModel.cs" />
     <Compile Include="ViewModel\General\PlanAsignaturaRegistroModel.cs" />
+    <Compile Include="ViewModel\General\ResultadoDocumentoImportarModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GDirectiva.Core.Entities\GDirectiva.Core.Entities.csproj">

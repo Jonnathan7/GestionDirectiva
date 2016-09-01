@@ -12,9 +12,9 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
 
     base.Ini = function () {
         base.Control.FormularioRegistro = new GDirectiva.Presentacion.General.PlanArea.FormularioRegistro.Controller({
-            /*GrabarSuccess: function () {
+            GrabarSuccess: function () {
                 base.Control.GrdResultado.Load(base.Configurations.search.parameters);
-            }*/
+            }
         });
         base.Control.BtnAgregar().on('click', base.Event.BtnAgregarClick);
         base.Control.BtnBuscar().on('click', base.Event.BtnBuscarClick);
@@ -57,14 +57,14 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
             base.Control.FormularioRegistro.Mostrar();
         },
         BtnGridEditarClick: function (row, data) {
-            base.Control.FormularioRegistro.Mostrar(data.ID_PLAN_ASIGNATURA);
+            base.Control.FormularioRegistro.Mostrar(data.ID_PLANAREA);
         },
         BtnGridEliminarClick: function (row, data) {
             base.Control.Mensaje.Confirmation({
                 title: GDirectiva.Presentacion.Base.MensajeResource.ConfirmacionEliminacion,
                 message: GDirectiva.Presentacion.Base.MensajeResource.TextoEliminacion,
                 onAccept: function () {
-                    base.Ajax.AjaxEliminar.send({ pId_Plan_Area: data.ID_PLAN_ASIGNATURA })
+                    base.Ajax.AjaxEliminar.send({ pId_PlanArea: data.ID_PLANAREA })
                 }
             });
         },
@@ -88,16 +88,25 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
     };
 
     base.Function = {
+        
+        ActivarEliminar: function (data, type, full) {
+            return full.ID_ESTADO;
+        },
         CrearGrid: function () {
 
             var columns = new Array();
-            columns.push({ data: 'NombrePlanArea', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaPeriodoAcademico });
-            columns.push({ data: 'Periodo', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaGrado });
-            columns.push({ data: 'NombreGrado', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaArea });
+            columns.push({ data: 'PERIODO', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaPeriodoAcademico });
+            columns.push({ data: 'NOMBRE_GRADO', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaGrado });
+            columns.push({ data: 'NOMBRE_AREA', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaArea });
+            columns.push({
+                data: null, title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaNombrePlanArea, 'mRender': function (data, type, full) {
+                    return full.NOMBRE_PLANAREA;
+                }
+            });
             
             var listaOpciones = new Array();
-            listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Edit, event: { on: 'click', callBack: base.Event.BtnGridEditarClick } });
-            listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Delete, event: { on: 'click', callBack: base.Event.BtnGridEliminarClick } });
+            listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Edit, validateRender: base.Function.ActivarEditar, event: { on: 'click', callBack: base.Event.BtnGridEditarClick } });
+            listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Delete, validateRender: base.Function.ActivarEliminar, event: { on: 'click', callBack: base.Event.BtnGridEliminarClick } });
 
             columns.push({
                 data: null,

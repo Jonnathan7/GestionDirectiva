@@ -98,6 +98,9 @@
     <Compile Include="PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="PA_PLAN_AREA_LISTA_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="PA_PLAN_AREA_SEL_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -120,9 +123,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="usp_gd_PlanArea_Listar_Result.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config">
