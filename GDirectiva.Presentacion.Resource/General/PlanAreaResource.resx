@@ -129,6 +129,9 @@
   <data name="EtiquetaDocumento" xml:space="preserve">
     <value>Documento</value>
   </data>
+  <data name="EtiquetaEstado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
   <data name="EtiquetaGrado" xml:space="preserve">
     <value>Grado</value>
   </data>

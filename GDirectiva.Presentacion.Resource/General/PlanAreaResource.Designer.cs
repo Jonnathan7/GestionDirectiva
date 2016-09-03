@@ -97,6 +97,15 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Estado.
+        /// </summary>
+        public static string EtiquetaEstado {
+            get {
+                return ResourceManager.GetString("EtiquetaEstado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Grado.
         /// </summary>
         public static string EtiquetaGrado {

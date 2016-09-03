@@ -78,7 +78,7 @@
                     <div class="box-acciones">
                         <div class="pull-right">
                             <button type="button" id="btnBuscar" class="btn-s btn-search">Buscar</button>
-                            <button type="reset" class="btn-s btn-clean">@GenericResource.BotonLimpiar</button>
+                            <button style="display:none" type="reset" class="btn-s btn-clean">@GenericResource.BotonLimpiar</button>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
     GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaNombrePlanArea = '@PlanAreaResource.EtiquetaNombrePlanArea';
     GDirectiva.Presentacion.General.PlanArea.Resource.ErrorDeExtension = '@PlanAreaResource.ErrorDeExtension';
     GDirectiva.Presentacion.General.PlanArea.Resource.MensajeDebeSeleccionarArchivoWord = '@PlanAreaResource.MensajeDebeSeleccionarArchivoWord';
-
+    GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaEstado = '@PlanAreaResource.EtiquetaEstado';
 </script>
     @CustomHtmlHelper.RenderViewJs("generalplanareaformularioregistro")
 }

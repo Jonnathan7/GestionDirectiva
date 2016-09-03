@@ -103,7 +103,7 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
                     return full.NOMBRE_PLANAREA;
                 }
             });
-            
+            columns.push({ data: 'ESTADO', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaEstado });
             var listaOpciones = new Array();
             listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Edit, validateRender: base.Function.ActivarEditar, event: { on: 'click', callBack: base.Event.BtnGridEditarClick } });
             listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Delete, validateRender: base.Function.ActivarEliminar, event: { on: 'click', callBack: base.Event.BtnGridEliminarClick } });

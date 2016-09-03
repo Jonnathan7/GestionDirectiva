@@ -931,6 +931,7 @@
           <Property Type="String" Name="NOMBRE_AREA" Nullable="true" MaxLength="255" />
           <Property Type="Int64" Name="FilasTotal" Nullable="true" />
           <Property Type="Int64" Name="NumeroFila" Nullable="true" />
+          <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="20" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1137,6 +1138,7 @@
                 <ScalarProperty Name="NOMBRE_AREA" ColumnName="NOMBRE_AREA" />
                 <ScalarProperty Name="FilasTotal" ColumnName="FilasTotal" />
                 <ScalarProperty Name="NumeroFila" ColumnName="NumeroFila" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

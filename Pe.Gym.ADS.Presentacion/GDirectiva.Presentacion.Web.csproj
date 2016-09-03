@@ -473,6 +473,7 @@
     <Content Include="Views\PlanAsignaturaCronograma\FormularioRegistroActividad.cshtml" />
     <Content Include="Views\PlanArea\Index.cshtml" />
     <Content Include="Views\PlanArea\FormularioRegistro.cshtml" />
+    <None Include="Properties\PublishProfiles\GestionDirectiva.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GDirectiva.Presentacion.Resource\GDirectiva.Presentacion.Resource.csproj">
