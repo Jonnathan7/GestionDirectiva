@@ -53,6 +53,7 @@
     <Compile Include="Controllers\General\PlanAreaController.cs" />
     <Compile Include="Controllers\General\PlanAsignaturaController.cs" />
     <Compile Include="Controllers\General\PlanAsignaturaCronogramaController.cs" />
+    <Compile Include="Controllers\General\PlanProyectoPedagogicoController.cs" />
     <Compile Include="Helpers\CustomHtmlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\Base\CargarArchivoViewModel.cs" />
@@ -64,6 +65,8 @@
     <Compile Include="ViewModel\General\PlanAsignaturaCronogramaBusquedaModel.cs" />
     <Compile Include="ViewModel\General\PlanAsignaturaCronogramaRegistroModel.cs" />
     <Compile Include="ViewModel\General\PlanAsignaturaRegistroModel.cs" />
+    <Compile Include="ViewModel\General\PlanProyectoPedagogicoRegistroModel.cs" />
+    <Compile Include="ViewModel\General\PlanProyectoPedagogicoBusquedaModel.cs" />
     <Compile Include="ViewModel\General\ResultadoDocumentoImportarModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -260,6 +260,14 @@ GDirectiva.Presentacion.Web.Components.GridAction = {
             return GDirectiva.Presentacion.Web.Components.Util.RenderIcono('delete', 'fa-trash ' + selector, GDirectiva.Presentacion.Base.GenericResource.EtiquetaEliminar);
         }
     },
+    DeleteActividades: {
+        Class: 'eliminar',
+        Icon: '.fa-trash-',
+        Source: function (id) {
+            var selector = 'fa-trash-' + id;
+            return GDirectiva.Presentacion.Web.Components.Util.RenderIcono('delete', 'fa-trash ' + selector, GDirectiva.Presentacion.Base.GenericResource.EtiquetaEliminarActividades);
+        }
+    },
     Disable: {
         Class: 'eliminar',
         Icon: '.fa-lock-',
