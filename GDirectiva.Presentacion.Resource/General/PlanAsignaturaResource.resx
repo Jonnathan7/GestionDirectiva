@@ -117,17 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ErrorDeExtension" xml:space="preserve">
+    <value>Error de extensión: Archivo Inválido, solo se acepta archivos de tipo Word.</value>
+  </data>
   <data name="EtiquetaAsignatura" xml:space="preserve">
-    <value>Asignatura</value>
+    <value>Curso</value>
   </data>
-  <data name="EtiquetaAsociarReglas" xml:space="preserve">
-    <value>Asociar reglas:</value>
-  </data>
-  <data name="EtiquetaDebeAsociarUnaRegla" xml:space="preserve">
-    <value>Debe asociar al menos una regla.</value>
-  </data>
-  <data name="EtiquetaDocente" xml:space="preserve">
-    <value>Docente</value>
+  <data name="EtiquetaEstado" xml:space="preserve">
+    <value>Estado</value>
   </data>
   <data name="EtiquetaLineaNegocio" xml:space="preserve">
     <value>Línea de Negocio</value>
@@ -144,19 +141,16 @@
   <data name="EtiquetaPlanArea" xml:space="preserve">
     <value>Plan área</value>
   </data>
-  <data name="EtiquetaRegla" xml:space="preserve">
-    <value>Regla</value>
-  </data>
   <data name="EtiquetaResultadosBusqueda" xml:space="preserve">
     <value>Resultado de la búsqueda</value>
-  </data>
-  <data name="EtiquetaSeleccionarUnaRegla" xml:space="preserve">
-    <value>Seleccionar una regla.</value>
   </data>
   <data name="EtiquetaTituloFormulario" xml:space="preserve">
     <value>Formulario de Plan Asignatura</value>
   </data>
   <data name="EtiquetaTituloPrincipal" xml:space="preserve">
     <value>Plan Asignatura</value>
+  </data>
+  <data name="MensajeDebeSeleccionarArchivoWord" xml:space="preserve">
+    <value>Debe seleccionar el archivo Excel (.doc | .docx).</value>
   </data>
 </root>

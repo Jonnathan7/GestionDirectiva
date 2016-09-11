@@ -70,15 +70,6 @@ namespace GDirectiva.Presentacion.Resource.Mensaje {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ¿Está seguro de activar el registro?.
-        /// </summary>
-        public static string ConfirmacionActivacion {
-            get {
-                return ResourceManager.GetString("ConfirmacionActivacion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ¿Está seguro de eliminar el registro?.
         /// </summary>
         public static string ConfirmacionEliminacion {
@@ -151,51 +142,6 @@ namespace GDirectiva.Presentacion.Resource.Mensaje {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to El usuario estará activo hasta.
-        /// </summary>
-        public static string EtiquetaMensajeDesactivar {
-            get {
-                return ResourceManager.GetString("EtiquetaMensajeDesactivar", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No se ejecuto ningun proceso..
-        /// </summary>
-        public static string EtiquetaNoEjecutoNingunProceso {
-            get {
-                return ResourceManager.GetString("EtiquetaNoEjecutoNingunProceso", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Código de Demanda ya existe.
-        /// </summary>
-        public static string ExistenciaCodigoDemanda {
-            get {
-                return ResourceManager.GetString("ExistenciaCodigoDemanda", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fecha de depósito distinto..
-        /// </summary>
-        public static string FechaRegistroDistinta {
-            get {
-                return ResourceManager.GetString("FechaRegistroDistinta", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Importe de pago distinto..
-        /// </summary>
-        public static string ImportePagoDistinta {
-            get {
-                return ResourceManager.GetString("ImportePagoDistinta", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Debe ingresar al menos un filtro de búsqueda..
         /// </summary>
         public static string InformacionIngresarFiltro {
@@ -223,38 +169,11 @@ namespace GDirectiva.Presentacion.Resource.Mensaje {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to La contraseña autogenerada es:.
-        /// </summary>
-        public static string MensajeLaContraseniaAutogeneradaEs {
-            get {
-                return ResourceManager.GetString("MensajeLaContraseniaAutogeneradaEs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Los registros seleccionados no coinciden:.
         /// </summary>
         public static string RegistrosNoCoinciden {
             get {
                 return ResourceManager.GetString("RegistrosNoCoinciden", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Se activó el registro con éxito..
-        /// </summary>
-        public static string SeActivoRegistro {
-            get {
-                return ResourceManager.GetString("SeActivoRegistro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Se anuló registro con éxito..
-        /// </summary>
-        public static string SeAnuloRegistro {
-            get {
-                return ResourceManager.GetString("SeAnuloRegistro", resourceCulture);
             }
         }
         
@@ -313,7 +232,7 @@ namespace GDirectiva.Presentacion.Resource.Mensaje {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Por favor confirme la eliminación de los registros seleccionados..
+        ///   Looks up a localized string similar to Por favor confirme la eliminación del registro seleccionado..
         /// </summary>
         public static string TextoEliminacion {
             get {

@@ -61,7 +61,16 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Asignatura.
+        ///   Looks up a localized string similar to Error de extensión: Archivo Inválido, solo se acepta archivos de tipo Word..
+        /// </summary>
+        public static string ErrorDeExtension {
+            get {
+                return ResourceManager.GetString("ErrorDeExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Curso.
         /// </summary>
         public static string EtiquetaAsignatura {
             get {
@@ -70,29 +79,11 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Asociar reglas:.
+        ///   Looks up a localized string similar to Estado.
         /// </summary>
-        public static string EtiquetaAsociarReglas {
+        public static string EtiquetaEstado {
             get {
-                return ResourceManager.GetString("EtiquetaAsociarReglas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Debe asociar al menos una regla..
-        /// </summary>
-        public static string EtiquetaDebeAsociarUnaRegla {
-            get {
-                return ResourceManager.GetString("EtiquetaDebeAsociarUnaRegla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Docente.
-        /// </summary>
-        public static string EtiquetaDocente {
-            get {
-                return ResourceManager.GetString("EtiquetaDocente", resourceCulture);
+                return ResourceManager.GetString("EtiquetaEstado", resourceCulture);
             }
         }
         
@@ -142,29 +133,11 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Regla.
-        /// </summary>
-        public static string EtiquetaRegla {
-            get {
-                return ResourceManager.GetString("EtiquetaRegla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Resultado de la búsqueda.
         /// </summary>
         public static string EtiquetaResultadosBusqueda {
             get {
                 return ResourceManager.GetString("EtiquetaResultadosBusqueda", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Seleccionar una regla..
-        /// </summary>
-        public static string EtiquetaSeleccionarUnaRegla {
-            get {
-                return ResourceManager.GetString("EtiquetaSeleccionarUnaRegla", resourceCulture);
             }
         }
         
@@ -183,6 +156,15 @@ namespace GDirectiva.Presentacion.Resource.General {
         public static string EtiquetaTituloPrincipal {
             get {
                 return ResourceManager.GetString("EtiquetaTituloPrincipal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debe seleccionar el archivo Excel (.doc | .docx)..
+        /// </summary>
+        public static string MensajeDebeSeleccionarArchivoWord {
+            get {
+                return ResourceManager.GetString("MensajeDebeSeleccionarArchivoWord", resourceCulture);
             }
         }
     }

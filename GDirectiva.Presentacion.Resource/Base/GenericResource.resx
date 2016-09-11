@@ -159,6 +159,9 @@
   <data name="EtiquetaEliminar" xml:space="preserve">
     <value>Eliminar</value>
   </data>
+  <data name="EtiquetaEliminarActividades" xml:space="preserve">
+    <value>Eliminar actividades</value>
+  </data>
   <data name="EtiquetaResultadosBusqueda" xml:space="preserve">
     <value>Resultado de la búsqueda</value>
   </data>
@@ -166,7 +169,7 @@
     <value>--SELECCIONE--</value>
   </data>
   <data name="EtiquetaTituloSistema" xml:space="preserve">
-    <value>SISTEMA GESTIÓN COLEGIOS - Gestión Directiva</value>
+    <value>Innova Schools</value>
   </data>
   <data name="EtiquetaTodos" xml:space="preserve">
     <value>(TODOS)</value>

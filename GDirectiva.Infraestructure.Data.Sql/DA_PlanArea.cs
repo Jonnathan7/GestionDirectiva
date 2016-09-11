@@ -19,6 +19,16 @@ namespace GDirectiva.Infraestructure.Data.Sql
             }
         }
 
+        public List<PA_PLAN_AREA_LISTA_VIGENTE_Result> ListarPlanAreaVigente(int pID_PERIODOACADEMICO)
+        {
+            using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
+            {
+                List<PA_PLAN_AREA_LISTA_VIGENTE_Result> objeto = new List<PA_PLAN_AREA_LISTA_VIGENTE_Result>();
+                objeto = contexto.PA_PLAN_AREA_LISTA_VIGENTE(pID_PERIODOACADEMICO).ToList();
+                return objeto;
+            }
+        }
+
         public PA_PLAN_AREA_SEL_Result ObtenerPlanArea(int pIdPlanArea)
         {
             using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
@@ -26,6 +36,15 @@ namespace GDirectiva.Infraestructure.Data.Sql
                 PA_PLAN_AREA_SEL_Result objeto = new PA_PLAN_AREA_SEL_Result();
                 objeto = contexto.PA_PLAN_AREA_SEL(pIdPlanArea).ToList().FirstOrDefault();
                 return objeto;
+            }
+        }
+
+        public int ObtenerPlanAreaExiste(int periodoacademicoId, int areaId, int planEstudioId, int gradoId)
+        {
+            using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
+            {
+                var objeto = contexto.PA_PLAN_AREA_EXISTE(periodoacademicoId, areaId, planEstudioId, gradoId).FirstOrDefault();
+                return Convert.ToInt32(objeto);
             }
         }
 

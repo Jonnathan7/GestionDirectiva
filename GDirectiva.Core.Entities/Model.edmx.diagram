@@ -4,34 +4,35 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5ffe0adaa50c4603827ef669ceb524b7" Name="Diagram1">
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.Empleado" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.ActividadPlanAsignatura" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.ActividadPlanProyectoPedagogico" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.Area" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.Asignatura" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.Grado" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PeriodoAcademico" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PlanArea" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PlanAsignatura" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PlanEstudio" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PlanProyectoPedagogico" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+      <Diagram DiagramId="0a9e1c7295d24456b258bc0accaca4a1" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.Empleado" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.ActividadPlanAsignatura" Width="1.5" PointX="9.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.ActividadPlanProyectoPedagogico" Width="1.5" PointX="10.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PeriodoAcademico" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PlanArea" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PlanAsignatura" Width="1.5" PointX="7.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PlanEstudio" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.PlanProyectoPedagogico" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.AreaCurricular" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.Curso" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_INNOVASCHOOLSModel.Grado" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__Actividad__Id_Em__29572725" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__Actividad__Id_Em__2B3F6F97" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanAsign__Id_Em__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__Actividad__Id_Pl__286302EC" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__Actividad__Id_Pr__2A4B4B5E" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__Asignatur__Id_Ar__2C3393D0" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanArea__Id_Are__300424B4" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanProye__Id_Ar__35BCFE0A" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanAsign__Id_As__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanArea__Id_Gra__2F10007B" ManuallyRouted="false" />
-        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanProye__Id_Gr__36B12243" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanArea__Id_Per__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanProye__Id_Pe__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanArea__Id_Are__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanArea__Id_Gra__2F10007B" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanArea__Id_Pla__2E1BDC42" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanAsign__Id_Pl__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanAsign__Id_As__31EC6D26" ManuallyRouted="false" />
         <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanProye__Id_Pl__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanProye__Id_Ar__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__PlanProye__Id_Gr__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_INNOVASCHOOLSModel.FK__Asignatur__Id_Ar__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_INNOVASCHOOLSModel.CursoDocente" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

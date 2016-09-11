@@ -120,9 +120,6 @@
   <data name="ComentarioValido" xml:space="preserve">
     <value>Comentario Válido</value>
   </data>
-  <data name="ConfirmacionActivacion" xml:space="preserve">
-    <value>¿Está seguro de activar el registro?</value>
-  </data>
   <data name="ConfirmacionEliminacion" xml:space="preserve">
     <value>¿Está seguro de eliminar el registro?</value>
   </data>
@@ -147,21 +144,6 @@
   <data name="EtiquetaErrorRegistro" xml:space="preserve">
     <value>Ocurrió un error inesperado. Inténtelo nuevamente</value>
   </data>
-  <data name="EtiquetaMensajeDesactivar" xml:space="preserve">
-    <value>El usuario estará activo hasta</value>
-  </data>
-  <data name="EtiquetaNoEjecutoNingunProceso" xml:space="preserve">
-    <value>No se ejecuto ningun proceso.</value>
-  </data>
-  <data name="ExistenciaCodigoDemanda" xml:space="preserve">
-    <value>Código de Demanda ya existe</value>
-  </data>
-  <data name="FechaRegistroDistinta" xml:space="preserve">
-    <value>Fecha de depósito distinto.</value>
-  </data>
-  <data name="ImportePagoDistinta" xml:space="preserve">
-    <value>Importe de pago distinto.</value>
-  </data>
   <data name="InformacionIngresarFiltro" xml:space="preserve">
     <value>Debe ingresar al menos un filtro de búsqueda.</value>
   </data>
@@ -171,17 +153,8 @@
   <data name="MensajeException" xml:space="preserve">
     <value>La solicitud no ha podido ser procesada. Comuníquese con el Administrador del Sistema.</value>
   </data>
-  <data name="MensajeLaContraseniaAutogeneradaEs" xml:space="preserve">
-    <value>La contraseña autogenerada es:</value>
-  </data>
   <data name="RegistrosNoCoinciden" xml:space="preserve">
     <value>Los registros seleccionados no coinciden:</value>
-  </data>
-  <data name="SeActivoRegistro" xml:space="preserve">
-    <value>Se activó el registro con éxito.</value>
-  </data>
-  <data name="SeAnuloRegistro" xml:space="preserve">
-    <value>Se anuló registro con éxito.</value>
   </data>
   <data name="SeEliminoRegistro" xml:space="preserve">
     <value>Se eliminó el registro con éxito.</value>
@@ -202,7 +175,7 @@
     <value>sin éxito.</value>
   </data>
   <data name="TextoEliminacion" xml:space="preserve">
-    <value>Por favor confirme la eliminación de los registros seleccionados.</value>
+    <value>Por favor confirme la eliminación del registro seleccionado.</value>
   </data>
   <data name="TextoReactivacion" xml:space="preserve">
     <value>Por favor confirme la activación del registro.</value>

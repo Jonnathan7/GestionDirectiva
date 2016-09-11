@@ -187,6 +187,15 @@ namespace GDirectiva.Presentacion.Resource.Base {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Eliminar actividades.
+        /// </summary>
+        public static string EtiquetaEliminarActividades {
+            get {
+                return ResourceManager.GetString("EtiquetaEliminarActividades", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resultado de la búsqueda.
         /// </summary>
         public static string EtiquetaResultadosBusqueda {
@@ -205,7 +214,7 @@ namespace GDirectiva.Presentacion.Resource.Base {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SISTEMA GESTIÓN COLEGIOS - Gestión Directiva.
+        ///   Looks up a localized string similar to Innova Schools.
         /// </summary>
         public static string EtiquetaTituloSistema {
             get {

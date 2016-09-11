@@ -57,10 +57,10 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Adapter\PlanAsignaturaAdapter.cs" />
-    <Compile Include="Area.cs">
+    <Compile Include="AreaCurricular.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Asignatura.cs">
+    <Compile Include="Curso.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Empleado.cs">
@@ -86,7 +86,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="PA_AREA_LISTA_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PA_ASIGNATURA_PLANAREA_LISTA_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PA_GRADO_LISTA_Result.cs">
@@ -101,7 +107,19 @@
     <Compile Include="PA_PLAN_AREA_LISTA_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="PA_PLAN_AREA_LISTA_VIGENTE_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="PA_PLAN_AREA_SEL_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PA_PLAN_ASIGNATURA_LISTA_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PA_PLAN_ASIGNATURA_LISTA_VIGENTE_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PA_PLAN_ASIGNATURA_SEL_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PA_PLAN_ESTUDIO_SEL_Result.cs">

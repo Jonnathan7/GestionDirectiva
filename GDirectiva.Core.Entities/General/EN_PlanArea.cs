@@ -19,14 +19,14 @@ namespace GDirectiva.Core.Entities.General
         public PeriodoAcademico PeriodoAcademicoBE { get; set; }
         public PlanEstudio PlanEstudioBE { get; set; }
         public Grado GradoBE { get; set; }
-        public Area AreaBE { get; set; }
+        public AreaCurricular AreaBE { get; set; }
 
         public EN_PlanArea()
         {
             PeriodoAcademicoBE = new PeriodoAcademico();
             PlanEstudioBE = new PlanEstudio();
             GradoBE = new Grado();
-            AreaBE = new Area();
+            AreaBE = new AreaCurricular();
         }
 
     }
