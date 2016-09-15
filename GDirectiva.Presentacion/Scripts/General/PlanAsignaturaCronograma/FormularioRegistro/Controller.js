@@ -321,15 +321,15 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.FormularioRegistro.Cont
 
                     if (dateString != null && dateString != "") {
                         var dateObject = GDirectiva.Presentacion.Web.Components.Util.ConvertirCadenaAFecha(dateString);
-
-                        if (dateObject < new Date()) {
+                        //
+                        if (dateObject > new Date()) {
                             if (full.PORCENTAJE == null || full.PORCENTAJE == "" || parseInt(full.PORCENTAJE) < 100) {
                                 resultado = '<div style="width:100%;" align="center"><div id="circleRed" align="center" ></div></div>';
                             } else {
                                 resultado = '<div style="width:100%;" align="center"><div id="circleGreen" ></div></div>';
                             }
                         } else {
-                            resultado = '<div style="width:100%;" align="center"><div id="circleGreen" align="center"></div></div>';
+                            resultado = '<div style="width:100%;" align="center"><div id="circleRed" align="center"></div></div>';
                         }
                     } else {
                         resultado = '<div style="width:100%;" align="center"><div id="circleGreen" align="center"></div></div>';
