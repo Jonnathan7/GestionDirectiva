@@ -1,0 +1,122 @@
+﻿/**********************************************
+File : uiExt
+-----------------------------------------------
+Description:    
+   - Dentro de uiExt, definiremos
+     las modificaciones o extenciones 
+     de las piezas
+     de librerias ui externas.
+-----------------------------------------------
+Assigned to: Sebastian Yabiku        
+/*********************************************/
+
+
+
+/*----Spinner*/
+/*********************************************/
+.ui-spinner {
+    border:none!important;
+    display:block!important;
+}
+.ui-spinner input {
+    /*width:30px;*/
+    padding: 7px 24px 7px 7px!important;
+    margin:0px;
+}
+
+.ui-spinner input,
+.ui-spinner input:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+/*----Autocomplete*/
+/*********************************************/
+.ui-autocomplete-input {
+}
+
+    .ui-autocomplete-input,
+    .ui-autocomplete-input:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -moz-box-shadow: none;
+    }
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{
+    float:left!important;
+}
+.ui-dialog-buttonset .ui-button-Confirmar {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 10px 20px;
+    font-size: 11px;
+    line-height: 1.42857143;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: uppercase;
+    outline: none !important;
+    background: #c14044;
+    background: -moz-linear-gradient(top, #c14044 0%, #b13b3f 99%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c14044), color-stop(99%,#b13b3f));
+    background: -webkit-linear-gradient(top, #c14044 0%,#b13b3f 99%);
+    background: -o-linear-gradient(top, #c14044 0%,#b13b3f 99%);
+    background: -ms-linear-gradient(top, #c14044 0%,#b13b3f 99%);
+    background: linear-gradient(to bottom, #c14044 0%,#b13b3f 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c14044', endColorstr='#b13b3f',GradientType=0 );
+    color: #e8e8e8;
+    border: 1px solid #b1b1b1;
+    text-transform:capitalize;
+}
+
+.ui-dialog-buttonset .ui-button-Cancelar {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 10px 20px;
+    font-size: 11px;
+    line-height: 1.42857143;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-transform: uppercase;
+    outline: none !important;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #e7e7e7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e7e7e7));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e7e7e7 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#e7e7e7 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#e7e7e7 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#e7e7e7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e7e7e7',GradientType=0 );
+    color: #b93e42;
+    border: 1px solid #b1b1b1;
+    text-transform:capitalize;
+}
+
+
+
+.DialogProgressbar.ui-dialog .progressBar-custom {
+    margin:0px;
+}
+.DialogProgressbar.ui-dialog .ui-dialog-content {
+    height:auto!important;
+    padding: 14px 10px;
+}
+.DialogProgressbar.ui-dialog .ui-progressbar .ui-progressbar-value {
+    margin:0px;
+}

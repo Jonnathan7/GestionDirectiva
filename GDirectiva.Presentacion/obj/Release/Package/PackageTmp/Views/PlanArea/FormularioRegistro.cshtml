@@ -1,0 +1,129 @@
+﻿@using GDirectiva.Presentacion.Resource.General
+@using GDirectiva.Presentacion.Resource.Base
+@using GDirectiva.Presentacion.Resource.Mensaje
+@model GDirectiva.Presentacion.Core.ViewModel.General.PlanAreaRegistroModel
+
+@Html.Hidden("hdnFormularioRegistroCodigo", Model.planArea.ID_PLANAREA, new { id = "hdnFormularioRegistroCodigo" })
+@Html.Hidden("hdnFormularioCodigoPlanEstudio", Model.planEstudio.ID_PLANESTUDIO, new { id = "hdnFormularioCodigoPlanEstudio" })
+
+@*@using (Html.BeginForm("SubirArchivo", "PlanArea", FormMethod.Post, new { id = "ajaxform_Archivo", enctype = "multipart/form-data" }))
+{*@
+    <form id="frmRegistrarPlanArea">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="txtAnioPlanEstudioForm">@PlanEstudioResource.EtiquetaAnio</label>
+                    <input type="text" class="form-control" id="txtAnioPlanEstudio" readonly="readonly" disabled="disabled" value="@Model.planEstudio.ANIO" />
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="txtDocumentoPlanEstudioForm">@PlanEstudioResource.EtiquetaDocumento</label>
+                    <input type="text" class="form-control" id="txtDocumentoPlanEstudio" readonly="readonly" disabled="disabled" value="@Model.planEstudio.DOCUMENTO" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="txtPeriodoAcademico">@PlanAreaResource.EtiquetaPeriodoAcademico</label>
+                    <select class="form-control" id="slcPeriodoAcademicoForm" validable="required EtiquetaPeriodoAcademico" @((Model.planArea.ID_PLANAREA > 0 || Model.planArea.ESTADO_PLANAREA == "ELIMINADO") ? "disabled" : "")>
+                        <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                        @{
+                            if (Model.ListaPeriodoAcademico != null)
+                            {
+                                foreach (var item in Model.ListaPeriodoAcademico)
+                                {
+                                    <option value="@item.ID_PERIODOACADEMICO" @((Model.planArea.ID_PERIODOACADEMICO == item.ID_PERIODOACADEMICO) ? "selected" : "")>@item.PERIODO</option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="txtPlanArea">@PlanAreaResource.EtiquetaGrado</label>
+                    <select class="form-control" id="slcGradoForm" validable="required EtiquetaGrado" @((Model.planArea.ID_GRADO > 0) ? "disabled" : "")>
+                        <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                        @{
+                            if (Model.ListaGrados != null)
+                            {
+                                foreach (var item in Model.ListaGrados)
+                                {
+                                    <option value="@item.ID_GRADO" @((Model.planArea.ID_GRADO == item.ID_GRADO) ? "selected" : "")>@item.NIVELES - @item.NOMBRE</option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="txtArea">@PlanAreaResource.EtiquetaArea</label>
+                    <select class="form-control" id="slcAreaForm" validable="required EtiquetaArea" @((Model.planArea.ID_AREA > 0) ? "disabled" : "")>
+                        <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                        @{
+                            if (Model.ListaAreas != null)
+                            {
+                                foreach (var item in Model.ListaAreas)
+                                {
+                                    <option value="@item.ID_AREA" @((Model.planArea.ID_AREA == item.ID_AREA) ? "selected" : "")>@item.NOMBRE</option>
+                                }
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="txtNombre">@PlanAreaResource.EtiquetaNombre</label>
+                    <input type="text" class="form-control" id="txtNombreForm" value="@Model.planArea.NOMBRE_PLANAREA" validable="required EtiquetaNombre" @((Model.planArea.ESTADO_PLANAREA == "ELIMINADO") ? "disabled" : "") />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="txtObjetivos">@PlanAreaResource.EtiquetaObjetivos</label>
+                    <textarea class="form-control" maxlength="1024" id="txtObjetivosForm" rows="4" validable="required EtiquetaObjetivos" @((Model.planArea.ESTADO_PLANAREA == "ELIMINADO") ? "disabled" : "")>@Model.planArea.OBJETIVOS</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="txtCriterios">@PlanAreaResource.EtiquetaCriterios</label>
+                    <textarea class="form-control" maxlength="1024" id="txtCriteriosForm" rows="4" validable="required EtiquetaCriterios" @((Model.planArea.ESTADO_PLANAREA == "ELIMINADO") ? "disabled" : "")>@Model.planArea.CRITERIOS</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="txtRequisitos">@PlanAreaResource.EtiquetaRequisitos</label>
+                    <textarea class="form-control" maxlength="1024" id="txtRequisitosForm" rows="4" validable="required EtiquetaRequisitos" @((Model.planArea.ESTADO_PLANAREA == "ELIMINADO") ? "disabled" : "")>@Model.planArea.REQUISITOS</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="txtDocumento">@PlanAreaResource.EtiquetaDocumento</label>
+                    <input type="file" class="form-control" id="txtFile" name="file" accept="doc|docx" @((Model.planArea.ESTADO_PLANAREA == "ELIMINADO") ? "disabled" : "") />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="comp-Modal-footer">
+        <button class="btn btn-default" id="btnFrmCancelar">@GenericResource.BotonCerrar</button>
+        @{
+            if(Model.planArea.ESTADO_PLANAREA != "ELIMINADO"){
+                <button class="btn-s btn-add" id="btnFrmGrabar" >@GenericResource.BotonGrabar</button>
+            }
+        }
+    </div>
+@*}*@

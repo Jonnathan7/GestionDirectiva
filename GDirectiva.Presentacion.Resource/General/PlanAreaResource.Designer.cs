@@ -196,7 +196,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Debe seleccionar el archivo Excel (.doc | .docx)..
+        ///   Looks up a localized string similar to Debe seleccionar el archivo Word (.doc | .docx)..
         /// </summary>
         public static string MensajeDebeSeleccionarArchivoWord {
             get {

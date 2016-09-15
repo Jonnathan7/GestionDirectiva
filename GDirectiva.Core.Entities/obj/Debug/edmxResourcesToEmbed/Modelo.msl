@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GESTION_DIRECTIVAModelStoreContainer" CdmEntityContainer="GESTION_DIRECTIVAEntities">
+    <FunctionImportMapping FunctionImportName="GD_SP_PLAN_ASIGNATURA_LISTA" FunctionName="GESTION_DIRECTIVAModel.Store.GD_SP_PLAN_ASIGNATURA_LISTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_SP_PLAN_ASIGNATURA_LISTA_Result">
+          <ScalarProperty Name="RegistrosPagina" ColumnName="RegistrosPagina" />
+          <ScalarProperty Name="TotalRegistro" ColumnName="TotalRegistro" />
+          <ScalarProperty Name="NumeroRegistro" ColumnName="NumeroRegistro" />
+          <ScalarProperty Name="TamanioPagina" ColumnName="TamanioPagina" />
+          <ScalarProperty Name="ID_PLAN_ASIGNATURA" ColumnName="ID_PLAN_ASIGNATURA" />
+          <ScalarProperty Name="META" ColumnName="META" />
+          <ScalarProperty Name="METODOLOGIA" ColumnName="METODOLOGIA" />
+          <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_PLAN_AREA" ColumnName="ID_PLAN_AREA" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="ID_ASIGNATURA" ColumnName="ID_ASIGNATURA" />
+          <ScalarProperty Name="NOMBRE_PLAN_AREA" ColumnName="NOMBRE_PLAN_AREA" />
+          <ScalarProperty Name="NOMBRE_EMPLEADO" ColumnName="NOMBRE_EMPLEADO" />
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="ID_PERIODO" ColumnName="ID_PERIODO" />
+          <ScalarProperty Name="NOMBRE_CURSO" ColumnName="NOMBRE_CURSO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="GD_Area">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Area">
+        <MappingFragment StoreEntitySet="GD_Area">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id_Area" ColumnName="Id_Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Asignatura">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Asignatura">
+        <MappingFragment StoreEntitySet="GD_Asignatura">
+          <ScalarProperty Name="GD_Area_Id_Area" ColumnName="GD_Area_Id_Area" />
+          <ScalarProperty Name="Curso" ColumnName="Curso" />
+          <ScalarProperty Name="Id_Asignatura" ColumnName="Id_Asignatura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Empleado_Asignatura">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura">
+        <MappingFragment StoreEntitySet="GD_Empleado_Asignatura">
+          <ScalarProperty Name="GRMS_Empleado_Id_Empleado" ColumnName="GRMS_Empleado_Id_Empleado" />
+          <ScalarProperty Name="GD_Asignatura_Id_Asignatura" ColumnName="GD_Asignatura_Id_Asignatura" />
+          <ScalarProperty Name="Id_Asignatura_Empleado" ColumnName="Id_Asignatura_Empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Grado">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Grado">
+        <MappingFragment StoreEntitySet="GD_Grado">
+          <ScalarProperty Name="Grado" ColumnName="Grado" />
+          <ScalarProperty Name="Id_Grado" ColumnName="Id_Grado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Observacion">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Observacion">
+        <MappingFragment StoreEntitySet="GD_Observacion">
+          <ScalarProperty Name="GD_Plan_Asignatura_Id_Plan_Asignatura" ColumnName="GD_Plan_Asignatura_Id_Plan_Asignatura" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="Id_Observacion" ColumnName="Id_Observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Periodo_Academico">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Periodo_Academico">
+        <MappingFragment StoreEntitySet="GD_Periodo_Academico">
+          <ScalarProperty Name="Fecha_Fin" ColumnName="Fecha_Fin" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="Id_Periodo" ColumnName="Id_Periodo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Plan_Area">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Plan_Area">
+        <MappingFragment StoreEntitySet="GD_Plan_Area">
+          <ScalarProperty Name="GD_Grado_Id_Grado" ColumnName="GD_Grado_Id_Grado" />
+          <ScalarProperty Name="GD_Area_Id_Area" ColumnName="GD_Area_Id_Area" />
+          <ScalarProperty Name="GD_Periodo_Academico_Id_Periodo" ColumnName="GD_Periodo_Academico_Id_Periodo" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Requisitos" ColumnName="Requisitos" />
+          <ScalarProperty Name="Criterios" ColumnName="Criterios" />
+          <ScalarProperty Name="Objetivos" ColumnName="Objetivos" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id_Plan_Area" ColumnName="Id_Plan_Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Plan_Asignatura">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Plan_Asignatura">
+        <MappingFragment StoreEntitySet="GD_Plan_Asignatura">
+          <ScalarProperty Name="GD_Asignatura_Id_Asignatura" ColumnName="GD_Asignatura_Id_Asignatura" />
+          <ScalarProperty Name="GRMS_Empleado_Id_Empleado" ColumnName="GRMS_Empleado_Id_Empleado" />
+          <ScalarProperty Name="GD_Plan_Area_Id_Plan_Area" ColumnName="GD_Plan_Area_Id_Plan_Area" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Metodologia" ColumnName="Metodologia" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Id_Plan_Asignatura" ColumnName="Id_Plan_Asignatura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GD_Plan_Asignatura_Actividades">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades">
+        <MappingFragment StoreEntitySet="GD_Plan_Asignatura_Actividades">
+          <ScalarProperty Name="GRMS_Empleado_Id_Empleado" ColumnName="GRMS_Empleado_Id_Empleado" />
+          <ScalarProperty Name="GD_Plan_Asignatura_Id_Plan_Asignatura" ColumnName="GD_Plan_Asignatura_Id_Plan_Asignatura" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Porcentaje_Avance" ColumnName="Porcentaje_Avance" />
+          <ScalarProperty Name="Fecha_Fin" ColumnName="Fecha_Fin" />
+          <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+          <ScalarProperty Name="Actividad" ColumnName="Actividad" />
+          <ScalarProperty Name="Id_Actividad" ColumnName="Id_Actividad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GRMS_Empleado">
+      <EntityTypeMapping TypeName="GESTION_DIRECTIVAModel.GRMS_Empleado">
+        <MappingFragment StoreEntitySet="GRMS_Empleado">
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Ape_Materno" ColumnName="Ape_Materno" />
+          <ScalarProperty Name="Ape_Paterno" ColumnName="Ape_Paterno" />
+          <ScalarProperty Name="Documento" ColumnName="Documento" />
+          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_ELIMINAR" FunctionName="GESTION_DIRECTIVAModel.Store.GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_ELIMINAR" />
+    <FunctionImportMapping FunctionImportName="GD_SP_PLAN_ASIGNATURA_SEL" FunctionName="GESTION_DIRECTIVAModel.Store.GD_SP_PLAN_ASIGNATURA_SEL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_SP_PLAN_ASIGNATURA_SEL_Result">
+          <ScalarProperty Name="ID_PLAN_ASIGNATURA" ColumnName="ID_PLAN_ASIGNATURA" />
+          <ScalarProperty Name="META" ColumnName="META" />
+          <ScalarProperty Name="METODOLOGIA" ColumnName="METODOLOGIA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_PLAN_AREA" ColumnName="ID_PLAN_AREA" />
+          <ScalarProperty Name="NOMBRE_PLAN_AREA" ColumnName="NOMBRE_PLAN_AREA" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="NOMBRE_EMPLEADO" ColumnName="NOMBRE_EMPLEADO" />
+          <ScalarProperty Name="ID_ASIGNATURA" ColumnName="ID_ASIGNATURA" />
+          <ScalarProperty Name="NOMBRE_CURSO" ColumnName="NOMBRE_CURSO" />
+          <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
+          <ScalarProperty Name="ID_PERIODO" ColumnName="ID_PERIODO" />
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GD_SP_PERIODO_ACADEMICO_LISTA" FunctionName="GESTION_DIRECTIVAModel.Store.GD_SP_PERIODO_ACADEMICO_LISTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_SP_PERIODO_ACADEMICO_LISTA_Result">
+          <ScalarProperty Name="ID_PERIODO" ColumnName="ID_PERIODO" />
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+          <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GESTION_DIRECTIVAModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GESTION_DIRECTIVAModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GESTION_DIRECTIVAModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GESTION_DIRECTIVAModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GESTION_DIRECTIVAModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GESTION_DIRECTIVAModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GESTION_DIRECTIVAModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GESTION_DIRECTIVAModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GESTION_DIRECTIVAModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_LISTA" FunctionName="GESTION_DIRECTIVAModel.Store.GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_LISTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_LISTA_Result">
+          <ScalarProperty Name="RegistrosPagina" ColumnName="RegistrosPagina" />
+          <ScalarProperty Name="TotalRegistro" ColumnName="TotalRegistro" />
+          <ScalarProperty Name="NumeroRegistro" ColumnName="NumeroRegistro" />
+          <ScalarProperty Name="TamanioPagina" ColumnName="TamanioPagina" />
+          <ScalarProperty Name="ID_ACTIVIDAD" ColumnName="ID_ACTIVIDAD" />
+          <ScalarProperty Name="NOMBRE_ACTIVIDAD" ColumnName="NOMBRE_ACTIVIDAD" />
+          <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+          <ScalarProperty Name="FECHA_FIN" ColumnName="FECHA_FIN" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="PORCENTAJE" ColumnName="PORCENTAJE" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="NOMBRE_EMPLEADO" ColumnName="NOMBRE_EMPLEADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GD_SP_PLAN_ASIGNATURA_EMPLEADO_LISTA" FunctionName="GESTION_DIRECTIVAModel.Store.GD_SP_PLAN_ASIGNATURA_EMPLEADO_LISTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GESTION_DIRECTIVAModel.GD_SP_PLAN_ASIGNATURA_EMPLEADO_LISTA_Result">
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="NOMBRE_EMPLEADO" ColumnName="NOMBRE_EMPLEADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

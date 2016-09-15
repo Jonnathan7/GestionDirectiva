@@ -1,0 +1,33 @@
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.csprojResolveAssemblyReference.cache
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Infraestructure.Data.Sql.dll
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.dll
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.SqlServer.dll
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Core.Entities.dll
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Core.Entities.pdb
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.xml
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.SqlServer.xml
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.dll
+D:\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Infraestructure.Data.Sql.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.SqlServer.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Core.Entities.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Core.Entities.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.SqlServer.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.csprojResolveAssemblyReference.cache
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Infraestructure.Data.Sql.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.SqlServer.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Core.Entities.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Debug\GDirectiva.Core.Entities.pdb
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.xml
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Debug\EntityFramework.SqlServer.xml
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.csprojResolveAssemblyReference.cache
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\obj\Debug\GDirectiva.Infraestructure.Data.Sql.pdb

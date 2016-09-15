@@ -1,0 +1,275 @@
+﻿/**********************************************
+File : nav.css;
+-----------------------------------------------
+Description:
+   - Reglas para piezas
+     de navegacion.
+-----------------------------------------------
+Assigned to: Sebastian Yabiku        
+/*********************************************/
+
+
+
+/*---.nav-GmdNavMain*/
+/*********************************************/
+.GmdNavMain-button{
+	display:block;
+	height:52px;
+	width:58px;
+	background:#373738;
+	border:none;	
+	float:left;
+	text-align:center;
+	color:#fff;
+}
+.GmdNavMain-button .fa-bars{
+	font-size: 21px;
+	margin: 15px 0 0;
+	color:#fff;
+}
+.GmdNavMain-button.active .fa-bars:before{
+	content:"\f00d";
+}
+.nav-GmdNavMain{	
+    position:fixed; 	
+	-webkit-overflow-scrolling: touch;
+	opacity: .95;
+	z-index: 9;
+	float: left;
+	float: left;
+	/*position: relative;*/
+	margin-right: -100%;
+}
+.nav-GmdNavMain ul{
+	margin:0px;
+	padding:0px;
+}
+.nav-GmdNavMain li{
+	list-style: none;
+}
+.nav-GmdNavMain .bl-slide{	
+	height: 2000px;
+	background: #2a2a2c;
+	position: fixed;
+	width: 260px;
+}
+.nav-GmdNavMain > ul > li{
+	position:relative;
+}
+.nav-GmdNavMain > ul > li > a{
+	font-weight: bold;
+}
+.nav-GmdNavMain a{
+	display:block;
+	font-size: 12px;
+	color: #636363;
+	min-height:53px;
+}
+.nav-GmdNavMain .wrap-icon{
+	width: 58px;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	line-height: 54px;
+	background: #2a2a2c;
+	z-index: 9;
+}
+.nav-GmdNavMain .wrap-text{
+	display: block;
+	padding: 18px 35px 18px 14px;
+	position: relative;
+	background: #2a2a2c;
+	margin-left: 58px;
+	z-index: 1;
+	width:202px;
+}
+.nav-GmdNavMain .wrap-text-inner{
+	padding: 18px 35px 18px 14px;
+	display:block;
+	margin-left: 58px;
+	background: #111;
+}
+.GmdNavMain-menuDropdown .fa-bars{
+	color: #636363;
+	position: absolute;
+	font-size: 14px;
+	right: 28px;
+	top: 50%;
+	margin-top: -7px;
+}
+.GmdNavMain-menuDropdown ul{
+	display:none;
+    width:260px;
+}
+.GmdNavMain-menuDropdown li.title{
+	padding: 18px 35px 18px 14px;
+	color:#fff;
+	margin-left:0px!important;
+}
+.GmdNavMain-menuDropdown:before{
+	content:'';
+	position:absolute;
+	width:4px;
+	height:100%;
+	background:#4d4d4d;
+	z-index:99;
+}
+.nav-GmdNavMain li:hover > a,
+.nav-GmdNavMain li.active > a, 
+.nav-GmdNavMain li.active .fa-bars,
+.nav-GmdNavMain li:hover .fa-bars,
+.nav-GmdNavMain a.active{
+	color:#fff;
+}
+.GmdNavMain-menuDropdown.active:before{
+	background:#3763b0;
+}
+
+/*----.nav-Aside--open*/
+.nav-Aside--open .GmdNavMain-subMenu .title{
+	display:none;
+}--openComplete
+.nav-Aside--openComplete .main-aside{
+	width:260px;
+}
+
+.nav-Aside--openComplete .nav-GmdNavMain{
+	position: fixed;
+	bottom: 52px;
+	top: 52px;
+	background: #2a2a2c;
+	overflow: hidden;
+	overflow-y: auto;
+    
+}
+.nav-Aside--openComplete .GmdNavMain-menuDropdown[data-menu="dropdown"] > a:hover .wrap-text,
+.nav-Aside--openComplete .GmdNavMain-menuDropdown[data-menu="dropdown"].active > a .wrap-text{
+    background:#3C3C3C;
+}
+/*----.nav-Aside--closed*/
+.nav-Aside--closed .nav-GmdNavMain > ul > li:hover .GmdNavMain-subMenu{	
+	color: #fff;
+}
+.nav-Aside--closed .nav-GmdNavMain> ul > li .GmdNavMain-subMenu li{
+	background: #373738;
+	margin-left:2px;
+}
+.nav-Aside--closed .bl-slide{
+    left:-202px;
+}
+.nav-Aside--closedComplete .nav-GmdNavMain ul ul{
+	position:absolute;
+	top:0px;
+	left:58px;
+	width:222px;
+	-webkit-box-shadow:5px 5px rgba(44, 53, 66, 0.2);
+	box-shadow:5px 5px rgba(44, 53, 66, 0.2);
+	-moz-box-shadow:5px 5px rgba(44, 53, 66, 0.2);
+}
+.nav-Aside--closedComplete  .nav-GmdNavMain > ul > li:hover ul, .nav-Aside--closedComplete  .nav-GmdNavMain > ul > li:hover ul .text{
+	display:block!important;
+}
+
+.nav-Aside--closedComplete .nav-GmdNavMain .wrap-text{
+	margin-left:0px;
+	width:auto;
+	padding:0px;
+}
+.nav-Aside--closedComplete  .nav-GmdNavMain .wrap-text-inner{
+	margin-left:0px;
+}
+.nav-Aside--closedComplete .nav-GmdNavMain{
+	width:58px;
+}
+.nav-Aside--closed .GmdNavMain-subMenu .title{
+	display:none;
+}
+.nav-Aside--closedComplete .GmdNavMain-subMenu .title{
+	display:block;
+}
+.nav-Aside--closed .nav-GmdNavMain > ul > li:hover > a .wrap-text,
+.nav-Aside--closed .nav-GmdNavMain > ul > li:hover > a .wrap-icon,
+.nav-Aside--closed .nav-GmdNavMain > ul > li.active > a .wrap-text
+.nav-Aside--closed .nav-GmdNavMain > ul > li.active > a .wrap-icon
+{
+	background:#373738;
+	color:#fff;
+}
+
+
+/*----tag*/
+/*********************************************/
+.Tag{
+	display:block;
+	padding:6px;
+	background:#eee;
+	font-weight: bold;	
+	font-size:11px;
+	color:#475159;
+}
+
+
+
+/*----.NavList*/
+/*********************************************/
+.NavList{
+	display:inline-block;
+}
+.NavList .arrow, .NavList .pagination-ui{
+	border:1px solid #adadad;
+}
+.NavList li{
+	list-style: none;
+}
+.NavList .arrow{
+	padding:12px 18px;
+	color:#8b8b8b;
+	font-weight: bold;
+	float:left;
+	background:#f2f2f2;
+}
+.NavList .arrow:hover{
+	background: #e0e0e0; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e0e0e0 0%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e0e0e0), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e0e0e0 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e0e0e0 0%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e0e0e0 0%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e0e0e0 0%,#ededed 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}
+.NavList .pagination-ui{
+	background:#fff;
+	float:left;
+	padding:0px;
+	margin:0 4px;
+}
+.NavList .pagination-ui li{
+	float:left;
+}
+.NavList .pagination-ui a{
+	display:block;
+	padding:12px 18px;
+	color:#8b8b8b;
+}
+
+/*---.nav-UpPage*/
+/*********************************************/
+.nav-UpPage{
+    position: fixed;
+    bottom: 76px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    background: #3e3d3d;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 2px;
+    color: #fff;
+    right: 20px;
+    z-index: 99;
+    cursor: pointer;
+    display: none;
+}

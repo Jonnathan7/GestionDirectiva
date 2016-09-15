@@ -1,0 +1,24 @@
+﻿/**********************************************
+File : presentation-ui.css;
+-----------------------------------------------
+Description:
+   - Reglas para la presentacion del ui
+-----------------------------------------------
+Assigned to: Sebastian Yabiku        
+/*********************************************/
+
+/*---.show-grid*/
+/*********************************************/
+.show-grid{
+	width:98%;
+	margin:auto;
+}
+.show-grid [class^=col-] .inner-grid{
+	outline:1px solid #cacaca;	
+	min-height: 60px;
+	background:#f1f1f1;	
+}
+.show-grid .row{
+	margin-bottom:15px;
+}
+

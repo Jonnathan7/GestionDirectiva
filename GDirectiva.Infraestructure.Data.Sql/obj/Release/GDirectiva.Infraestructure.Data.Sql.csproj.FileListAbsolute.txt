@@ -1,0 +1,11 @@
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Release\GDirectiva.Infraestructure.Data.Sql.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Release\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Release\EntityFramework.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Release\EntityFramework.SqlServer.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Release\GDirectiva.Core.Entities.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Release\GDirectiva.Core.Entities.pdb
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Release\EntityFramework.xml
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\bin\Release\EntityFramework.SqlServer.xml
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\obj\Release\GDirectiva.Infraestructure.Data.Sql.csprojResolveAssemblyReference.cache
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\obj\Release\GDirectiva.Infraestructure.Data.Sql.dll
+D:\CodeGitHub\GDirectiva.Infraestructure.Data.Sql\obj\Release\GDirectiva.Infraestructure.Data.Sql.pdb

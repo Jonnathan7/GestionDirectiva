@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_INNOVASCHOOLSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="Id_Empleado" />
+    </Key>
+    <Property Name="Id_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApePaterno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ApeMaterno" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Nombres" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Rol" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Area" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ActividadPlanAsignatura" Relationship="Self.FK__Actividad__Id_Em__29572725" FromRole="Empleado" ToRole="ActividadPlanAsignatura" />
+    <NavigationProperty Name="ActividadPlanProyectoPedagogico" Relationship="Self.FK__Actividad__Id_Em__2B3F6F97" FromRole="Empleado" ToRole="ActividadPlanProyectoPedagogico" />
+    <NavigationProperty Name="PlanAsignatura" Relationship="Self.FK__PlanAsign__Id_Em__32E0915F" FromRole="Empleado" ToRole="PlanAsignatura" />
+    <NavigationProperty Name="Curso" Relationship="Self.CursoDocente" FromRole="Empleado" ToRole="Curso" />
+  </EntityType>
+  <EntityType Name="ActividadPlanAsignatura">
+    <Key>
+      <PropertyRef Name="Id_ActividadPlanAsignatura" />
+    </Key>
+    <Property Name="Id_ActividadPlanAsignatura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Actividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PorcentajeAvance" Type="Int32" Nullable="false" />
+    <Property Name="Id_PlanAsignatura" Type="Int32" />
+    <Property Name="Id_Empleado" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK__Actividad__Id_Em__29572725" FromRole="ActividadPlanAsignatura" ToRole="Empleado" />
+    <NavigationProperty Name="PlanAsignatura" Relationship="Self.FK__Actividad__Id_Pl__286302EC" FromRole="ActividadPlanAsignatura" ToRole="PlanAsignatura" />
+  </EntityType>
+  <EntityType Name="ActividadPlanProyectoPedagogico">
+    <Key>
+      <PropertyRef Name="Id_ActividadProyectoPedagogico" />
+    </Key>
+    <Property Name="Id_ActividadProyectoPedagogico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Actividad" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PorcentajeAvance" Type="Int32" Nullable="false" />
+    <Property Name="Id_ProyectoPedagogico" Type="Int32" />
+    <Property Name="Id_Empleado" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK__Actividad__Id_Em__2B3F6F97" FromRole="ActividadPlanProyectoPedagogico" ToRole="Empleado" />
+    <NavigationProperty Name="PlanProyectoPedagogico" Relationship="Self.FK__Actividad__Id_Pr__2A4B4B5E" FromRole="ActividadPlanProyectoPedagogico" ToRole="PlanProyectoPedagogico" />
+  </EntityType>
+  <EntityType Name="PeriodoAcademico">
+    <Key>
+      <PropertyRef Name="Id_PeriodoAcademico" />
+    </Key>
+    <Property Name="Id_PeriodoAcademico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Periodo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FechaInicio" Type="DateTime" Precision="3" />
+    <Property Name="FechaFin" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PlanArea" Relationship="Self.FK__PlanArea__Id_Per__2D27B809" FromRole="PeriodoAcademico" ToRole="PlanArea" />
+    <NavigationProperty Name="PlanProyectoPedagogico" Relationship="Self.FK__PlanProye__Id_Pe__34C8D9D1" FromRole="PeriodoAcademico" ToRole="PlanProyectoPedagogico" />
+  </EntityType>
+  <EntityType Name="PlanArea">
+    <Key>
+      <PropertyRef Name="Id_PlanArea" />
+    </Key>
+    <Property Name="Id_PlanArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Objetivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Criterios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Requisitos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Documento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Id_PeriodoAcademico" Type="Int32" />
+    <Property Name="Id_PlanEstudio" Type="Int32" />
+    <Property Name="Id_Grado" Type="Int32" />
+    <Property Name="Id_Area" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="PeriodoAcademico" Relationship="Self.FK__PlanArea__Id_Per__2D27B809" FromRole="PlanArea" ToRole="PeriodoAcademico" />
+    <NavigationProperty Name="AreaCurricular" Relationship="Self.FK__PlanArea__Id_Are__300424B4" FromRole="PlanArea" ToRole="AreaCurricular" />
+    <NavigationProperty Name="Grado" Relationship="Self.FK__PlanArea__Id_Gra__2F10007B" FromRole="PlanArea" ToRole="Grado" />
+    <NavigationProperty Name="PlanEstudio" Relationship="Self.FK__PlanArea__Id_Pla__2E1BDC42" FromRole="PlanArea" ToRole="PlanEstudio" />
+    <NavigationProperty Name="PlanAsignatura" Relationship="Self.FK__PlanAsign__Id_Pl__30F848ED" FromRole="PlanArea" ToRole="PlanAsignatura" />
+  </EntityType>
+  <EntityType Name="PlanAsignatura">
+    <Key>
+      <PropertyRef Name="Id_PlanAsignatura" />
+    </Key>
+    <Property Name="Id_PlanAsignatura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Metodologia" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Documento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Id_PlanArea" Type="Int32" />
+    <Property Name="Id_Asignatura" Type="Int32" />
+    <Property Name="Id_Empleado" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Empleado" Relationship="Self.FK__PlanAsign__Id_Em__32E0915F" FromRole="PlanAsignatura" ToRole="Empleado" />
+    <NavigationProperty Name="ActividadPlanAsignatura" Relationship="Self.FK__Actividad__Id_Pl__286302EC" FromRole="PlanAsignatura" ToRole="ActividadPlanAsignatura" />
+    <NavigationProperty Name="PlanArea" Relationship="Self.FK__PlanAsign__Id_Pl__30F848ED" FromRole="PlanAsignatura" ToRole="PlanArea" />
+    <NavigationProperty Name="Curso" Relationship="Self.FK__PlanAsign__Id_As__31EC6D26" FromRole="PlanAsignatura" ToRole="Curso" />
+  </EntityType>
+  <EntityType Name="PlanEstudio">
+    <Key>
+      <PropertyRef Name="Id_PlanEstudio" />
+    </Key>
+    <Property Name="Id_PlanEstudio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripción" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Anio" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Documento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PlanArea" Relationship="Self.FK__PlanArea__Id_Pla__2E1BDC42" FromRole="PlanEstudio" ToRole="PlanArea" />
+    <NavigationProperty Name="PlanProyectoPedagogico" Relationship="Self.FK__PlanProye__Id_Pl__33D4B598" FromRole="PlanEstudio" ToRole="PlanProyectoPedagogico" />
+  </EntityType>
+  <EntityType Name="PlanProyectoPedagogico">
+    <Key>
+      <PropertyRef Name="Id_ProyectoPedagogico" />
+    </Key>
+    <Property Name="Id_ProyectoPedagogico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Objetivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Documento" Type="Binary" MaxLength="1" FixedLength="true" />
+    <Property Name="Id_PlanEstudio" Type="Int32" />
+    <Property Name="Id_PeriodoAcademico" Type="Int32" />
+    <Property Name="Id_Area" Type="Int32" />
+    <Property Name="Id_Grado" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ActividadPlanProyectoPedagogico" Relationship="Self.FK__Actividad__Id_Pr__2A4B4B5E" FromRole="PlanProyectoPedagogico" ToRole="ActividadPlanProyectoPedagogico" />
+    <NavigationProperty Name="PeriodoAcademico" Relationship="Self.FK__PlanProye__Id_Pe__34C8D9D1" FromRole="PlanProyectoPedagogico" ToRole="PeriodoAcademico" />
+    <NavigationProperty Name="PlanEstudio" Relationship="Self.FK__PlanProye__Id_Pl__33D4B598" FromRole="PlanProyectoPedagogico" ToRole="PlanEstudio" />
+    <NavigationProperty Name="AreaCurricular" Relationship="Self.FK__PlanProye__Id_Ar__35BCFE0A" FromRole="PlanProyectoPedagogico" ToRole="AreaCurricular" />
+    <NavigationProperty Name="Grado" Relationship="Self.FK__PlanProye__Id_Gr__36B12243" FromRole="PlanProyectoPedagogico" ToRole="Grado" />
+  </EntityType>
+  <EntityType Name="AreaCurricular">
+    <Key>
+      <PropertyRef Name="Id_AreaCurricular" />
+    </Key>
+    <Property Name="Id_AreaCurricular" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PlanArea" Relationship="Self.FK__PlanArea__Id_Are__300424B4" FromRole="AreaCurricular" ToRole="PlanArea" />
+    <NavigationProperty Name="PlanProyectoPedagogico" Relationship="Self.FK__PlanProye__Id_Ar__35BCFE0A" FromRole="AreaCurricular" ToRole="PlanProyectoPedagogico" />
+    <NavigationProperty Name="Curso" Relationship="Self.FK__Asignatur__Id_Ar__2C3393D0" FromRole="AreaCurricular" ToRole="Curso" />
+  </EntityType>
+  <EntityType Name="Curso">
+    <Key>
+      <PropertyRef Name="Id_Asignatura" />
+    </Key>
+    <Property Name="Id_Asignatura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Area" Type="Int32" />
+    <NavigationProperty Name="PlanAsignatura" Relationship="Self.FK__PlanAsign__Id_As__31EC6D26" FromRole="Curso" ToRole="PlanAsignatura" />
+    <NavigationProperty Name="AreaCurricular" Relationship="Self.FK__Asignatur__Id_Ar__2C3393D0" FromRole="Curso" ToRole="AreaCurricular" />
+    <NavigationProperty Name="Empleado" Relationship="Self.CursoDocente" FromRole="Curso" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Grado">
+    <Key>
+      <PropertyRef Name="Id_Grado" />
+    </Key>
+    <Property Name="Id_Grado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Niveles" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PlanArea" Relationship="Self.FK__PlanArea__Id_Gra__2F10007B" FromRole="Grado" ToRole="PlanArea" />
+    <NavigationProperty Name="PlanProyectoPedagogico" Relationship="Self.FK__PlanProye__Id_Gr__36B12243" FromRole="Grado" ToRole="PlanProyectoPedagogico" />
+  </EntityType>
+  <Association Name="FK__Actividad__Id_Em__29572725">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="ActividadPlanAsignatura" Type="Self.ActividadPlanAsignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="ActividadPlanAsignatura">
+        <PropertyRef Name="Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Actividad__Id_Em__2B3F6F97">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="ActividadPlanProyectoPedagogico" Type="Self.ActividadPlanProyectoPedagogico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="ActividadPlanProyectoPedagogico">
+        <PropertyRef Name="Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanAsign__Id_Em__32E0915F">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
+    <End Role="PlanAsignatura" Type="Self.PlanAsignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="PlanAsignatura">
+        <PropertyRef Name="Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Actividad__Id_Pl__286302EC">
+    <End Role="PlanAsignatura" Type="Self.PlanAsignatura" Multiplicity="0..1" />
+    <End Role="ActividadPlanAsignatura" Type="Self.ActividadPlanAsignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanAsignatura">
+        <PropertyRef Name="Id_PlanAsignatura" />
+      </Principal>
+      <Dependent Role="ActividadPlanAsignatura">
+        <PropertyRef Name="Id_PlanAsignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Actividad__Id_Pr__2A4B4B5E">
+    <End Role="PlanProyectoPedagogico" Type="Self.PlanProyectoPedagogico" Multiplicity="0..1" />
+    <End Role="ActividadPlanProyectoPedagogico" Type="Self.ActividadPlanProyectoPedagogico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanProyectoPedagogico">
+        <PropertyRef Name="Id_ProyectoPedagogico" />
+      </Principal>
+      <Dependent Role="ActividadPlanProyectoPedagogico">
+        <PropertyRef Name="Id_ProyectoPedagogico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanArea__Id_Per__2D27B809">
+    <End Role="PeriodoAcademico" Type="Self.PeriodoAcademico" Multiplicity="0..1" />
+    <End Role="PlanArea" Type="Self.PlanArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PeriodoAcademico">
+        <PropertyRef Name="Id_PeriodoAcademico" />
+      </Principal>
+      <Dependent Role="PlanArea">
+        <PropertyRef Name="Id_PeriodoAcademico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanProye__Id_Pe__34C8D9D1">
+    <End Role="PeriodoAcademico" Type="Self.PeriodoAcademico" Multiplicity="0..1" />
+    <End Role="PlanProyectoPedagogico" Type="Self.PlanProyectoPedagogico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PeriodoAcademico">
+        <PropertyRef Name="Id_PeriodoAcademico" />
+      </Principal>
+      <Dependent Role="PlanProyectoPedagogico">
+        <PropertyRef Name="Id_PeriodoAcademico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanArea__Id_Are__300424B4">
+    <End Role="AreaCurricular" Type="Self.AreaCurricular" Multiplicity="0..1" />
+    <End Role="PlanArea" Type="Self.PlanArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaCurricular">
+        <PropertyRef Name="Id_AreaCurricular" />
+      </Principal>
+      <Dependent Role="PlanArea">
+        <PropertyRef Name="Id_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanArea__Id_Gra__2F10007B">
+    <End Role="Grado" Type="Self.Grado" Multiplicity="0..1" />
+    <End Role="PlanArea" Type="Self.PlanArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grado">
+        <PropertyRef Name="Id_Grado" />
+      </Principal>
+      <Dependent Role="PlanArea">
+        <PropertyRef Name="Id_Grado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanArea__Id_Pla__2E1BDC42">
+    <End Role="PlanEstudio" Type="Self.PlanEstudio" Multiplicity="0..1" />
+    <End Role="PlanArea" Type="Self.PlanArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanEstudio">
+        <PropertyRef Name="Id_PlanEstudio" />
+      </Principal>
+      <Dependent Role="PlanArea">
+        <PropertyRef Name="Id_PlanEstudio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanAsign__Id_Pl__30F848ED">
+    <End Role="PlanArea" Type="Self.PlanArea" Multiplicity="0..1" />
+    <End Role="PlanAsignatura" Type="Self.PlanAsignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanArea">
+        <PropertyRef Name="Id_PlanArea" />
+      </Principal>
+      <Dependent Role="PlanAsignatura">
+        <PropertyRef Name="Id_PlanArea" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanAsign__Id_As__31EC6D26">
+    <End Role="Curso" Type="Self.Curso" Multiplicity="0..1" />
+    <End Role="PlanAsignatura" Type="Self.PlanAsignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Curso">
+        <PropertyRef Name="Id_Asignatura" />
+      </Principal>
+      <Dependent Role="PlanAsignatura">
+        <PropertyRef Name="Id_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanProye__Id_Pl__33D4B598">
+    <End Role="PlanEstudio" Type="Self.PlanEstudio" Multiplicity="0..1" />
+    <End Role="PlanProyectoPedagogico" Type="Self.PlanProyectoPedagogico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanEstudio">
+        <PropertyRef Name="Id_PlanEstudio" />
+      </Principal>
+      <Dependent Role="PlanProyectoPedagogico">
+        <PropertyRef Name="Id_PlanEstudio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanProye__Id_Ar__35BCFE0A">
+    <End Role="AreaCurricular" Type="Self.AreaCurricular" Multiplicity="0..1" />
+    <End Role="PlanProyectoPedagogico" Type="Self.PlanProyectoPedagogico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaCurricular">
+        <PropertyRef Name="Id_AreaCurricular" />
+      </Principal>
+      <Dependent Role="PlanProyectoPedagogico">
+        <PropertyRef Name="Id_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlanProye__Id_Gr__36B12243">
+    <End Role="Grado" Type="Self.Grado" Multiplicity="0..1" />
+    <End Role="PlanProyectoPedagogico" Type="Self.PlanProyectoPedagogico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grado">
+        <PropertyRef Name="Id_Grado" />
+      </Principal>
+      <Dependent Role="PlanProyectoPedagogico">
+        <PropertyRef Name="Id_Grado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Asignatur__Id_Ar__2C3393D0">
+    <End Role="AreaCurricular" Type="Self.AreaCurricular" Multiplicity="0..1" />
+    <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AreaCurricular">
+        <PropertyRef Name="Id_AreaCurricular" />
+      </Principal>
+      <Dependent Role="Curso">
+        <PropertyRef Name="Id_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CursoDocente">
+    <End Role="Curso" Type="Self.Curso" Multiplicity="*" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="DB_INNOVASCHOOLSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+    <EntitySet Name="ActividadPlanAsignatura" EntityType="Self.ActividadPlanAsignatura" />
+    <EntitySet Name="ActividadPlanProyectoPedagogico" EntityType="Self.ActividadPlanProyectoPedagogico" />
+    <EntitySet Name="PeriodoAcademico" EntityType="Self.PeriodoAcademico" />
+    <EntitySet Name="PlanArea" EntityType="Self.PlanArea" />
+    <EntitySet Name="PlanAsignatura" EntityType="Self.PlanAsignatura" />
+    <EntitySet Name="PlanEstudio" EntityType="Self.PlanEstudio" />
+    <EntitySet Name="PlanProyectoPedagogico" EntityType="Self.PlanProyectoPedagogico" />
+    <EntitySet Name="AreaCurricular" EntityType="Self.AreaCurricular" />
+    <EntitySet Name="Curso" EntityType="Self.Curso" />
+    <EntitySet Name="Grado" EntityType="Self.Grado" />
+    <AssociationSet Name="FK__Actividad__Id_Em__29572725" Association="Self.FK__Actividad__Id_Em__29572725">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="ActividadPlanAsignatura" EntitySet="ActividadPlanAsignatura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Actividad__Id_Em__2B3F6F97" Association="Self.FK__Actividad__Id_Em__2B3F6F97">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="ActividadPlanProyectoPedagogico" EntitySet="ActividadPlanProyectoPedagogico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanAsign__Id_Em__32E0915F" Association="Self.FK__PlanAsign__Id_Em__32E0915F">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Actividad__Id_Pl__286302EC" Association="Self.FK__Actividad__Id_Pl__286302EC">
+      <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
+      <End Role="ActividadPlanAsignatura" EntitySet="ActividadPlanAsignatura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Actividad__Id_Pr__2A4B4B5E" Association="Self.FK__Actividad__Id_Pr__2A4B4B5E">
+      <End Role="PlanProyectoPedagogico" EntitySet="PlanProyectoPedagogico" />
+      <End Role="ActividadPlanProyectoPedagogico" EntitySet="ActividadPlanProyectoPedagogico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanArea__Id_Per__2D27B809" Association="Self.FK__PlanArea__Id_Per__2D27B809">
+      <End Role="PeriodoAcademico" EntitySet="PeriodoAcademico" />
+      <End Role="PlanArea" EntitySet="PlanArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanProye__Id_Pe__34C8D9D1" Association="Self.FK__PlanProye__Id_Pe__34C8D9D1">
+      <End Role="PeriodoAcademico" EntitySet="PeriodoAcademico" />
+      <End Role="PlanProyectoPedagogico" EntitySet="PlanProyectoPedagogico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanArea__Id_Are__300424B4" Association="Self.FK__PlanArea__Id_Are__300424B4">
+      <End Role="AreaCurricular" EntitySet="AreaCurricular" />
+      <End Role="PlanArea" EntitySet="PlanArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanArea__Id_Gra__2F10007B" Association="Self.FK__PlanArea__Id_Gra__2F10007B">
+      <End Role="Grado" EntitySet="Grado" />
+      <End Role="PlanArea" EntitySet="PlanArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanArea__Id_Pla__2E1BDC42" Association="Self.FK__PlanArea__Id_Pla__2E1BDC42">
+      <End Role="PlanEstudio" EntitySet="PlanEstudio" />
+      <End Role="PlanArea" EntitySet="PlanArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanAsign__Id_Pl__30F848ED" Association="Self.FK__PlanAsign__Id_Pl__30F848ED">
+      <End Role="PlanArea" EntitySet="PlanArea" />
+      <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanAsign__Id_As__31EC6D26" Association="Self.FK__PlanAsign__Id_As__31EC6D26">
+      <End Role="Curso" EntitySet="Curso" />
+      <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanProye__Id_Pl__33D4B598" Association="Self.FK__PlanProye__Id_Pl__33D4B598">
+      <End Role="PlanEstudio" EntitySet="PlanEstudio" />
+      <End Role="PlanProyectoPedagogico" EntitySet="PlanProyectoPedagogico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanProye__Id_Ar__35BCFE0A" Association="Self.FK__PlanProye__Id_Ar__35BCFE0A">
+      <End Role="AreaCurricular" EntitySet="AreaCurricular" />
+      <End Role="PlanProyectoPedagogico" EntitySet="PlanProyectoPedagogico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlanProye__Id_Gr__36B12243" Association="Self.FK__PlanProye__Id_Gr__36B12243">
+      <End Role="Grado" EntitySet="Grado" />
+      <End Role="PlanProyectoPedagogico" EntitySet="PlanProyectoPedagogico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Asignatur__Id_Ar__2C3393D0" Association="Self.FK__Asignatur__Id_Ar__2C3393D0">
+      <End Role="AreaCurricular" EntitySet="AreaCurricular" />
+      <End Role="Curso" EntitySet="Curso" />
+    </AssociationSet>
+    <AssociationSet Name="CursoDocente" Association="Self.CursoDocente">
+      <End Role="Curso" EntitySet="Curso" />
+      <End Role="Empleado" EntitySet="Empleado" />
+    </AssociationSet>
+    <FunctionImport Name="PA_AREA_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_AREA_LISTA_Result)" />
+    <FunctionImport Name="PA_ASIGNATURA_PLANAREA_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_ASIGNATURA_PLANAREA_LISTA_Result)">
+      <Parameter Name="ID_PLANAREA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_GRADO_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_GRADO_LISTA_Result)" />
+    <FunctionImport Name="PA_PERIODO_ACADEMICO_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PERIODO_ACADEMICO_LISTA_Result)" />
+    <FunctionImport Name="PA_PERIODO_ACADEMICO_LISTA_VIGENTE" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result)" />
+    <FunctionImport Name="PA_PLAN_AREA_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_AREA_LISTA_Result)">
+      <Parameter Name="ID_PERIODOACADEMICO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_GRADO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_AREA" Mode="In" Type="Int32" />
+      <Parameter Name="PAGINA_INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="TAMANIO_PAGINA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_PLAN_AREA_LISTA_VIGENTE" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_AREA_LISTA_VIGENTE_Result)">
+      <Parameter Name="ID_PERIODOACADEMICO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_PLAN_AREA_SEL" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_AREA_SEL_Result)">
+      <Parameter Name="PlanAreaId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_PLAN_ASIGNATURA_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_ASIGNATURA_LISTA_Result)">
+      <Parameter Name="ID_PERIODOACADEMICO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_PLANAREA" Mode="In" Type="Int32" />
+      <Parameter Name="ID_ASIGNATURA" Mode="In" Type="Int32" />
+      <Parameter Name="PAGINA_INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="TAMANIO_PAGINA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_PLAN_ASIGNATURA_SEL" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_ASIGNATURA_SEL_Result)">
+      <Parameter Name="ID_PLANASIGNATURA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_PLAN_ESTUDIO_SEL" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_ESTUDIO_SEL_Result)" />
+    <FunctionImport Name="PA_PLAN_AREA_EXISTE" ReturnType="Collection(Int32)">
+      <Parameter Name="ID_PERIODOACADEMICO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_AREA" Mode="In" Type="Int32" />
+      <Parameter Name="ID_PLANESTUDIO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_GRADO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_PLAN_ASIGNATURA_LISTA_VIGENTE" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_ASIGNATURA_LISTA_VIGENTE_Result)">
+      <Parameter Name="ID_PERIODOACADEMICO" Mode="In" Type="Int32" />
+      <Parameter Name="ID_PLANAREA" Mode="In" Type="Int32" />
+      <Parameter Name="ID_ASIGNATURA" Mode="In" Type="Int32" />
+      <Parameter Name="PAGINA_INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="TAMANIO_PAGINA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA_Result)">
+      <Parameter Name="ID_PLANASIGNATURA" Mode="In" Type="Int32" />
+      <Parameter Name="PAGINA_INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="TAMANIO_PAGINA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_ACTIVIDAD_PLAN_ASIGNATURA_ELIMINAR">
+      <Parameter Name="ID_PLANASIGNATURA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PA_ACTIVIDAD_PLAN_ASIGNATURA_REGISTRAR">
+      <Parameter Name="ACTIVIDAD" Mode="In" Type="String" />
+      <Parameter Name="FECHAINICIO" Mode="In" Type="DateTime" />
+      <Parameter Name="FECHAFIN" Mode="In" Type="DateTime" />
+      <Parameter Name="PORCENTAJEAVANCE" Mode="In" Type="Int32" />
+      <Parameter Name="ID_PLANASIGNATURA" Mode="In" Type="Int32" />
+      <Parameter Name="ID_EMPLEADO" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="PA_AREA_LISTA_Result">
+    <Property Type="Int32" Name="ID_AREA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="PA_GRADO_LISTA_Result">
+    <Property Type="Int32" Name="ID_GRADO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="NIVELES" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="PA_PERIODO_ACADEMICO_LISTA_Result">
+    <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="false" />
+    <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="FECHA_INICIO" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_FIN" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result">
+    <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="false" />
+    <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="FECHA_INICIO" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="FECHA_FIN" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="PA_PLAN_AREA_LISTA_Result">
+    <Property Type="Int64" Name="RegistrosPagina" Nullable="true" />
+    <Property Type="Int64" Name="FilasTotal" Nullable="true" />
+    <Property Type="Int64" Name="NumeroFila" Nullable="true" />
+    <Property Type="Int32" Name="TamanioPagina" Nullable="true" />
+    <Property Type="Int32" Name="ID_PLANAREA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PLANAREA" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="OBJETIVOS" Nullable="false" />
+    <Property Type="String" Name="CRITERIOS" Nullable="false" />
+    <Property Type="String" Name="REQUISITOS" Nullable="false" />
+    <Property Type="Int32" Name="ID_ESTADO" Nullable="false" />
+    <Property Type="String" Name="ESTADO" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="DOCUMENTO_PLANAREA" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="true" />
+    <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID_PLANESTUDIO" Nullable="true" />
+    <Property Type="Int32" Name="ID_GRADO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_GRADO" Nullable="true" MaxLength="513" />
+    <Property Type="Int32" Name="ID_AREA" Nullable="true" />
+    <Property Type="String" Name="NOMBRE_AREA" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="PA_PLAN_AREA_LISTA_VIGENTE_Result">
+    <Property Type="Int32" Name="ID_PLANAREA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="PA_PLAN_AREA_SEL_Result">
+    <Property Type="Int32" Name="ANIO_PLANESTUDIO" Nullable="false" />
+    <Property Type="Int32" Name="ID_PLANESTUDIO" Nullable="false" />
+    <Property Type="String" Name="DESCRIPCION_PLANESTUDIO" Nullable="false" />
+    <Property Type="String" Name="DOCUMENTO_PLANESTUDIO" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ID_PLANAREA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PLANAREA" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="OBJETIVOS" Nullable="false" />
+    <Property Type="String" Name="CRITERIOS" Nullable="false" />
+    <Property Type="String" Name="REQUISITOS" Nullable="false" />
+    <Property Type="String" Name="ESTADO_PLANAREA" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="DOCUMENTO_PLANAREA" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="true" />
+    <Property Type="Int32" Name="ID_GRADO" Nullable="true" />
+    <Property Type="Int32" Name="ID_AREA" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="PA_PLAN_ASIGNATURA_SEL_Result">
+    <Property Type="Int32" Name="ID_PLANASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="META" Nullable="false" />
+    <Property Type="String" Name="METODOLOGIA" Nullable="false" />
+    <Property Type="String" Name="DOCUMENTO_PLANASIGNATURA" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ID_PLANAREA" Nullable="true" />
+    <Property Type="Int32" Name="ID_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_ASIGNATURA" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="true" />
+    <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PLANAREA" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="PA_PLAN_ESTUDIO_SEL_Result">
+    <Property Type="Int32" Name="ID_PLANESTUDIO" Nullable="false" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="false" />
+    <Property Type="Int32" Name="ANIO" Nullable="false" />
+    <Property Type="String" Name="DOCUMENTO" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="PA_PLAN_ASIGNATURA_LISTA_Result">
+    <Property Type="Int64" Name="RegistrosPagina" Nullable="true" />
+    <Property Type="Int64" Name="FilasTotal" Nullable="true" />
+    <Property Type="Int64" Name="NumeroFila" Nullable="true" />
+    <Property Type="Int32" Name="TamanioPagina" Nullable="true" />
+    <Property Type="Int32" Name="ID_PLANASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="META" Nullable="false" />
+    <Property Type="String" Name="METOLOGIA" Nullable="false" />
+    <Property Type="String" Name="DOCUMENTO_PLANASIGNATURA" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ID_PLANAREA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PLANAREA" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ID_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_ASIGNATURA" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="true" />
+    <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PERIODO" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID_ESTADO" Nullable="false" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="PA_ASIGNATURA_PLANAREA_LISTA_Result">
+    <Property Type="Int32" Name="ID_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_ASIGNATURA" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="PA_PLAN_ASIGNATURA_LISTA_VIGENTE_Result">
+    <Property Type="Int64" Name="RegistrosPagina" Nullable="true" />
+    <Property Type="Int64" Name="FilasTotal" Nullable="true" />
+    <Property Type="Int64" Name="NumeroFila" Nullable="true" />
+    <Property Type="Int32" Name="TamanioPagina" Nullable="true" />
+    <Property Type="Int32" Name="ID_PLANASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="META" Nullable="false" />
+    <Property Type="String" Name="METOLOGIA" Nullable="false" />
+    <Property Type="String" Name="DOCUMENTO_PLANASIGNATURA" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ID_PLANAREA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PLANAREA" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="ID_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_ASIGNATURA" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="true" />
+    <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PERIODO" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID_ESTADO" Nullable="false" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA_Result">
+    <Property Type="Int64" Name="RegistrosPagina" Nullable="true" />
+    <Property Type="Int64" Name="FilasTotal" Nullable="true" />
+    <Property Type="Int64" Name="NumeroFila" Nullable="true" />
+    <Property Type="Int32" Name="TamanioPagina" Nullable="true" />
+    <Property Type="Int32" Name="ID_ACTIVIDADPLANASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="ACTIVIDAD" Nullable="false" MaxLength="255" />
+    <Property Type="DateTime" Name="FECHAINICIO" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="FECHAFIN" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="PORCENTAJE" Nullable="false" />
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="true" />
+  </ComplexType>
+</Schema>

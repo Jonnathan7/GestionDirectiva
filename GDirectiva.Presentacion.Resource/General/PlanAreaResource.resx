@@ -163,6 +163,6 @@
     <value>Plan de Área</value>
   </data>
   <data name="MensajeDebeSeleccionarArchivoWord" xml:space="preserve">
-    <value>Debe seleccionar el archivo Excel (.doc | .docx).</value>
+    <value>Debe seleccionar el archivo Word (.doc | .docx).</value>
   </data>
 </root>

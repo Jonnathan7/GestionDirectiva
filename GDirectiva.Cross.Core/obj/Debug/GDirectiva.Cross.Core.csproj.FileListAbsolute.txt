@@ -1,0 +1,6 @@
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Cross.Core\bin\Debug\GDirectiva.Cross.Core.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Cross.Core\bin\Debug\GDirectiva.Cross.Core.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Cross.Core\bin\Debug\log4net.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Cross.Core\obj\Debug\GDirectiva.Cross.Core.csprojResolveAssemblyReference.cache
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Cross.Core\obj\Debug\GDirectiva.Cross.Core.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Cross.Core\obj\Debug\GDirectiva.Cross.Core.pdb

@@ -1,0 +1,220 @@
+﻿/**********************************************
+File : comp.css;
+-----------------------------------------------
+Description:    
+   - componentes reutilizables, elementos que
+     cuentan con interacciones.
+-----------------------------------------------
+Assigned to: Sebastian Yabiku        
+/*********************************************/
+
+
+
+/*----.BtnNotification*/
+/**********************************************/
+.comp-BtnNotification .btn{
+	width: 54px;
+	height: 51px;
+	background: #333333;
+	border: none;
+	border-left: 1px solid #d4d4d4;
+	border-right: 1px solid #d4d4d4;
+	text-align: center;
+	position:relative;
+}
+.comp-BtnNotification .btn:before,
+.comp-BtnUser .btn:before{
+	content:'';
+	height:4px;
+	width:100%;
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	background:#ccc;	
+}
+.comp-BtnNotification.btn-group.open .btn:before, .comp-BtnNotification .btn:hover:before,
+.comp-BtnUser.btn-group.open .btn:before, .comp-BtnUser .btn:hover:before{
+	background:#3763b0;	
+}
+.comp-BtnNotification .btn:hover .fa-globe, .comp-BtnNotification.btn-group.open .btn .fa-globe{
+	color:#898989;
+}
+.comp-BtnNotification .btn:active, .comp-BtnNotification .btn.active, .comp-BtnNotification.btn-group.open .dropdown-toggle,
+.comp-BtnUser .btn:active, .comp-BtnUser .btn.active, .comp-BtnUser.btn-group.open .dropdown-toggle{
+	
+}
+.BtnNotification-dropdownMenu,
+.comp-BtnUser .dropdown-menu{
+	margin:0px;
+	-webkit-box-shadow: 5px 5px rgba(44, 53, 66, 0.2);
+	box-shadow: 5px 5px rgba(44, 53, 66, 0.2);
+	-moz-box-shadow: 5px 5px rgba(44, 53, 66, 0.2);
+	width:100%;
+}
+.comp-BtnNotification:hover .fa-bell-o,
+.comp-BtnNotification.btn-group.open .fa-bell-o{
+	color:#585757;
+}
+.comp-BtnNotification.open{
+	-webkit-box-shadow: inset 0px 3px 8px #d8d8d8;
+	box-shadow: inset 0px 3px 8px #d8d8d8;
+	-moz-box-shadow: inset 0px 3px 8px #d8d8d8;
+}
+.comp-BtnNotification .fa-bell-o{
+	font-size: 16px;
+	color: #b8b8b8;
+	position: relative;
+	right: 3px;
+	top: 1px;
+}
+.comp-BtnNotification .total{
+	display: block;
+	background: #d61a21;
+	position: absolute;
+	font-size: 9px;
+	padding: 2px 4px;
+	letter-spacing: -2px;
+	text-align: center;
+	text-indent: -1px;
+	min-width: 14px;
+	height: 14px;
+	top: -9px;
+	right: -12px;
+	color: #fff;
+	border-radius: 30px;
+}
+.BtnNotification-dropdownMenu{
+	padding: 0px;
+	width: 302px;
+	top: 70px;
+}
+.comp-BtnNotification .title{
+	font-size:13px;
+	font-weight:bold;
+	padding:14px;
+	text-align: center;
+}
+.comp-BtnNotification .title:before{
+		content:'';
+		background:url('../images/system/arrow.png') no-repeat;
+		width: 16px;
+		height: 9px;
+		position: absolute;
+		right: 19px;
+		top: -9px;
+}
+.comp-BtnNotification a{
+	padding:14px 14px 14px 54px;
+	display:block;
+	border-top:1px solid #dbdbdb;
+	color:#8c9399;
+	font-size:12px;
+	position:relative;
+	min-height: 63px;
+}
+.comp-BtnNotification a span{
+	display:block;
+	color:#c3c3c3;
+}
+.comp-BtnNotification a:hover{
+	background:#f1faff;
+}
+.comp-BtnNotification a:hover span{
+	color:#afbfcf;
+}
+.comp-BtnNotification .icon-not{
+	display:inline-block;
+	background-image:url(../images/system/icon-state.png);
+	background-repeat:no-repeat;
+	width:28px;
+	height:30px;
+	position:absolute;
+	left:16px;
+	top:16px;
+}
+.comp-BtnNotification .icon-not-val{
+	background-position:0px -32px;
+}
+.comp-BtnNotification .icon-not-new{
+	background-position:0px -64px;
+}
+.comp-BtnNotification .icon-not-del{
+	background-position:0px -96px;
+}
+/*----.comp-BtnUser*/
+/**********************************************/
+.comp-BtnUser .btn{
+	height: 51px;
+	border: none;
+	background: #333333;
+	font-size:12px;
+	color:#969696;
+	line-height: 34px;
+	padding:6px 12px;
+	font-weight: normal;
+	text-transform:inherit;
+}
+.comp-BtnUser .btn .caret{
+	margin-left:4px;
+	border-top:4px solid #c8c8c8;
+}
+.comp-BtnUser.open .btn, .comp-BtnUser .btn:hover{
+	color:#626262;
+}
+.comp-BtnUser.open .caret, .comp-BtnUser .btn:hover .caret{
+	border-top:4px solid #999;
+}
+.comp-BtnUser .btn img{
+	position: relative;
+	top: -2px;
+	margin-right: 5px;
+	border:1px solid #d0d0d0;
+    width:36px;
+    height:36px;
+}
+.comp-BtnUser .dropdown-menu{
+	padding:0px;
+	top:60px;
+}
+.comp-BtnUser .first a{
+	border:none;
+}
+.comp-BtnUser .dropdown-menu:before{
+	content:'';
+	background:url('../images/system/arrow.png') no-repeat;
+	width: 16px;
+	height: 9px;
+	position: absolute;
+	left: 19px;
+	top: -9px;
+}
+.comp-BtnUser a{
+	padding: 14px!important;
+	display: block;
+	border-top: 1px solid #dbdbdb;
+	color: #8c9399!important;
+	font-size: 12px;
+}
+.comp-BtnUser a:hover{
+	color: #8c9399!important;
+	background:#f1faff!important;
+}
+
+/*----Modal*/
+/**********************************************/
+.comp-Modal-footer {
+    border-top: 1px solid #ccc;
+    margin: 10px -13px 0;
+    padding: 10px 10px 4px 10px;
+}
+.comp-Modal-footer .btn-default {
+    margin-right:10px;
+}
+
+
+
+
+
+
+
+

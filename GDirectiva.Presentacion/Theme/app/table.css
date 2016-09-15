@@ -1,0 +1,48 @@
+﻿/**********************************************
+File : table.css;
+-----------------------------------------------
+Description:
+   - Reglas 
+     especificas para tablas
+-----------------------------------------------
+Assigned to: Sebastian Yabiku        
+/*********************************************/
+
+/*----.controls .control-table*/
+/*********************************************/
+.controls .control-table{
+	display: inline-block;
+	font-size: 16px;
+	color: #aaa;
+	margin-right: 10px;
+	cursor:pointer;
+	border:none;
+	background:none;
+	padding:0px;
+}
+    .controls .control-table:hover .fa,
+    .controls .control-table.is-active .fa{
+        color:#124671;
+    }
+
+/*----.hidden-edit*/
+/*********************************************/
+.hidden-edit .input-group .input-group-addon{
+	display:none;
+}
+.hidden-edit input[readonly]{
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+.hidden-edit input[readonly]:focus,
+.hidden-edit input[readonly]:hover,
+.hidden-edit .input-group:hover{
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	-moz-box-shadow:none;
+}
+.hidden-edit input[type="text"],
+.hidden-edit input[type="password"]{
+	text-align:center;
+}

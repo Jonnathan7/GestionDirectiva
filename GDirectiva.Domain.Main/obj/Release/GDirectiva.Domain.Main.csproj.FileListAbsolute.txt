@@ -1,0 +1,13 @@
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\GDirectiva.Domain.Main.dll
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\GDirectiva.Domain.Main.pdb
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\GDirectiva.Core.Entities.dll
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\GDirectiva.Cross.Core.dll
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\GDirectiva.Infraestructure.Data.Sql.dll
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\EntityFramework.dll
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\log4net.dll
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\GDirectiva.Core.Entities.pdb
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\GDirectiva.Cross.Core.pdb
+D:\CodeGitHub\GDirectiva.Domain.Main\bin\Release\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\CodeGitHub\GDirectiva.Domain.Main\obj\Release\GDirectiva.Domain.Main.csprojResolveAssemblyReference.cache
+D:\CodeGitHub\GDirectiva.Domain.Main\obj\Release\GDirectiva.Domain.Main.dll
+D:\CodeGitHub\GDirectiva.Domain.Main\obj\Release\GDirectiva.Domain.Main.pdb

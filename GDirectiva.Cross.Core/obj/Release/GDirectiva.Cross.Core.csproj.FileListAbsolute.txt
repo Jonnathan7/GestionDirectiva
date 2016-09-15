@@ -1,0 +1,6 @@
+D:\CodeGitHub\GDirectiva.Cross.Core\bin\Release\GDirectiva.Cross.Core.dll
+D:\CodeGitHub\GDirectiva.Cross.Core\bin\Release\GDirectiva.Cross.Core.pdb
+D:\CodeGitHub\GDirectiva.Cross.Core\bin\Release\log4net.dll
+D:\CodeGitHub\GDirectiva.Cross.Core\obj\Release\GDirectiva.Cross.Core.csprojResolveAssemblyReference.cache
+D:\CodeGitHub\GDirectiva.Cross.Core\obj\Release\GDirectiva.Cross.Core.dll
+D:\CodeGitHub\GDirectiva.Cross.Core\obj\Release\GDirectiva.Cross.Core.pdb

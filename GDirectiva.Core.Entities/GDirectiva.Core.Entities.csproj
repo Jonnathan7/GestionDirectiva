@@ -135,6 +135,9 @@
     <Compile Include="PA_PLAN_PROYECTO_PEDAGOGICO_LISTA_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="PA_PLAN_PROYECTO_PEDAGOGICO_SEL_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="PeriodoAcademico.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

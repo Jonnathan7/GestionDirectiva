@@ -1,0 +1,12 @@
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\bin\Release\GDirectiva.Presentacion.Resource.dll
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\bin\Release\GDirectiva.Presentacion.Resource.pdb
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.csprojResolveAssemblyReference.cache
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.Base.GenericResource.resources
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.General.PlanEstudioResource.resources
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.General.PlanAsignaturaCronogramaResource.resources
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.General.PlanAreaResource.resources
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.General.PlanAsignaturaResource.resources
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.Mensaje.MensajeResource.resources
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.csproj.GenerateResource.Cache
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.dll
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.pdb

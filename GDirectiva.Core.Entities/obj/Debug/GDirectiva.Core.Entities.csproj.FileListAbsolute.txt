@@ -1,0 +1,22 @@
+D:\GestionDirectiva\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.csprojResolveAssemblyReference.cache
+D:\GestionDirectiva\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.dll.config
+D:\GestionDirectiva\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.dll
+D:\GestionDirectiva\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.pdb
+D:\GestionDirectiva\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.dll
+D:\GestionDirectiva\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.dll.config
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Core.Entities\bin\Debug\EntityFramework.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Core.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.csprojResolveAssemblyReference.cache
+D:\CodeGitHub\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.dll.config
+D:\CodeGitHub\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.dll
+D:\CodeGitHub\GDirectiva.Core.Entities\bin\Debug\GDirectiva.Core.Entities.pdb
+D:\CodeGitHub\GDirectiva.Core.Entities\bin\Debug\EntityFramework.dll
+D:\CodeGitHub\GDirectiva.Core.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\CodeGitHub\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.csprojResolveAssemblyReference.cache
+D:\CodeGitHub\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.dll
+D:\CodeGitHub\GDirectiva.Core.Entities\obj\Debug\GDirectiva.Core.Entities.pdb

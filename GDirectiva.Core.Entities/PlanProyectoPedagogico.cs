@@ -24,7 +24,7 @@ namespace GDirectiva.Core.Entities
         public string Descripcion { get; set; }
         public string Objetivos { get; set; }
         public string Estado { get; set; }
-        public byte[] Documento { get; set; }
+        public string Documento { get; set; }
         public Nullable<int> Id_PlanEstudio { get; set; }
         public Nullable<int> Id_PeriodoAcademico { get; set; }
         public Nullable<int> Id_Area { get; set; }

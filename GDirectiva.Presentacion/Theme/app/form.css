@@ -1,0 +1,82 @@
+﻿/**********************************************
+File : form.css;
+-----------------------------------------------
+Description:
+   - Estructuras, piezas referente a 
+     formularios
+-----------------------------------------------
+Assigned to: Sebastian Yabiku        
+/*********************************************/
+
+/*----.Login*/
+/*********************************************/
+.form-Login{
+	border: 1px solid #d9d9d9;
+	border-top: 3px solid #d9d9d9;
+}
+.form-Login .Login-header{
+	padding:20px;
+	padding-bottom:0px;
+}
+.form-Login .Login-body{
+	padding:20px;
+}
+.form-Login .Login-footer{	
+	border-top:1px solid #e0e0e0;
+	padding:20px;
+}
+/*----.InputSearch*/
+/*********************************************/
+.form-InputSearch{
+	border:1px solid #d4d4d4;
+	position:relative;
+}
+.form-InputSearch:hover{
+	border-color: #a7a7a7;
+  outline: 0;
+  -webkit-box-shadow: 3px 3px 0px 0px rgba(50, 50, 50, 0.19);
+  -moz-box-shadow: 3px 3px 0px 0px rgba(50, 50, 50, 0.19);
+  -ms-box-shadow: 3px 3px 0px 0px rgba(50, 50, 50, 0.19);
+  -o-box-shadow: 3px 3px 0px 0px rgba(50, 50, 50, 0.19);
+  box-shadow: 3px 3px 0px 0px rgba(50, 50, 50, 0.19);
+  background:#fff;
+}
+.form-InputSearch input[type="text"]{
+	padding:5px;
+}
+.form-InputSearch button{
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+	right: 0px;
+}
+.form-InputSearch input[type="text"],
+.form-InputSearch button{
+	border:none;
+	background:none;
+	box-shadow:none;
+}
+/*----.InputRead*/
+/*********************************************/
+.form-InputRead input[disabled]{
+	background:none;
+	border:none;
+	box-shadow:none;
+	padding:0px;
+}
+
+
+/*********************************************/
+/*----Advertencias Formularios*/
+/*********************************************/
+.form-group label{
+    display:block;
+}
+/*----.hasError*/
+/*********************************************/
+.hasRequired{
+    border:1px solid #e7c58b!important;
+}
+.hasError {
+    border: 1px solid #f00!important;
+}

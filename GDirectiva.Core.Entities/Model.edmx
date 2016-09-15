@@ -105,7 +105,7 @@
           <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
           <Property Name="Objetivos" Type="varchar(max)" Nullable="false" />
           <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="Documento" Type="binary" MaxLength="1" />
+          <Property Name="Documento" Type="varchar" MaxLength="255" />
           <Property Name="Id_PlanEstudio" Type="int" />
           <Property Name="Id_PeriodoAcademico" Type="int" />
           <Property Name="Id_Area" Type="int" />
@@ -398,12 +398,21 @@
           <Parameter Name="ID_PLANASIGNATURA" Type="int" Mode="In" />
         </Function>
         <Function Name="PA_PLAN_ESTUDIO_SEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
+        <Function Name="PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+          <Parameter Name="ID_PERIODOACADEMICO" Type="int" Mode="In" />
+          <Parameter Name="ID_AREA" Type="int" Mode="In" />
+          <Parameter Name="ID_PLANESTUDIO" Type="int" Mode="In" />
+          <Parameter Name="ID_GRADO" Type="int" Mode="In" />
+        </Function>
         <Function Name="PA_PLAN_PROYECTO_PEDAGOGICO_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
           <Parameter Name="ID_PERIODOACADEMICO" Type="int" Mode="In" />
           <Parameter Name="ID_GRADO" Type="int" Mode="In" />
           <Parameter Name="ID_AREA" Type="int" Mode="In" />
           <Parameter Name="PAGINA_INICIO" Type="int" Mode="In" />
           <Parameter Name="TAMANIO_PAGINA" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PA_PLAN_PROYECTO_PEDAGOGICO_SEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+          <Parameter Name="PlanProyectoPedagogicoId" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="DB_INNOVASCHOOLSModelStoreContainer">
           <EntitySet Name="ActividadPlanAsignatura" EntityType="Self.ActividadPlanAsignatura" Schema="gd" store:Type="Tables" />
@@ -599,7 +608,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Objetivos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Documento" Type="Binary" MaxLength="1" FixedLength="true" />
+          <Property Name="Documento" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="Id_PlanEstudio" Type="Int32" />
           <Property Name="Id_PeriodoAcademico" Type="Int32" />
           <Property Name="Id_Area" Type="Int32" />
@@ -986,6 +995,15 @@
             <Parameter Name="PAGINA_INICIO" Mode="In" Type="Int32" />
             <Parameter Name="TAMANIO_PAGINA" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="PA_PLAN_PROYECTO_PEDAGOGICO_SEL" ReturnType="Collection(DB_INNOVASCHOOLSModel.PA_PLAN_PROYECTO_PEDAGOGICO_SEL_Result)">
+          <Parameter Name="PlanProyectoPedagogicoId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE" ReturnType="Collection(Int32)">
+            <Parameter Name="ID_PERIODOACADEMICO" Mode="In" Type="Int32" />
+            <Parameter Name="ID_AREA" Mode="In" Type="Int32" />
+            <Parameter Name="ID_PLANESTUDIO" Mode="In" Type="Int32" />
+            <Parameter Name="ID_GRADO" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA_Result">
           <Property Type="Int64" Name="RegistrosPagina" Nullable="true" />
@@ -1153,6 +1171,21 @@
           <Property Type="String" Name="NOMBRE_GRADO" Nullable="true" MaxLength="513" />
           <Property Type="Int32" Name="ID_AREA" Nullable="true" />
           <Property Type="String" Name="NOMBRE_AREA" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="PA_PLAN_PROYECTO_PEDAGOGICO_SEL_Result">
+          <Property Type="Int32" Name="ANIO_PLANESTUDIO" Nullable="false" />
+          <Property Type="Int32" Name="ID_PLANESTUDIO" Nullable="false" />
+          <Property Type="String" Name="DESCRIPCION_PLANESTUDIO" Nullable="false" />
+          <Property Type="String" Name="DOCUMENTO_PLANESTUDIO" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="ID_PLANPROYECTOPEDAGOGICO" Nullable="true" />
+          <Property Type="String" Name="NOMBRE_PLANPROYECTOPEDAGOGICO" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="OBJETIVOS" Nullable="false" />
+          <Property Type="String" Name="ESTADO_PLANPROYECTOPEDAGOGICO" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="DOCUMENTO_PLANPROYECTOPEDAGOGICO" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="ID_PERIODOACADEMICO" Nullable="true" />
+          <Property Type="Int32" Name="ID_GRADO" Nullable="true" />
+          <Property Type="Int32" Name="ID_AREA" Nullable="true" />
+          <Property Type="String" Name="DESCRIPCION_PLANPROYECTOPEDAGOGICO" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1546,6 +1579,26 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PA_PLAN_PROYECTO_PEDAGOGICO_SEL" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_PROYECTO_PEDAGOGICO_SEL">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_PROYECTO_PEDAGOGICO_SEL_Result">
+                <ScalarProperty Name="ANIO_PLANESTUDIO" ColumnName="ANIO_PLANESTUDIO" />
+                <ScalarProperty Name="ID_PLANESTUDIO" ColumnName="ID_PLANESTUDIO" />
+                <ScalarProperty Name="DESCRIPCION_PLANESTUDIO" ColumnName="DESCRIPCION_PLANESTUDIO" />
+                <ScalarProperty Name="DOCUMENTO_PLANESTUDIO" ColumnName="DOCUMENTO_PLANESTUDIO" />
+                <ScalarProperty Name="ID_PLANPROYECTOPEDAGOGICO" ColumnName="ID_PLANPROYECTOPEDAGOGICO" />
+                <ScalarProperty Name="NOMBRE_PLANPROYECTOPEDAGOGICO" ColumnName="NOMBRE_PLANPROYECTOPEDAGOGICO" />
+                <ScalarProperty Name="OBJETIVOS" ColumnName="OBJETIVOS" />
+                <ScalarProperty Name="ESTADO_PLANPROYECTOPEDAGOGICO" ColumnName="ESTADO_PLANPROYECTOPEDAGOGICO" />
+                <ScalarProperty Name="DOCUMENTO_PLANPROYECTOPEDAGOGICO" ColumnName="DOCUMENTO_PLANPROYECTOPEDAGOGICO" />
+                <ScalarProperty Name="ID_PERIODOACADEMICO" ColumnName="ID_PERIODOACADEMICO" />
+                <ScalarProperty Name="ID_GRADO" ColumnName="ID_GRADO" />
+                <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+                <ScalarProperty Name="DESCRIPCION_PLANPROYECTOPEDAGOGICO" ColumnName="DESCRIPCION_PLANPROYECTOPEDAGOGICO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

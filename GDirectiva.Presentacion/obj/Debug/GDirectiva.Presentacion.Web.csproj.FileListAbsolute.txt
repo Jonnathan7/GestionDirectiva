@@ -1,0 +1,189 @@
+D:\GestionDirectiva\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.csprojResolveAssemblyReference.cache
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Web.dll.config
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Web.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Web.pdb
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Antlr3.Runtime.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Core.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Resource.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Core.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Cookies.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Facebook.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Google.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.OAuth.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Twitter.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Web.Infrastructure.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Newtonsoft.Json.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Owin.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Helpers.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Mvc.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Razor.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.Deployment.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.Razor.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\WebGrease.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Core.Entities.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Domain.Main.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Cross.Core.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Infraestructure.Data.Sql.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\log4net.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Resource.pdb
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Core.pdb
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Helpers.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Mvc.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Razor.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.Deployment.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.Razor.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Newtonsoft.Json.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Core.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Facebook.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Cookies.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.OAuth.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Google.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Twitter.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Core.Entities.pdb
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Domain.Main.pdb
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Cross.Core.pdb
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\GestionDirectiva\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.dll
+D:\GestionDirectiva\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Web.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Web.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Antlr3.Runtime.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\EntityFramework.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\EntityFramework.SqlServer.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Core.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Resource.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Google.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Web.Infrastructure.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Newtonsoft.Json.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Owin.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Helpers.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Mvc.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Optimization.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Razor.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.Deployment.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.Razor.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\WebGrease.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Core.Entities.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Domain.Main.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Cross.Core.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Infraestructure.Data.Sql.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\log4net.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Resource.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Core.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Helpers.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Mvc.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.Razor.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.Deployment.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\System.Web.WebPages.Razor.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Newtonsoft.Json.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Google.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Core.Entities.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Domain.Main.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Cross.Core.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\bin\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.csprojResolveAssemblyReference.cache
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.dll
+D:\Factory\Gestion Academica\Source\ProyectoTP3-master\GestionDirectiva\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.pdb
+D:\GestionDirectiva\GDirectiva.Presentacion\bin\Antlr3.Runtime.pdb
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Web.dll.config
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Web.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Web.pdb
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Antlr3.Runtime.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\EntityFramework.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\EntityFramework.SqlServer.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Core.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Resource.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Core.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Cookies.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Facebook.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Google.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.OAuth.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Twitter.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Web.Infrastructure.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Newtonsoft.Json.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Owin.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.Helpers.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.Mvc.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.Optimization.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.Razor.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.WebPages.Deployment.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.WebPages.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.WebPages.Razor.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\WebGrease.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Core.Entities.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Domain.Main.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Cross.Core.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Infraestructure.Data.Sql.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\log4net.dll
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Resource.pdb
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Presentacion.Core.pdb
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.Helpers.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.Mvc.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.Razor.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.WebPages.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.WebPages.Deployment.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\System.Web.WebPages.Razor.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Newtonsoft.Json.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Core.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Facebook.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Cookies.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.OAuth.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Google.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.Twitter.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Core.Entities.pdb
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Domain.Main.pdb
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Cross.Core.pdb
+D:\CodeGitHub\GDirectiva.Presentacion\bin\GDirectiva.Infraestructure.Data.Sql.pdb
+D:\CodeGitHub\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.csprojResolveAssemblyReference.cache
+D:\CodeGitHub\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.dll
+D:\CodeGitHub\GDirectiva.Presentacion\obj\Debug\GDirectiva.Presentacion.Web.pdb

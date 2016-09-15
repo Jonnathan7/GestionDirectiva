@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GESTION_DIRECTIVAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GESTION_DIRECTIVAEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="GD_SP_PLAN_ASIGNATURA_LISTA" ReturnType="Collection(GESTION_DIRECTIVAModel.GD_SP_PLAN_ASIGNATURA_LISTA_Result)">
+      <Parameter Name="Id_Periodo" Mode="In" Type="Int32" />
+      <Parameter Name="Id_Plan_Area" Mode="In" Type="Int32" />
+      <Parameter Name="Id_Asignatura" Mode="In" Type="Int32" />
+      <Parameter Name="Id_Empleado" Mode="In" Type="Int32" />
+      <Parameter Name="PAGINA_INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="TAMANIO_PAGINA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="GD_Area" EntityType="GESTION_DIRECTIVAModel.GD_Area" />
+    <EntitySet Name="GD_Asignatura" EntityType="GESTION_DIRECTIVAModel.GD_Asignatura" />
+    <EntitySet Name="GD_Empleado_Asignatura" EntityType="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura" />
+    <EntitySet Name="GD_Grado" EntityType="GESTION_DIRECTIVAModel.GD_Grado" />
+    <EntitySet Name="GD_Observacion" EntityType="GESTION_DIRECTIVAModel.GD_Observacion" />
+    <EntitySet Name="GD_Periodo_Academico" EntityType="GESTION_DIRECTIVAModel.GD_Periodo_Academico" />
+    <EntitySet Name="GD_Plan_Area" EntityType="GESTION_DIRECTIVAModel.GD_Plan_Area" />
+    <EntitySet Name="GD_Plan_Asignatura" EntityType="GESTION_DIRECTIVAModel.GD_Plan_Asignatura" />
+    <EntitySet Name="GD_Plan_Asignatura_Actividades" EntityType="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades" />
+    <EntitySet Name="GRMS_Empleado" EntityType="GESTION_DIRECTIVAModel.GRMS_Empleado" />
+    <AssociationSet Name="GD_Asignatura_GD_Area_FK" Association="GESTION_DIRECTIVAModel.GD_Asignatura_GD_Area_FK">
+      <End Role="GD_Area" EntitySet="GD_Area" />
+      <End Role="GD_Asignatura" EntitySet="GD_Asignatura" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Plan_Area_GD_Area_FK" Association="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Area_FK">
+      <End Role="GD_Area" EntitySet="GD_Area" />
+      <End Role="GD_Plan_Area" EntitySet="GD_Plan_Area" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Empleado_Asignatura_GD_Asignatura_FK" Association="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura_GD_Asignatura_FK">
+      <End Role="GD_Asignatura" EntitySet="GD_Asignatura" />
+      <End Role="GD_Empleado_Asignatura" EntitySet="GD_Empleado_Asignatura" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Plan_Asignatura_GD_Asignatura_FK" Association="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GD_Asignatura_FK">
+      <End Role="GD_Asignatura" EntitySet="GD_Asignatura" />
+      <End Role="GD_Plan_Asignatura" EntitySet="GD_Plan_Asignatura" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Empleado_Asignatura_GRMS_Empleado_FK" Association="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura_GRMS_Empleado_FK">
+      <End Role="GRMS_Empleado" EntitySet="GRMS_Empleado" />
+      <End Role="GD_Empleado_Asignatura" EntitySet="GD_Empleado_Asignatura" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Plan_Area_GD_Grado_FK" Association="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Grado_FK">
+      <End Role="GD_Grado" EntitySet="GD_Grado" />
+      <End Role="GD_Plan_Area" EntitySet="GD_Plan_Area" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Observacion_GD_Plan_Asignatura_FK" Association="GESTION_DIRECTIVAModel.GD_Observacion_GD_Plan_Asignatura_FK">
+      <End Role="GD_Plan_Asignatura" EntitySet="GD_Plan_Asignatura" />
+      <End Role="GD_Observacion" EntitySet="GD_Observacion" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Plan_Area_GD_Periodo_Academico_FK" Association="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Periodo_Academico_FK">
+      <End Role="GD_Periodo_Academico" EntitySet="GD_Periodo_Academico" />
+      <End Role="GD_Plan_Area" EntitySet="GD_Plan_Area" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Plan_Asignatura_GD_Plan_Area_FK" Association="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GD_Plan_Area_FK">
+      <End Role="GD_Plan_Area" EntitySet="GD_Plan_Area" />
+      <End Role="GD_Plan_Asignatura" EntitySet="GD_Plan_Asignatura" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Plan_Asignatura_Actividades_GD_Plan_Asignatura_FK" Association="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades_GD_Plan_Asignatura_FK">
+      <End Role="GD_Plan_Asignatura" EntitySet="GD_Plan_Asignatura" />
+      <End Role="GD_Plan_Asignatura_Actividades" EntitySet="GD_Plan_Asignatura_Actividades" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Plan_Asignatura_GRMS_Empleado_FK" Association="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GRMS_Empleado_FK">
+      <End Role="GRMS_Empleado" EntitySet="GRMS_Empleado" />
+      <End Role="GD_Plan_Asignatura" EntitySet="GD_Plan_Asignatura" />
+    </AssociationSet>
+    <AssociationSet Name="GD_Plan_Asignatura_Actividades_GRMS_Empleado_FK" Association="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades_GRMS_Empleado_FK">
+      <End Role="GRMS_Empleado" EntitySet="GRMS_Empleado" />
+      <End Role="GD_Plan_Asignatura_Actividades" EntitySet="GD_Plan_Asignatura_Actividades" />
+    </AssociationSet>
+    <FunctionImport Name="GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_ELIMINAR">
+      <Parameter Name="Id_Plan_Asignatura" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GD_SP_PLAN_ASIGNATURA_SEL" ReturnType="Collection(GESTION_DIRECTIVAModel.GD_SP_PLAN_ASIGNATURA_SEL_Result)">
+      <Parameter Name="ID_PLAN_ASIGNATURA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GD_SP_PERIODO_ACADEMICO_LISTA" ReturnType="Collection(GESTION_DIRECTIVAModel.GD_SP_PERIODO_ACADEMICO_LISTA_Result)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GESTION_DIRECTIVAModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GESTION_DIRECTIVAModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_LISTA" ReturnType="Collection(GESTION_DIRECTIVAModel.GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_LISTA_Result)">
+      <Parameter Name="Id_Plan_Asignatura" Mode="In" Type="Int32" />
+      <Parameter Name="PAGINA_INICIO" Mode="In" Type="Int32" />
+      <Parameter Name="TAMANIO_PAGINA" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GD_SP_PLAN_ASIGNATURA_EMPLEADO_LISTA" ReturnType="Collection(GESTION_DIRECTIVAModel.GD_SP_PLAN_ASIGNATURA_EMPLEADO_LISTA_Result)">
+      <Parameter Name="Id_Plan_Asignatura" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GD_SP_PLAN_ASIGNATURA_LISTA_Result">
+    <Property Type="Int64" Name="RegistrosPagina" Nullable="true" />
+    <Property Type="Int64" Name="TotalRegistro" Nullable="true" />
+    <Property Type="Int64" Name="NumeroRegistro" Nullable="true" />
+    <Property Type="Int32" Name="TamanioPagina" Nullable="true" />
+    <Property Type="Int32" Name="ID_PLAN_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="META" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="METODOLOGIA" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="DOCUMENTO" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ID_PLAN_AREA" Nullable="false" />
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="false" />
+    <Property Type="Int32" Name="ID_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PLAN_AREA" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="NOMBRE_EMPLEADO" Nullable="true" MaxLength="282" />
+    <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="ID_PERIODO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_CURSO" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <EntityType Name="GD_Area">
+    <Key>
+      <PropertyRef Name="Id_Area" />
+    </Key>
+    <Property Name="Id_Area" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GD_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Asignatura_GD_Area_FK" FromRole="GD_Area" ToRole="GD_Asignatura" />
+    <NavigationProperty Name="GD_Plan_Area" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Area_FK" FromRole="GD_Area" ToRole="GD_Plan_Area" />
+  </EntityType>
+  <EntityType Name="GD_Asignatura">
+    <Key>
+      <PropertyRef Name="Id_Asignatura" />
+    </Key>
+    <Property Name="Id_Asignatura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Curso" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="GD_Area_Id_Area" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GD_Area" Relationship="GESTION_DIRECTIVAModel.GD_Asignatura_GD_Area_FK" FromRole="GD_Asignatura" ToRole="GD_Area" />
+    <NavigationProperty Name="GD_Empleado_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura_GD_Asignatura_FK" FromRole="GD_Asignatura" ToRole="GD_Empleado_Asignatura" />
+    <NavigationProperty Name="GD_Plan_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GD_Asignatura_FK" FromRole="GD_Asignatura" ToRole="GD_Plan_Asignatura" />
+  </EntityType>
+  <EntityType Name="GD_Empleado_Asignatura">
+    <Key>
+      <PropertyRef Name="Id_Asignatura_Empleado" />
+    </Key>
+    <Property Name="Id_Asignatura_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GD_Asignatura_Id_Asignatura" Type="Int32" Nullable="false" />
+    <Property Name="GRMS_Empleado_Id_Empleado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GD_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura_GD_Asignatura_FK" FromRole="GD_Empleado_Asignatura" ToRole="GD_Asignatura" />
+    <NavigationProperty Name="GRMS_Empleado" Relationship="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura_GRMS_Empleado_FK" FromRole="GD_Empleado_Asignatura" ToRole="GRMS_Empleado" />
+  </EntityType>
+  <EntityType Name="GD_Grado">
+    <Key>
+      <PropertyRef Name="Id_Grado" />
+    </Key>
+    <Property Name="Id_Grado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Grado" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GD_Plan_Area" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Grado_FK" FromRole="GD_Grado" ToRole="GD_Plan_Area" />
+  </EntityType>
+  <EntityType Name="GD_Observacion">
+    <Key>
+      <PropertyRef Name="Id_Observacion" />
+    </Key>
+    <Property Name="Id_Observacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Observacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GD_Plan_Asignatura_Id_Plan_Asignatura" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GD_Plan_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Observacion_GD_Plan_Asignatura_FK" FromRole="GD_Observacion" ToRole="GD_Plan_Asignatura" />
+  </EntityType>
+  <EntityType Name="GD_Periodo_Academico">
+    <Key>
+      <PropertyRef Name="Id_Periodo" />
+    </Key>
+    <Property Name="Id_Periodo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Periodo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_Inicio" Type="DateTime" Precision="0" />
+    <Property Name="Fecha_Fin" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="GD_Plan_Area" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Periodo_Academico_FK" FromRole="GD_Periodo_Academico" ToRole="GD_Plan_Area" />
+  </EntityType>
+  <EntityType Name="GD_Plan_Area">
+    <Key>
+      <PropertyRef Name="Id_Plan_Area" />
+    </Key>
+    <Property Name="Id_Plan_Area" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Objetivos" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Criterios" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Requisitos" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Documento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="GD_Periodo_Academico_Id_Periodo" Type="Int32" Nullable="false" />
+    <Property Name="GD_Area_Id_Area" Type="Int32" Nullable="false" />
+    <Property Name="GD_Grado_Id_Grado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GD_Area" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Area_FK" FromRole="GD_Plan_Area" ToRole="GD_Area" />
+    <NavigationProperty Name="GD_Grado" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Grado_FK" FromRole="GD_Plan_Area" ToRole="GD_Grado" />
+    <NavigationProperty Name="GD_Periodo_Academico" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Area_GD_Periodo_Academico_FK" FromRole="GD_Plan_Area" ToRole="GD_Periodo_Academico" />
+    <NavigationProperty Name="GD_Plan_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GD_Plan_Area_FK" FromRole="GD_Plan_Area" ToRole="GD_Plan_Asignatura" />
+  </EntityType>
+  <EntityType Name="GD_Plan_Asignatura">
+    <Key>
+      <PropertyRef Name="Id_Plan_Asignatura" />
+    </Key>
+    <Property Name="Id_Plan_Asignatura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Meta" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Metodologia" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Documento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GD_Plan_Area_Id_Plan_Area" Type="Int32" Nullable="false" />
+    <Property Name="GRMS_Empleado_Id_Empleado" Type="Int32" Nullable="false" />
+    <Property Name="GD_Asignatura_Id_Asignatura" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GD_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GD_Asignatura_FK" FromRole="GD_Plan_Asignatura" ToRole="GD_Asignatura" />
+    <NavigationProperty Name="GD_Observacion" Relationship="GESTION_DIRECTIVAModel.GD_Observacion_GD_Plan_Asignatura_FK" FromRole="GD_Plan_Asignatura" ToRole="GD_Observacion" />
+    <NavigationProperty Name="GD_Plan_Area" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GD_Plan_Area_FK" FromRole="GD_Plan_Asignatura" ToRole="GD_Plan_Area" />
+    <NavigationProperty Name="GD_Plan_Asignatura_Actividades" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades_GD_Plan_Asignatura_FK" FromRole="GD_Plan_Asignatura" ToRole="GD_Plan_Asignatura_Actividades" />
+    <NavigationProperty Name="GRMS_Empleado" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GRMS_Empleado_FK" FromRole="GD_Plan_Asignatura" ToRole="GRMS_Empleado" />
+  </EntityType>
+  <EntityType Name="GD_Plan_Asignatura_Actividades">
+    <Key>
+      <PropertyRef Name="Id_Actividad" />
+    </Key>
+    <Property Name="Id_Actividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Actividad" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha_Inicio" Type="DateTime" Precision="0" />
+    <Property Name="Fecha_Fin" Type="DateTime" Precision="0" />
+    <Property Name="Porcentaje_Avance" Type="Int32" />
+    <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GD_Plan_Asignatura_Id_Plan_Asignatura" Type="Int32" Nullable="false" />
+    <Property Name="GRMS_Empleado_Id_Empleado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GD_Plan_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades_GD_Plan_Asignatura_FK" FromRole="GD_Plan_Asignatura_Actividades" ToRole="GD_Plan_Asignatura" />
+    <NavigationProperty Name="GRMS_Empleado" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades_GRMS_Empleado_FK" FromRole="GD_Plan_Asignatura_Actividades" ToRole="GRMS_Empleado" />
+  </EntityType>
+  <EntityType Name="GRMS_Empleado">
+    <Key>
+      <PropertyRef Name="Id_Empleado" />
+    </Key>
+    <Property Name="Id_Empleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Documento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Ape_Paterno" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Ape_Materno" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Nombres" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Rol" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Area" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="GD_Empleado_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura_GRMS_Empleado_FK" FromRole="GRMS_Empleado" ToRole="GD_Empleado_Asignatura" />
+    <NavigationProperty Name="GD_Plan_Asignatura" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_GRMS_Empleado_FK" FromRole="GRMS_Empleado" ToRole="GD_Plan_Asignatura" />
+    <NavigationProperty Name="GD_Plan_Asignatura_Actividades" Relationship="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades_GRMS_Empleado_FK" FromRole="GRMS_Empleado" ToRole="GD_Plan_Asignatura_Actividades" />
+  </EntityType>
+  <Association Name="GD_Asignatura_GD_Area_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Area" Role="GD_Area" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Asignatura" Role="GD_Asignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Area">
+        <PropertyRef Name="Id_Area" />
+      </Principal>
+      <Dependent Role="GD_Asignatura">
+        <PropertyRef Name="GD_Area_Id_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Plan_Area_GD_Area_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Area" Role="GD_Area" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Area" Role="GD_Plan_Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Area">
+        <PropertyRef Name="Id_Area" />
+      </Principal>
+      <Dependent Role="GD_Plan_Area">
+        <PropertyRef Name="GD_Area_Id_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Empleado_Asignatura_GD_Asignatura_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Asignatura" Role="GD_Asignatura" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura" Role="GD_Empleado_Asignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Asignatura">
+        <PropertyRef Name="Id_Asignatura" />
+      </Principal>
+      <Dependent Role="GD_Empleado_Asignatura">
+        <PropertyRef Name="GD_Asignatura_Id_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Plan_Asignatura_GD_Asignatura_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Asignatura" Role="GD_Asignatura" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Asignatura" Role="GD_Plan_Asignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Asignatura">
+        <PropertyRef Name="Id_Asignatura" />
+      </Principal>
+      <Dependent Role="GD_Plan_Asignatura">
+        <PropertyRef Name="GD_Asignatura_Id_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Empleado_Asignatura_GRMS_Empleado_FK">
+    <End Type="GESTION_DIRECTIVAModel.GRMS_Empleado" Role="GRMS_Empleado" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Empleado_Asignatura" Role="GD_Empleado_Asignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRMS_Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="GD_Empleado_Asignatura">
+        <PropertyRef Name="GRMS_Empleado_Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Plan_Area_GD_Grado_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Grado" Role="GD_Grado" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Area" Role="GD_Plan_Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Grado">
+        <PropertyRef Name="Id_Grado" />
+      </Principal>
+      <Dependent Role="GD_Plan_Area">
+        <PropertyRef Name="GD_Grado_Id_Grado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Observacion_GD_Plan_Asignatura_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Asignatura" Role="GD_Plan_Asignatura" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Observacion" Role="GD_Observacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Plan_Asignatura">
+        <PropertyRef Name="Id_Plan_Asignatura" />
+      </Principal>
+      <Dependent Role="GD_Observacion">
+        <PropertyRef Name="GD_Plan_Asignatura_Id_Plan_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Plan_Area_GD_Periodo_Academico_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Periodo_Academico" Role="GD_Periodo_Academico" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Area" Role="GD_Plan_Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Periodo_Academico">
+        <PropertyRef Name="Id_Periodo" />
+      </Principal>
+      <Dependent Role="GD_Plan_Area">
+        <PropertyRef Name="GD_Periodo_Academico_Id_Periodo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Plan_Asignatura_GD_Plan_Area_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Area" Role="GD_Plan_Area" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Asignatura" Role="GD_Plan_Asignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Plan_Area">
+        <PropertyRef Name="Id_Plan_Area" />
+      </Principal>
+      <Dependent Role="GD_Plan_Asignatura">
+        <PropertyRef Name="GD_Plan_Area_Id_Plan_Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Plan_Asignatura_Actividades_GD_Plan_Asignatura_FK">
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Asignatura" Role="GD_Plan_Asignatura" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades" Role="GD_Plan_Asignatura_Actividades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GD_Plan_Asignatura">
+        <PropertyRef Name="Id_Plan_Asignatura" />
+      </Principal>
+      <Dependent Role="GD_Plan_Asignatura_Actividades">
+        <PropertyRef Name="GD_Plan_Asignatura_Id_Plan_Asignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Plan_Asignatura_GRMS_Empleado_FK">
+    <End Type="GESTION_DIRECTIVAModel.GRMS_Empleado" Role="GRMS_Empleado" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Asignatura" Role="GD_Plan_Asignatura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRMS_Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="GD_Plan_Asignatura">
+        <PropertyRef Name="GRMS_Empleado_Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GD_Plan_Asignatura_Actividades_GRMS_Empleado_FK">
+    <End Type="GESTION_DIRECTIVAModel.GRMS_Empleado" Role="GRMS_Empleado" Multiplicity="1" />
+    <End Type="GESTION_DIRECTIVAModel.GD_Plan_Asignatura_Actividades" Role="GD_Plan_Asignatura_Actividades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GRMS_Empleado">
+        <PropertyRef Name="Id_Empleado" />
+      </Principal>
+      <Dependent Role="GD_Plan_Asignatura_Actividades">
+        <PropertyRef Name="GRMS_Empleado_Id_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GD_PLAN_ASIGNATURA_SEL_Result">
+    <Property Type="Int32" Name="ID_PLAN_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="META" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="METODOLOGIA" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ID_PLAN_AREA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PLAN_AREA" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_EMPLEADO" Nullable="true" MaxLength="283" />
+    <Property Type="Int32" Name="ID_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_CURSO" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="GD_SP_PLAN_ASIGNATURA_SEL_Result">
+    <Property Type="Int32" Name="ID_PLAN_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="META" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="METODOLOGIA" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ID_PLAN_AREA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_PLAN_AREA" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_EMPLEADO" Nullable="true" MaxLength="283" />
+    <Property Type="Int32" Name="ID_ASIGNATURA" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_CURSO" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="DOCUMENTO" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="ID_PERIODO" Nullable="false" />
+    <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="GD_SP_PERIODO_ACADEMICO_LISTA_Result">
+    <Property Type="Int32" Name="ID_PERIODO" Nullable="false" />
+    <Property Type="String" Name="PERIODO" Nullable="true" MaxLength="80" />
+    <Property Type="DateTime" Name="FECHA_INICIO" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA_FIN" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GD_SP_PLAN_ASIGNATURA_ACTIVIDADES_LISTA_Result">
+    <Property Type="Int64" Name="RegistrosPagina" Nullable="true" />
+    <Property Type="Int64" Name="TotalRegistro" Nullable="true" />
+    <Property Type="Int64" Name="NumeroRegistro" Nullable="true" />
+    <Property Type="Int32" Name="TamanioPagina" Nullable="true" />
+    <Property Type="Int32" Name="ID_ACTIVIDAD" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_ACTIVIDAD" Nullable="true" MaxLength="120" />
+    <Property Type="DateTime" Name="FECHA_INICIO" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA_FIN" Nullable="true" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="PORCENTAJE" Nullable="true" />
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_EMPLEADO" Nullable="true" MaxLength="283" />
+  </ComplexType>
+  <ComplexType Name="GD_SP_PLAN_ASIGNATURA_EMPLEADO_LISTA_Result">
+    <Property Type="Int32" Name="ID_EMPLEADO" Nullable="false" />
+    <Property Type="String" Name="NOMBRE_EMPLEADO" Nullable="true" MaxLength="283" />
+  </ComplexType>
+</Schema>

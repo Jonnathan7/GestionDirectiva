@@ -1,0 +1,134 @@
+﻿@using GDirectiva.Presentacion.Core.Helpers
+@using GDirectiva.Presentacion.Resource.Base
+@using GDirectiva.Presentacion.Resource.Mensaje
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="~/Theme/images/icon/favicon.ICO" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>@GenericResource.EtiquetaTituloSistema > @ViewBag.Title</title>
+    @Styles.Render("~/FrameworkStyle/css")
+    @Styles.Render("~/Template/css")
+    @Styles.Render("~/Components/JQueryCss")
+    @Styles.Render("~/Components/GmdCss")
+    @Styles.Render("~/Components/DataTablesCss")
+    @RenderSection("css", required: false)
+    <link href="../Content/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/css/justified-nav.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/css/skin.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="skin-gym bar-white">
+    <div class="container">
+        <div class="masthead">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="~/Content/images/system/innova_schools.png" alt="" />
+                </div>
+                <div class="col-sm-6" style="text-align: right">
+                    <h3 class="text-info">
+                        <a href='@Url.Content("~/Home/Index")'>Sistema de gestión académica</a>
+                    </h3>
+                </div>
+            </div>
+            <ul class="nav nav-justified">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" href="#">
+                        Gestión<br />
+                        Pedagógica
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href='@Url.Content("~/Home/Opcion1Modulo1")'>Opcion1</a>
+                        </li>
+                        <li>
+                            <a href='@Url.Content("~/Home/Opcion2Modulo1")'>Opcion2</a>
+                        </li>
+                        <li>
+                            <a href='@Url.Content("~/Home/Opcion3Modulo1")'>Opcion3</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" href="#">
+                        Gestión <br />Directiva
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href='@Url.Content("~/PlanArea")'>Plan Área</a></li>
+                        <li><a href='@Url.Content("~/PlanAsignatura")'>Plan Asignatura</a></li>
+                        <li><a href='@Url.Content("~/PlanAsignaturaCronograma")'>Cronograma Plan Asignatura</a></li>
+                        <li><a href='@Url.Content("~/PlanProyectoPedagogico")'>Plan Proyecto Pedagógico</a></li>
+                        <li><a href='@Url.Content("~/PlanProyectoPedagogico")'>Reporte Plan Asignatura</a></li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Gestión Apoyo Académico", "Modulo3", "Home")</li>
+                <li>@Html.ActionLink("Gestión Selección de Personal", "Modulo3", "Home")</li>
+                <li>@Html.ActionLink("Gestion Académica y Formativa", "Modulo5", "Home")</li>
+                <li>@Html.ActionLink("Gestión de Gobierno Escolar", "Modulo1", "Home")</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container body-content" style="padding-top:50px;">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/Components/JQuery")
+    @Scripts.Render("~/FrameworkStyle/js")
+    @Scripts.Render("~/Components/Codemaleon")
+    @Scripts.Render("~/Components/DataTables")
+    @Scripts.Render("~/Components/Gmd")
+    @Scripts.Render("~/Scripts/baselayout")
+    @Scripts.Render("~/Components/Charts")
+    <script src="~/Scripts/Base/Layout/common.js"></script>
+    <script type="text/javascript">
+        ns('GDirectiva.Presentacion.Web.Formato')
+        GDirectiva.Presentacion.Web.Formato.Fecha = "dd/mm/yy";
+        GDirectiva.Presentacion.Web.Formato.FechaMascara = "00/00/0000";
+        GDirectiva.Presentacion.Web.Formato.Hora = "HH:mm";
+
+        //Modal de Cargar Archivo
+        ns('GDirectiva.Presentacion.Base.CargarArchivo.Actions');
+        GDirectiva.Presentacion.Base.CargarArchivo.Actions.UploadDocument = '@Url.Action("UploadDocument", "CargaArchivo", new { Area = "Base" })';
+
+        //Mensajes Genericos
+        ns('GDirectiva.Presentacion.Base.MensajeResource');
+        GDirectiva.Presentacion.Base.MensajeResource.SeGuardoInformacionExito = '@Html.Raw(MensajeResource.SeGuardoInformacionExito)';
+        GDirectiva.Presentacion.Base.MensajeResource.ConfirmacionEliminacion = '@Html.Raw(MensajeResource.ConfirmacionEliminacion)';
+        GDirectiva.Presentacion.Base.MensajeResource.TextoEliminacion = '@Html.Raw(MensajeResource.TextoEliminacion)';
+        GDirectiva.Presentacion.Base.MensajeResource.DebeSeleccionarRegistro = '@Html.Raw(MensajeResource.DebeSeleccionarRegistro)';
+        GDirectiva.Presentacion.Base.MensajeResource.SeEliminoRegistro = '@Html.Raw(MensajeResource.SeEliminoRegistro)';
+        GDirectiva.Presentacion.Base.MensajeResource.TextoReactivacion = '@Html.Raw(MensajeResource.TextoReactivacion)';
+        GDirectiva.Presentacion.Base.MensajeResource.MensajeValidarElegirArchivo = '@Html.Raw(MensajeResource.TextoReactivacion)';
+        GDirectiva.Presentacion.Base.MensajeResource.MensajeValidarExtensionArchivo = '@Html.Raw(MensajeResource.TextoReactivacion)';
+
+
+        ns('GDirectiva.Presentacion.Base.GenericResource');
+        GDirectiva.Presentacion.Base.GenericResource.EtiquetaEditar = '@Html.Raw(GenericResource.EtiquetaEditar)';
+        GDirectiva.Presentacion.Base.GenericResource.EtiquetaEliminar = '@Html.Raw(GenericResource.EtiquetaEliminar)';
+        GDirectiva.Presentacion.Base.GenericResource.EtiquetaEliminarActividades = '@Html.Raw(GenericResource.EtiquetaEliminarActividades)';        
+        GDirectiva.Presentacion.Base.GenericResource.EtiquetaDesactivar = '@Html.Raw(GenericResource.EtiquetaDesactivar)';
+        GDirectiva.Presentacion.Base.GenericResource.EtiquetaSeleccionar = '@Html.Raw(GenericResource.EtiquetaSeleccionar)';
+        GDirectiva.Presentacion.Base.GenericResource.GridAcciones = '@Html.Raw(GenericResource.GridAcciones)';
+        GDirectiva.Presentacion.Base.GenericResource.EtiquetaCalendario = '@Html.Raw(GenericResource.EtiquetaCalendario)';
+
+        ns('GDirectiva.Presentacion.Web.Global.Format');
+        GDirectiva.Presentacion.Web.Global.Format.Date = "dd/mm/yy";
+
+        $('[data-toggle="tooltip"]').tooltip();
+    </script>
+    @CustomHtmlHelper.RenderViewJs()
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="../Scripts/app/common.js"></script>
+</body>
+
+</html>

@@ -320,5 +320,35 @@ namespace GDirectiva.Core.Entities
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_PLAN_PROYECTO_PEDAGOGICO_LISTA_Result>("PA_PLAN_PROYECTO_PEDAGOGICO_LISTA", iD_PERIODOACADEMICOParameter, iD_GRADOParameter, iD_AREAParameter, pAGINA_INICIOParameter, tAMANIO_PAGINAParameter);
         }
+    
+        public virtual ObjectResult<PA_PLAN_PROYECTO_PEDAGOGICO_SEL_Result> PA_PLAN_PROYECTO_PEDAGOGICO_SEL(Nullable<int> planProyectoPedagogicoId)
+        {
+            var planProyectoPedagogicoIdParameter = planProyectoPedagogicoId.HasValue ?
+                new ObjectParameter("PlanProyectoPedagogicoId", planProyectoPedagogicoId) :
+                new ObjectParameter("PlanProyectoPedagogicoId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PA_PLAN_PROYECTO_PEDAGOGICO_SEL_Result>("PA_PLAN_PROYECTO_PEDAGOGICO_SEL", planProyectoPedagogicoIdParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE(Nullable<int> iD_PERIODOACADEMICO, Nullable<int> iD_AREA, Nullable<int> iD_PLANESTUDIO, Nullable<int> iD_GRADO)
+        {
+            var iD_PERIODOACADEMICOParameter = iD_PERIODOACADEMICO.HasValue ?
+                new ObjectParameter("ID_PERIODOACADEMICO", iD_PERIODOACADEMICO) :
+                new ObjectParameter("ID_PERIODOACADEMICO", typeof(int));
+    
+            var iD_AREAParameter = iD_AREA.HasValue ?
+                new ObjectParameter("ID_AREA", iD_AREA) :
+                new ObjectParameter("ID_AREA", typeof(int));
+    
+            var iD_PLANESTUDIOParameter = iD_PLANESTUDIO.HasValue ?
+                new ObjectParameter("ID_PLANESTUDIO", iD_PLANESTUDIO) :
+                new ObjectParameter("ID_PLANESTUDIO", typeof(int));
+    
+            var iD_GRADOParameter = iD_GRADO.HasValue ?
+                new ObjectParameter("ID_GRADO", iD_GRADO) :
+                new ObjectParameter("ID_GRADO", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE", iD_PERIODOACADEMICOParameter, iD_AREAParameter, iD_PLANESTUDIOParameter, iD_GRADOParameter);
+        }
     }
 }
