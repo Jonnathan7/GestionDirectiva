@@ -55,6 +55,7 @@
     <Compile Include="DA_Empleado.cs" />
     <Compile Include="DA_Grado.cs" />
     <Compile Include="DA_PeriodoAcademico.cs" />
+    <Compile Include="DA_PlanProyectoPedagogico.cs" />
     <Compile Include="DA_PlanArea.cs" />
     <Compile Include="DA_PlanAsignatura.cs" />
     <Compile Include="DA_PlanAsignatura_Actividad.cs" />

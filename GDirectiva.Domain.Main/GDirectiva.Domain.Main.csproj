@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL_PlanProyectoPedagogico.cs" />
     <Compile Include="BL_PlanEstudio.cs" />
     <Compile Include="BL_Area.cs" />
     <Compile Include="BL_Asignatura.cs" />

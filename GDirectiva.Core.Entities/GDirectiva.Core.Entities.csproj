@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -63,7 +64,7 @@
     <Compile Include="Curso.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Empleado.cs">
+    <Compile Include="CursoDocente.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="General\EN_PlanArea.cs" />
@@ -95,6 +96,9 @@
     <Compile Include="PA_ASIGNATURA_PLANAREA_LISTA_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="PA_CURSO_DOCENTE_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="PA_GRADO_LISTA_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -119,10 +123,16 @@
     <Compile Include="PA_PLAN_ASIGNATURA_LISTA_VIGENTE_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="PA_PLAN_ASIGNATURA_META_LISTA_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="PA_PLAN_ASIGNATURA_SEL_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PA_PLAN_ESTUDIO_SEL_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PA_PLAN_PROYECTO_PEDAGOGICO_LISTA_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PeriodoAcademico.cs">
@@ -132,6 +142,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PlanAsignatura.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAsignaturaMeta.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="PlanEstudio.cs">

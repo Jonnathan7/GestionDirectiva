@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 
 namespace GDirectiva.Presentacion.Core.Controllers.General
@@ -88,18 +89,54 @@ namespace GDirectiva.Presentacion.Core.Controllers.General
         /// </summary>
         /// <param name="planArea"></param>
         /// <returns></returns>
-        public JsonResult Registrar(PlanArea planArea)
+        public JsonResult Registrar(PlanArea planArea, string contenidoArchivo)
         {
             ProcessResult<PlanArea> resultado = new ProcessResult<PlanArea>();
+
             var bl_PlanArea = new BL_PlanArea();
+
+            if (!string.IsNullOrEmpty(contenidoArchivo))
+            {
+                var extencion = planArea.Documento.Split('.').LastOrDefault();
+                planArea.Documento = WebConfigurationManager.AppSettings["DirectorioPlanArea"] + Guid.NewGuid().ToString() + "." + extencion;
+                contenidoArchivo = contenidoArchivo.Split(new string[] { "base64," }, StringSplitOptions.None).LastOrDefault();
+
+            }
+
             if (planArea.Id_PlanArea == 0)
             {
                 resultado = bl_PlanArea.InsertarPlanArea(planArea);
+
+                if (resultado.IsSuccess)
+                {
+                    if (!string.IsNullOrEmpty(contenidoArchivo))
+                    {
+                        System.IO.File.WriteAllBytes(planArea.Documento, Convert.FromBase64String(contenidoArchivo));
+                    }
+                }
             }
             else
             {
+                if (!string.IsNullOrEmpty(planArea.Documento))
+                {
+                    var planAreaActual = bl_PlanArea.ObtenerPlanArea(planArea.Id_PlanArea);
+                    if (!string.IsNullOrEmpty(planAreaActual.Result.DOCUMENTO_PLANAREA) && !string.IsNullOrEmpty(contenidoArchivo))
+                    {
+                        System.IO.File.Delete(planAreaActual.Result.DOCUMENTO_PLANAREA);
+                    }
+                }
+
                 resultado = bl_PlanArea.ActualizarPlanArea(planArea);
+
+                if (resultado.IsSuccess)
+                {
+                    if (!string.IsNullOrEmpty(contenidoArchivo))
+                    {
+                        System.IO.File.WriteAllBytes(planArea.Documento, Convert.FromBase64String(contenidoArchivo));
+                    }
+                }
             }
+
             return Json(resultado);
         }
         /// <summary>

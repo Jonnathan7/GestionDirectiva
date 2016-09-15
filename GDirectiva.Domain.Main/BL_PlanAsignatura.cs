@@ -61,7 +61,8 @@ namespace GDirectiva.Domain.Main
                         item.ACTIVIDAD,
                         item.FECHAINICIO,
                         item.FECHAFIN,
-                        item.PORCENTAJE).ToString();
+                        item.PORCENTAJE,
+                        (int)item.ID_PLANASIGNATURAMETA).ToString();
                 }
                 resultado.IsProcess = true;
             }
@@ -148,6 +149,79 @@ namespace GDirectiva.Domain.Main
                 objDA.EliminarPlanAsignatura(planAsignatura);
 
                 resultado.IsProcess = true;
+            }
+            catch (Exception e)
+            {
+                resultado.IsSuccess = false;
+                resultado.IsProcess = false;
+                resultado.Message = e.Message;
+                resultado.Exception = new ApplicationLayerException<BL_PlanAsignatura>(e);
+            }
+            return resultado;
+        }
+
+        public ProcessResult<List<PA_PLAN_ASIGNATURA_META_LISTA_Result>> ListarPlanAsignaturaMeta(int pId_PlanAsignatura)
+        {
+            ProcessResult<List<PA_PLAN_ASIGNATURA_META_LISTA_Result>> resultado = new ProcessResult<List<PA_PLAN_ASIGNATURA_META_LISTA_Result>>();
+            try
+            {
+                DA_PlanAsignatura objeto = new DA_PlanAsignatura();
+                resultado.Result = objeto.ListarPlanAsignaturaMeta(pId_PlanAsignatura);
+            }
+            catch (Exception e)
+            {
+                resultado.IsSuccess = false;
+                resultado.Exception = new ApplicationLayerException<BL_PlanAsignatura>(e);
+            }
+            return resultado;
+        }
+
+        public ProcessResult<PlanAsignaturaMeta> InsertarPlanAsignaturaMeta(int pId_PlanAsignatura, List<string> meta)
+        {
+            ProcessResult<PlanAsignaturaMeta> resultado = new ProcessResult<PlanAsignaturaMeta>();
+            try
+            {
+                DA_PlanAsignatura objDA = new DA_PlanAsignatura();
+                resultado.IsProcess = objDA.InsertarPlanAsignaturaMeta(pId_PlanAsignatura, meta);
+            }
+            catch (Exception e)
+            {
+                resultado.IsSuccess = false;
+                resultado.IsProcess = false;
+                resultado.Message = e.Message;
+                resultado.Exception = new ApplicationLayerException<BL_PlanAsignatura>(e);
+            }
+            return resultado;
+        }
+
+        public ProcessResult<PlanAsignaturaMeta> EliminarPlanAsignaturaMeta(int pId_PlanAsignatura)
+        {
+            ProcessResult<PlanAsignaturaMeta> resultado = new ProcessResult<PlanAsignaturaMeta>();
+            try
+            {
+                DA_PlanAsignatura objDA = new DA_PlanAsignatura();
+
+                resultado.IsProcess = objDA.EliminarPlanAsignaturaMeta(pId_PlanAsignatura); ;
+            }
+            catch (Exception e)
+            {
+                resultado.IsSuccess = false;
+                resultado.IsProcess = false;
+                resultado.Message = e.Message;
+                resultado.Exception = new ApplicationLayerException<BL_PlanAsignatura>(e);
+            }
+            return resultado;
+        }
+
+        public ProcessResult<List<PA_CURSO_DOCENTE_Result>> CursoDocente(int idCurso)
+        {
+            ProcessResult <List<PA_CURSO_DOCENTE_Result>> resultado = new ProcessResult<List<PA_CURSO_DOCENTE_Result>>();
+            try
+            {
+                DA_PlanAsignatura objDA = new DA_PlanAsignatura();
+
+                resultado.Result = objDA.ListarCursoDocente(idCurso);
+                resultado.IsSuccess = true;
             }
             catch (Exception e)
             {

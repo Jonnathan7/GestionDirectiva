@@ -17,7 +17,8 @@ namespace GDirectiva.Presentacion.Web
                         "~/Components/JQuery/jquery.validate.additional-methods.js",
                         "~/Components/JQuery/jquery.mask.js",
                         "~/Components/JQuery/jquery.mask.min.js",
-                        "~/Components/JQuery/jquery.ajax_upload.js"
+                        "~/Components/JQuery/jquery.ajax_upload.js",
+                        "~/Components/JQuery/jquery.formatCurrency-1.4.0.js"
             ));
 
             bundles.Add(new ScriptBundle("~/Components/DataTables").Include(

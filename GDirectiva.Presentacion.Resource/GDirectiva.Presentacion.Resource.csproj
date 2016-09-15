@@ -44,6 +44,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GenericResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="General\PlanProyectoPedagogicoResource.Designer.cs">
+      <DependentUpon>PlanProyectoPedagogicoResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="General\PlanEstudioResource.Designer.cs">
       <DependentUpon>PlanEstudioResource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -75,6 +80,10 @@
     <EmbeddedResource Include="Base\GenericResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GenericResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\PlanProyectoPedagogicoResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PlanProyectoPedagogicoResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="General\PlanEstudioResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

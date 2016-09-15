@@ -69,7 +69,7 @@ namespace GDirectiva.Domain.Main
                 {
                     planArea.Estado = "REGISTRADO";
                     planArea.FechaCreacion = DateTime.Now;
-                    objDA.InsertarPlanArea(planArea);
+                    resultado.Result = objDA.InsertarPlanArea(planArea);
                     resultado.IsProcess = true;
                 }
                 else
@@ -97,6 +97,7 @@ namespace GDirectiva.Domain.Main
                 planArea.Estado = "REGISTRADO";
                 planArea.FechaModificacion = DateTime.Now;
                 objDA.ActualizarPlanArea(planArea);
+                resultado.Result = planArea;
 
                 resultado.IsProcess = true;
             }

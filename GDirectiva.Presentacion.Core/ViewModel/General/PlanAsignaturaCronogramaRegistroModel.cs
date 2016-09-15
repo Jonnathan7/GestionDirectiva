@@ -16,5 +16,7 @@ namespace GDirectiva.Presentacion.Core.ViewModel.General
             this.planAsignatura = new PA_PLAN_ASIGNATURA_SEL_Result();
         }
         public PA_PLAN_ASIGNATURA_SEL_Result planAsignatura { get; set; }
+        public string fechaInicioPeriodo { get; set; }
+        public string fechaFinPeriodo { get; set; }
     }
 }
