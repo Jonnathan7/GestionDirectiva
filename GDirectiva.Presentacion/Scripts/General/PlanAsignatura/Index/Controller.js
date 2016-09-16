@@ -161,11 +161,11 @@ GDirectiva.Presentacion.General.PlanAsignatura.Index.Controller = function () {
             columns.push({ data: 'NOMBRE_PERIODO', title: GDirectiva.Presentacion.General.PlanAsignatura.Resource.EtiquetaPeriodoAcademico });
             columns.push({ data: 'NOMBRE_PLANAREA', title: GDirectiva.Presentacion.General.PlanAsignatura.Resource.EtiquetaPlanArea });
             columns.push({ data: 'NOMBRE_ASIGNATURA', title: GDirectiva.Presentacion.General.PlanAsignatura.Resource.EtiquetaAsignatura });
-            columns.push({
-                data: null, title: GDirectiva.Presentacion.General.PlanAsignatura.Resource.EtiquetaEstado, 'mRender': function (data, type, full) {
-                    return full.ESTADO;
-                }
-            });
+            //columns.push({
+            //    data: null, title: GDirectiva.Presentacion.General.PlanAsignatura.Resource.EtiquetaEstado, 'mRender': function (data, type, full) {
+            //        return full.ESTADO;
+            //    }
+            //});
             
             var listaOpciones = new Array();
             listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Edit, event: { on: 'click', callBack: base.Event.BtnGridEditarClick } });

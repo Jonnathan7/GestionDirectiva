@@ -49,9 +49,13 @@ namespace GDirectiva.Presentacion.Core.Controllers.General
             if (pId_Plan_Asignatura > 0)
             {
                 model.planAsignatura = bl_PlanAsignatura.ObtenerPlanAsignatura(pId_Plan_Asignatura).Result;
+                model.ListaPeriodoAcademico = new List<PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result>() { new PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result() { ID_PERIODOACADEMICO = 4, PERIODO = "2016 - Cuarto bimestre" } };
             }
-            model.ListaPeriodoAcademico = bl_PeriodoAcademico.ListarPeriodosAcademicosVigentes();
-
+            else
+            {
+                //model.ListaPeriodoAcademico = bl_PeriodoAcademico.ListarPeriodosAcademicosVigentes();
+                model.ListaPeriodoAcademico = new List<PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result>() { new PA_PERIODO_ACADEMICO_LISTA_VIGENTE_Result() { ID_PERIODOACADEMICO = 4, PERIODO = "2016 - Cuarto bimestre" } };
+            }
             return PartialView(model);
         }
         #endregion

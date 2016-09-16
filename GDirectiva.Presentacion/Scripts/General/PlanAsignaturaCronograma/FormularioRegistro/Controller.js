@@ -282,7 +282,7 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.FormularioRegistro.Cont
                         opcion += '<option value="' + meta.Id_PlanAsignaturaMeta + '"' + ((meta.Id_PlanAsignaturaMeta == full.ID_PLANASIGNATURAMETA) ? 'selected' : '') + '>' + meta.Meta + '</option>';
                     }
 
-                    var resultado = '<select class="form-control" name="Id_PlanAsignaturaMeta" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '>'
+                    var resultado = '<select style="width:350px" class="form-control" name="Id_PlanAsignaturaMeta" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '>'
                            + '<option value="0">--SELECCIONE--</option> <option value="0">--SELECCIONE--</option>'
                            + opcion
                            + '</select>';
@@ -292,7 +292,7 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.FormularioRegistro.Cont
             });
             columns.push({
                     data: 'ACTIVIDAD', title: GDirectiva.Presentacion.General.PlanAsignaturaCronograma.Resource.EtiquetaNombreActividad, 'mRender': function (data, type, full) {
-                    return '<input class="form-control" type="text" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '" name="Actividad" value="' + full.ACTIVIDAD + '">';
+                        return '<input style="width:250px" class="form-control" type="text" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '" name="Actividad" value="' + full.ACTIVIDAD + '">';
                 }
             });
             columns.push({
@@ -324,7 +324,7 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.FormularioRegistro.Cont
                         //
                         if (dateObject > new Date()) {
                             if (full.PORCENTAJE == null || full.PORCENTAJE == "" || parseInt(full.PORCENTAJE) < 100) {
-                                resultado = '<div style="width:100%;" align="center"><div id="circleRed" align="center" ></div></div>';
+                                resultado = '<div style="width:100%;" align="center"><div id="circleGreen" align="center" ></div></div>';
                             } else {
                                 resultado = '<div style="width:100%;" align="center"><div id="circleGreen" ></div></div>';
                             }
