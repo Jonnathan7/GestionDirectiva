@@ -1,0 +1,120 @@
+﻿@using GDirectiva.Presentacion.Resource.General
+@using GDirectiva.Presentacion.Resource.Base
+@using GDirectiva.Presentacion.Resource.Mensaje
+@model GDirectiva.Presentacion.Core.ViewModel.General.PlanProyectoPedagogicoRegistroModel
+
+@Html.Hidden("hdnFormularioRegistroCodigo", Model.planProyectoPedagogico.ID_PLANPROYECTOPEDAGOGICO, new { id = "hdnFormularioRegistroCodigo" })
+@Html.Hidden("hdnFormularioCodigoPlanEstudio", Model.planEstudio.ID_PLANESTUDIO, new { id = "hdnFormularioCodigoPlanEstudio" })
+@*@using (Html.BeginForm("SubirArchivo", "PlanArea", FormMethod.Post, new { id = "ajaxform_Archivo", enctype = "multipart/form-data" }))
+    {*@
+<form id="frmRegistrarPlanProyectoPedagogico">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtAnioPlanEstudioForm">@PlanEstudioResource.EtiquetaAnio</label>
+                <input type="text" class="form-control" id="txtAnioPlanEstudio" readonly="readonly" disabled="disabled" value="@Model.planEstudio.ANIO" />
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtDocumentoPlanEstudioForm">@PlanEstudioResource.EtiquetaDocumento</label>
+                <input type="text" class="form-control" id="txtDocumentoPlanEstudio" readonly="readonly" disabled="disabled" value="@Model.planEstudio.DOCUMENTO" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtPeriodoAcademico">@PlanProyectoPedagogicoResource.EtiquetaPeriodoAcademico</label>
+                <select class="form-control" id="slcPeriodoAcademicoForm" validable="required EtiquetaPeriodoAcademico" @((Model.planProyectoPedagogico.ID_PLANPROYECTOPEDAGOGICO > 0 || Model.planProyectoPedagogico.ESTADO_PLANPROYECTOPEDAGOGICO == "ELIMINADO") ? "disabled" : "")>
+                    <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                    @{
+                        if (Model.ListaPeriodoAcademico != null)
+                        {
+                            foreach (var item in Model.ListaPeriodoAcademico)
+                            {
+                                <option value="@item.ID_PERIODOACADEMICO" @((Model.planProyectoPedagogico.ID_PERIODOACADEMICO == item.ID_PERIODOACADEMICO) ? "selected" : "")>@item.PERIODO</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtPlanArea">@PlanProyectoPedagogicoResource.EtiquetaGrado</label>
+                <select class="form-control" id="slcGradoForm" validable="required EtiquetaGrado" @((Model.planProyectoPedagogico.ID_GRADO > 0) ? "disabled" : "")>
+                    <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                    @{
+                        if (Model.ListaGrados != null)
+                        {
+                            foreach (var item in Model.ListaGrados)
+                            {
+                                <option value="@item.ID_GRADO" @((Model.planProyectoPedagogico.ID_GRADO == item.ID_GRADO) ? "selected" : "")>@item.NIVELES - @item.NOMBRE</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtArea">@PlanProyectoPedagogicoResource.EtiquetaArea</label>
+                <select class="form-control" id="slcAreaForm" validable="required EtiquetaArea" @((Model.planProyectoPedagogico.ID_AREA > 0) ? "disabled" : "")>
+                    <option value="">@GenericResource.EtiquetaSeleccionar</option>
+                    @{
+                        if (Model.ListaAreas != null)
+                        {
+                            foreach (var item in Model.ListaAreas)
+                            {
+                                <option value="@item.ID_AREA" @((Model.planProyectoPedagogico.ID_AREA == item.ID_AREA) ? "selected" : "")>@item.NOMBRE</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="txtNombre">@PlanProyectoPedagogicoResource.EtiquetaNombre</label>
+                <input type="text" class="form-control" id="txtNombreForm" value="@Model.planProyectoPedagogico.NOMBRE_PLANPROYECTOPEDAGOGICO" validable="required EtiquetaNombre" @((Model.planProyectoPedagogico.ESTADO_PLANPROYECTOPEDAGOGICO == "ELIMINADO") ? "disabled" : "") />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="txtObjetivos">@PlanProyectoPedagogicoResource.EtiquetaObjetivos</label>
+                <textarea class="form-control" maxlength="1024" id="txtObjetivosForm" rows="4" validable="required EtiquetaObjetivos" @((Model.planProyectoPedagogico.ESTADO_PLANPROYECTOPEDAGOGICO == "ELIMINADO") ? "disabled" : "")>@Model.planProyectoPedagogico.OBJETIVOS</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="txtDescripcion">@PlanProyectoPedagogicoResource.EtiquetaDescripcion</label>
+                <textarea class="form-control" maxlength="1024" id="txtDescripcionForm" rows="4" validable="required EtiquetaRequisitos" @((Model.planProyectoPedagogico.ESTADO_PLANPROYECTOPEDAGOGICO == "ELIMINADO") ? "disabled" : "")>@Model.planProyectoPedagogico.DESCRIPCION_PLANPROYECTOPEDAGOGICO</textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="txtDocumento">@PlanProyectoPedagogicoResource.EtiquetaDocumento</label>
+                <input type="file" class="form-control" id="txtFile" name="file" @((Model.planProyectoPedagogico.ESTADO_PLANPROYECTOPEDAGOGICO == "ELIMINADO") ? "disabled" : "") />
+            </div>
+        </div>
+    </div>
+</form>
+<div class="comp-Modal-footer">
+    <button class="btn btn-default" id="btnFrmCancelar">@GenericResource.BotonCerrar</button>
+    @{
+        if (Model.planProyectoPedagogico.ESTADO_PLANPROYECTOPEDAGOGICO != "ELIMINADO")
+        {
+            <button class="btn-s btn-add" id="btnFrmGrabar">@GenericResource.BotonGrabar</button>
+        }
+    }
+</div>
+@*}*@

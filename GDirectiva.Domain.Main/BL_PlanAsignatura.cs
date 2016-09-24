@@ -62,7 +62,7 @@ namespace GDirectiva.Domain.Main
                         item.FECHAINICIO,
                         item.FECHAFIN,
                         item.PORCENTAJE,
-                        (int)item.ID_PLANASIGNATURAMETA).ToString();
+                        (int)item.ID_PLANASIGNATURAMETA, id_planasignatura).ToString();
                 }
                 resultado.IsProcess = true;
             }

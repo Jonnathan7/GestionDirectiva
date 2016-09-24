@@ -70,24 +70,6 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Asociar reglas:.
-        /// </summary>
-        public static string EtiquetaAsociarReglas {
-            get {
-                return ResourceManager.GetString("EtiquetaAsociarReglas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Debe asociar al menos una regla..
-        /// </summary>
-        public static string EtiquetaDebeAsociarUnaRegla {
-            get {
-                return ResourceManager.GetString("EtiquetaDebeAsociarUnaRegla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Docente.
         /// </summary>
         public static string EtiquetaDocente {
@@ -97,7 +79,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fecha fin.
+        ///   Looks up a localized string similar to Fecha Fin.
         /// </summary>
         public static string EtiquetaFechaFin {
             get {
@@ -106,7 +88,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fecha inicio.
+        ///   Looks up a localized string similar to Fecha Inicio.
         /// </summary>
         public static string EtiquetaFechaInicio {
             get {
@@ -115,7 +97,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Metas.
+        ///   Looks up a localized string similar to Meta.
         /// </summary>
         public static string EtiquetaMetas {
             get {
@@ -133,7 +115,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nombre de actividad.
+        ///   Looks up a localized string similar to Actividad.
         /// </summary>
         public static string EtiquetaNombreActividad {
             get {
@@ -142,7 +124,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Periodo académico.
+        ///   Looks up a localized string similar to Periodo Académico.
         /// </summary>
         public static string EtiquetaPeriodoAcademico {
             get {
@@ -151,7 +133,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plan área.
+        ///   Looks up a localized string similar to Plan Área.
         /// </summary>
         public static string EtiquetaPlanArea {
             get {

@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\inetpub\wwwroot\innovaschools</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\inetpub\wwwroot</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
@@ -37,7 +37,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2016 00:12:40</publishTime>
     </File>
     <File Include="bin/GDirectiva.Presentacion.Web.dll">
-      <publishTime>09/24/2016 00:34:30</publishTime>
+      <publishTime>09/24/2016 02:43:22</publishTime>
     </File>
     <File Include="bin/log4net.dll">
       <publishTime>08/30/2016 14:59:03</publishTime>
@@ -826,7 +826,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/General/PlanArea/Index/Controller.js">
-      <publishTime>09/11/2016 18:22:21</publishTime>
+      <publishTime>09/24/2016 00:43:25</publishTime>
     </File>
     <File Include="Scripts/General/PlanArea/Index/Index.js">
       <publishTime>09/07/2016 22:46:22</publishTime>
@@ -949,7 +949,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/13/2016 10:19:21</publishTime>
     </File>
     <File Include="Views/PlanArea/Index.cshtml">
-      <publishTime>09/10/2016 19:30:56</publishTime>
+      <publishTime>09/24/2016 02:37:26</publishTime>
     </File>
     <File Include="Views/PlanAsignatura/FormularioRegistro.cshtml">
       <publishTime>09/14/2016 01:38:34</publishTime>
@@ -976,13 +976,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/15/2016 03:57:16</publishTime>
+      <publishTime>09/24/2016 02:50:51</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/24/2016 00:34:22</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>09/07/2016 22:46:22</publishTime>

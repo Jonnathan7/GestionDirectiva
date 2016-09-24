@@ -9,11 +9,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>@GenericResource.EtiquetaTituloSistema > @ViewBag.Title</title>
-    @Styles.Render("~/FrameworkStyle/css")
+    <link href="~/Components/Gmd/ProgressBar/ProgressBar.css" rel="stylesheet" type="text/css" />
+    <link href="~/Components/Gmd/Dialog/Dialog.css" rel="stylesheet" type="text/css" />
+    <link href="~/Components/Gmd/Message/Message.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Components/JQuery/jquery-ui-1.10.0.custom.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Components/DataTables/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <link href="~/Components/DataTables/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Components/DataTables/css/dataTables.responsive.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Theme/app/main.css" rel="stylesheet" type="text/css" />
+    
+    <link href="~/Theme/app/layout.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/app/form.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/app/table.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/app/comp.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/app/nav.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/app/uiExt.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/app/utilities.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/app/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/Theme/app/skin.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Components/Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="~/Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+
+
+    @*@Styles.Render("~/FrameworkStyle/css")
     @Styles.Render("~/Template/css")
-    @Styles.Render("~/Components/JQueryCss")
-    @Styles.Render("~/Components/GmdCss")
-    @Styles.Render("~/Components/DataTablesCss")
+    @Styles.Render("~/Components/JQueryCss")*@
+    @*@Styles.Render("~/Components/GmdCss")*@
+    @*@Styles.Render("~/Components/DataTablesCss")*@
     @RenderSection("css", required: false)
     <link href="../Content/css/style.css" rel="stylesheet" type="text/css" />
     <link href="../Content/css/justified-nav.css" rel="stylesheet" type="text/css" />
@@ -35,24 +62,10 @@
             </div>
             <ul class="nav nav-justified">
 
-                <li class="dropdown">
+                <li>
                     <a class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" href="#">
-                        Gestión<br />
-                        Pedagógica
-                        <span class="caret"></span>
+                        Gestión <br />Pedagógica
                     </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href='@Url.Content("~/Home/Opcion1Modulo1")'>Opcion1</a>
-                        </li>
-                        <li>
-                            <a href='@Url.Content("~/Home/Opcion2Modulo1")'>Opcion2</a>
-                        </li>
-                        <li>
-                            <a href='@Url.Content("~/Home/Opcion3Modulo1")'>Opcion3</a>
-                        </li>
-
-                    </ul>
                 </li>
 
                 <li class="dropdown">
@@ -82,13 +95,46 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-    @Scripts.Render("~/Components/JQuery")
-    @Scripts.Render("~/FrameworkStyle/js")
-    @Scripts.Render("~/Components/Codemaleon")
-    @Scripts.Render("~/Components/DataTables")
-    @Scripts.Render("~/Components/Gmd")
-    @Scripts.Render("~/Scripts/baselayout")
-    @Scripts.Render("~/Components/Charts")
+    <script type="text/javascript" src="~/Components/JQuery/jquery-1.11.2.js"></script>
+    <script type="text/javascript" src="~/Components/JQuery/jquery-ui-1.10.4.custom.js"></script>
+    <script type="text/javascript" src="~/Components/JQuery/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Components/JQuery/jquery.validate.additional-methods.js"></script>
+    <script type="text/javascript" src="~/Components/JQuery/jquery.mask.js"></script>
+    <script type="text/javascript" src="~/Components/JQuery/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="~/Components/JQuery/jquery.ajax_upload.js"></script>
+
+    <script type="text/javascript" src="~/Components/DataTables/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/Components/DataTables/js/dataTables.responsive.js"></script>
+    <script type="text/javascript" src="~/Components/DataTables/js/dataTables.bootstrap.js"></script>
+
+    <script type="text/javascript" src="~/Components/Codemaleon/ns.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/Base/Layout/Util.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/Ajax/Ajax.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/ProgressBar/ProgressBar.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/Validator/Validator.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/Dialog/Dialog.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/Message/Message.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/Storage/Storage.js"></script>
+
+    <script type="text/javascript" src="~/Components/Gmd/TextBox/TextBox.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/Calendar/Calendar.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/Grid/Grid.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/Chart/Chart.js"></script>
+    <script type="text/javascript" src="~/Components/Gmd/AjaxUpload/AjaxUpload.js"></script>
+
+    <script type="text/javascript" src="~/Components/Bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Components/Bootstrap/bootstrap-datetimepicker/moment.js"></script>
+    <script type="text/javascript" src="~/Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+    
+
+    @*@Scripts.Render("~/Components/JQuery")*@
+    @*@Scripts.Render("~/FrameworkStyle/js")*@
+    @*@Scripts.Render("~/Components/Codemaleon")*@
+    @*@Scripts.Render("~/Components/DataTables")*@
+    @*@Scripts.Render("~/Components/Gmd")*@
+    @*@Scripts.Render("~/Scripts/baselayout")*@
+    @*@Scripts.Render("~/Components/Charts")*@
     <script src="~/Scripts/Base/Layout/common.js"></script>
     <script type="text/javascript">
         ns('GDirectiva.Presentacion.Web.Formato')

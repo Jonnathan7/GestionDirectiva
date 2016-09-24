@@ -11,50 +11,50 @@ namespace GDirectiva.Presentacion.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.IgnoreList.Clear();
-            bundles.Add(new ScriptBundle("~/Components/JQuery").Include(
-                        "~/Components/JQuery/jquery-1.11.2.js",
-                        "~/Components/JQuery/jquery-ui-1.10.4.custom.js",
-                        "~/Components/JQuery/jquery.validate.js",
-                        "~/Components/JQuery/jquery.validate.additional-methods.js",
-                        "~/Components/JQuery/jquery.mask.js",
-                        "~/Components/JQuery/jquery.mask.min.js",
-                        "~/Components/JQuery/jquery.ajax_upload.js",
-                        "~/Components/JQuery/jquery.formatCurrency-1.4.0.js"
-            ));
+            //bundles.Add(new ScriptBundle("~/Components/JQuery").Include(
+            //            //"~/Components/JQuery/jquery-1.11.2.js",
+            //            "~/Components/JQuery/jquery-ui-1.10.4.custom.js",
+            //            "~/Components/JQuery/jquery.validate.js",
+            //            "~/Components/JQuery/jquery.validate.additional-methods.js",
+            //            "~/Components/JQuery/jquery.mask.js",
+            //            "~/Components/JQuery/jquery.mask.min.js",
+            //            "~/Components/JQuery/jquery.ajax_upload.js",
+            //            "~/Components/JQuery/jquery.formatCurrency-1.4.0.js"
+            //));
 
-            bundles.Add(new ScriptBundle("~/Components/DataTables").Include(
-                        "~/Components/DataTables/js/jquery.dataTables.js",
-                        "~/Components/DataTables/js/dataTables.responsive.js"
-                        , "~/Components/DataTables/js/dataTables.bootstrap.js"
-            ));
+            //bundles.Add(new ScriptBundle("~/Components/DataTables").Include(
+            //            "~/Components/DataTables/js/jquery.dataTables.js",
+            //            "~/Components/DataTables/js/dataTables.responsive.js"
+            //            , "~/Components/DataTables/js/dataTables.bootstrap.js"
+            //));
 
-            bundles.Add(new ScriptBundle("~/Components/Codemaleon").Include(
-                        "~/Components/Codemaleon/ns.js"
-            ));
+            //bundles.Add(new ScriptBundle("~/Components/Codemaleon").Include(
+            //            "~/Components/Codemaleon/ns.js"
+            //));
 
-            bundles.Add(new ScriptBundle("~/Components/Gmd").Include(
-                      "~/Scripts/Base/Layout/Util.js",
-                        "~/Components/Gmd/Ajax/Ajax.js",
-                        "~/Components/Gmd/ProgressBar/ProgressBar.js",
-                        "~/Components/Gmd/Validator/Validator.js",
-                        "~/Components/Gmd/Dialog/Dialog.js",
-                        "~/Components/Gmd/Message/Message.js",
-                        "~/Components/Gmd/Storage/Storage.js",
-                        "~/Components/Gmd/TextBox/TextBox.js",
-                        "~/Components/Gmd/Calendar/Calendar.js",
-                        "~/Components/Gmd/Grid/Grid.js",
-                        "~/Components/Gmd/Chart/Chart.js",
-                        "~/Components/Gmd/AjaxUpload/AjaxUpload.js"
-            ));
+            //bundles.Add(new ScriptBundle("~/Components/Gmd").Include(
+            //          "~/Scripts/Base/Layout/Util.js",
+            //            "~/Components/Gmd/Ajax/Ajax.js",
+            //            "~/Components/Gmd/ProgressBar/ProgressBar.js",
+            //            "~/Components/Gmd/Validator/Validator.js",
+            //            "~/Components/Gmd/Dialog/Dialog.js",
+            //            "~/Components/Gmd/Message/Message.js",
+            //            "~/Components/Gmd/Storage/Storage.js",
+            //            "~/Components/Gmd/TextBox/TextBox.js",
+            //            "~/Components/Gmd/Calendar/Calendar.js",
+            //            "~/Components/Gmd/Grid/Grid.js",
+            //            "~/Components/Gmd/Chart/Chart.js",
+            //            "~/Components/Gmd/AjaxUpload/AjaxUpload.js"
+            //));
 
-            bundles.Add(new ScriptBundle("~/FrameworkStyle/js").Include(
-                        "~/Components/Bootstrap/js/bootstrap.js",
-                        "~/Components/Bootstrap/bootstrap-datetimepicker/moment.js",
-                        "~/Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.js"
-            ));
+            //bundles.Add(new ScriptBundle("~/FrameworkStyle/js").Include(
+            //            "~/Components/Bootstrap/js/bootstrap.js",
+            //            "~/Components/Bootstrap/bootstrap-datetimepicker/moment.js",
+            //            "~/Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.js"
+            //));
 
 
-            bundles.Add(new StyleBundle("~/Components/GmdCss").Include(
+            /*bundles.Add(new StyleBundle("~/Components/GmdCss").Include(
                         "~/Components/Gmd/ProgressBar/ProgressBar.css",
                         "~/Components/Gmd/Dialog/Dialog.css",
                         "~/Components/Gmd/Message/Message.css"
@@ -68,33 +68,33 @@ namespace GDirectiva.Presentacion.Web
                         "~/Components/DataTables/css/jquery.dataTables.css"
                         , "~/Components/DataTables/css/dataTables.bootstrap.css"
                         , "~/Components/DataTables/css/dataTables.responsive.css"
-            ));
+            ));*/
 
-            bundles.Add(new StyleBundle("~/Template/css").Include(
-                        "~/Theme/app/main.css",
-                        "~/Theme/app/app/box.css",
-                        "~/Theme/app/layout.css",
-                        "~/Theme/app/form.css",
-                        "~/Theme/app/table.css",
-                        "~/Theme/app/comp.css",
-                        "~/Theme/app/nav.css",
-                        "~/Theme/app/uiExt.css",
-                        "~/Theme/app/utilities.css",
-                        "~/Theme/app/responsive.css",
-                        "~/Theme/app/skin.css"
-            ));
+            //bundles.Add(new StyleBundle("~/Template/css").Include(
+            //            "~/Theme/app/main.css",
+            //            "~/Theme/app/app/box.css",
+            //            "~/Theme/app/layout.css",
+            //            "~/Theme/app/form.css",
+            //            "~/Theme/app/table.css",
+            //            "~/Theme/app/comp.css",
+            //            "~/Theme/app/nav.css",
+            //            "~/Theme/app/uiExt.css",
+            //            "~/Theme/app/utilities.css",
+            //            "~/Theme/app/responsive.css",
+            //            "~/Theme/app/skin.css"
+            //));
 
 
-            bundles.Add(new StyleBundle("~/FrameworkStyle/css").Include(
-                        "~/Components/Bootstrap/css/bootstrap.css",
-                        "~/Components/font-awesome/css/font-awesome.css",
-                        "~/Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css"
-            ));
+            //bundles.Add(new StyleBundle("~/FrameworkStyle/css").Include(
+            //            "~/Components/Bootstrap/css/bootstrap.css",
+            //            "~/Components/font-awesome/css/font-awesome.css",
+            //            "~/Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css"
+            //));
 
-            bundles.Add(new ScriptBundle("~/Components/Charts").Include(
-                        "~/Components/Highcharts/js/highcharts.src.js",
-                        "~/Components/Highcharts/js/highcharts-more.js"
-            ));
+            //bundles.Add(new ScriptBundle("~/Components/Charts").Include(
+            //            "~/Components/Highcharts/js/highcharts.src.js",
+            //            "~/Components/Highcharts/js/highcharts-more.js"
+            //));
 
             var directoryScripts = HttpContext.Current.Server.MapPath("~/Scripts");
             GenerateDynamicScriptBundle(bundles, new DirectoryInfo(directoryScripts));

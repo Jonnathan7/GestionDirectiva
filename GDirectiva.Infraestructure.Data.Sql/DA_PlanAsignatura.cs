@@ -56,11 +56,11 @@ namespace GDirectiva.Infraestructure.Data.Sql
             DateTime fechainicio,
             DateTime fechafin,
             int porcentaje,
-            int id_planasignaturameta)
+            int id_planasignaturameta, int id_planasignatura)
         {
             using (DB_INNOVASCHOOLSEntities contexto = new DB_INNOVASCHOOLSEntities())
             {
-                var objeto = contexto.PA_ACTIVIDAD_PLAN_ASIGNATURA_REGISTRAR(actividad, (DateTime)fechainicio, (DateTime)fechafin, (int)porcentaje, 2, (int)id_empleado, (int)id_planasignaturameta);
+                var objeto = contexto.PA_ACTIVIDAD_PLAN_ASIGNATURA_REGISTRAR(actividad, (DateTime)fechainicio, (DateTime)fechafin, (int)porcentaje, id_planasignatura, (int)id_empleado, (int)id_planasignaturameta);
                 return objeto;
             }
         }

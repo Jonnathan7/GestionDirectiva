@@ -4,14 +4,14 @@
 /// <remarks>
 /// Creacion: 	JPC 30/08/2016
 /// </remarks>
-ns('GDirectiva.Presentacion.General.PlanArea.Index');
+ns('GDirectiva.Presentacion.General.PlanProyectoPedagogico.Index');
 
 
-GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
+GDirectiva.Presentacion.General.PlanProyectoPedagogico.Index.Controller = function () {
     var base = this;
 
     base.Ini = function () {
-        base.Control.FormularioRegistro = new GDirectiva.Presentacion.General.PlanArea.FormularioRegistro.Controller({
+        base.Control.FormularioRegistro = new GDirectiva.Presentacion.General.PlanProyectoPedagogico.FormularioRegistro.Controller({
             GrabarSuccess: function () {
                 base.Control.GrdResultado.Load(base.Configurations.search.parameters);
             }
@@ -28,7 +28,7 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
         Mensaje: new GDirectiva.Presentacion.Web.Components.Message(),
         GrdResultado: null,
         ValBusqueda: null,
-        FrmBusqueda: function () { return $('#frmPlanAreaBusqueda'); },
+        FrmBusqueda: function () { return $('#frmPlanProyectoPedagogicoBusqueda'); },
         SlcPeriodoAcademico: function () { return $('#slcPeriodoAcademico'); },
         SlcGrado: function () { return $('#slcGrado'); },
         SlcArea: function () { return $('#slcArea'); },
@@ -57,14 +57,14 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
             base.Control.FormularioRegistro.Mostrar();
         },
         BtnGridEditarClick: function (row, data) {
-            base.Control.FormularioRegistro.Mostrar(data.ID_PLANAREA);
+            base.Control.FormularioRegistro.Mostrar(data.ID_PLANPROYECTOPEDAGOGICO);
         },
         BtnGridEliminarClick: function (row, data) {
             base.Control.Mensaje.Confirmation({
                 title: GDirectiva.Presentacion.Base.MensajeResource.ConfirmacionEliminacion,
                 message: GDirectiva.Presentacion.Base.MensajeResource.TextoEliminacion,
                 onAccept: function () {
-                    base.Ajax.AjaxEliminar.send({ pId_PlanArea: data.ID_PLANAREA })
+                    base.Ajax.AjaxEliminar.send({ pId_PlanProyectoPedagogico: data.ID_PLANPROYECTOPEDAGOGICO })
                 }
             });
         },
@@ -81,7 +81,7 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
     base.Ajax = {
         AjaxEliminar: new GDirectiva.Presentacion.Web.Components.Ajax(
         {
-            action: GDirectiva.Presentacion.General.PlanArea.Actions.Eliminar,
+            action: GDirectiva.Presentacion.General.PlanProyectoPedagogico.Actions.Eliminar,
             autoSubmit: false,
             onSuccess: base.Event.AjaxEliminarSuccess
         })
@@ -95,15 +95,15 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
         CrearGrid: function () {
 
             var columns = new Array();
-            columns.push({ data: 'PERIODO', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaPeriodoAcademico });
-            columns.push({ data: 'NOMBRE_GRADO', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaGrado });
-            columns.push({ data: 'NOMBRE_AREA', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaArea });            
+            columns.push({ data: 'PERIODO', title: GDirectiva.Presentacion.General.PlanProyectoPedagogico.Resource.EtiquetaPeriodoAcademico });
+            columns.push({ data: 'NOMBRE_GRADO', title: GDirectiva.Presentacion.General.PlanProyectoPedagogico.Resource.EtiquetaGrado });
+            columns.push({ data: 'NOMBRE_AREA', title: GDirectiva.Presentacion.General.PlanProyectoPedagogico.Resource.EtiquetaArea });
             columns.push({
-                data: null, title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaNombrePlanArea, 'mRender': function (data, type, full) {
-                    return full.NOMBRE_PLANAREA;
+                data: null, title: GDirectiva.Presentacion.General.PlanProyectoPedagogico.Resource.EtiquetaNombrePlanProyectoPedagogico, 'mRender': function (data, type, full) {
+                    return full.NOMBRE_PLANPROYECTOPEDAGOGICO;
                 }
             });
-            columns.push({ data: 'ESTADO', title: GDirectiva.Presentacion.General.PlanArea.Resource.EtiquetaEstado });
+            
             var listaOpciones = new Array();
             listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Edit, validateRender: base.Function.ActivarEditar, event: { on: 'click', callBack: base.Event.BtnGridEditarClick } });
             listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Delete, validateRender: base.Function.ActivarEliminar, event: { on: 'click', callBack: base.Event.BtnGridEliminarClick } });
@@ -119,7 +119,7 @@ GDirectiva.Presentacion.General.PlanArea.Index.Controller = function () {
                 renderTo: 'divGrdResult',
                 columns: columns,
                 proxy: {
-                    url: GDirectiva.Presentacion.General.PlanArea.Actions.Buscar,
+                    url: GDirectiva.Presentacion.General.PlanProyectoPedagogico.Actions.Buscar,
                     source: 'Result'
                 },
                 hasSelectionRows: false
