@@ -265,7 +265,7 @@ GDirectiva.Presentacion.Web.Components.Util.ConvertirFechaACadena = function (da
         var day = '' + date.getDate();
         day = pad.substring(0, pad.length - day.length) + day
 
-        var month = '' + date.getMonth() + 1;
+        var month = '' + (date.getMonth() + 1);
         month = pad.substring(0, pad.length - month.length) + month
 
         var year = '' + date.getFullYear();
@@ -274,4 +274,10 @@ GDirectiva.Presentacion.Web.Components.Util.ConvertirFechaACadena = function (da
     } else {
         return '';
     }
+};
+
+GDirectiva.Presentacion.Web.Components.Util.ConvertirCadenaAFecha = function (dateString) {
+    var dateParts = dateString.split("/");
+
+    return new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
 };

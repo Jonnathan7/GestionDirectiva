@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="DB_INNOVASCHOOLSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Empleado">
-    <Key>
-      <PropertyRef Name="Id_Empleado" />
-    </Key>
-    <Property Name="Id_Empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ApePaterno" Type="varchar" MaxLength="255" />
-    <Property Name="ApeMaterno" Type="varchar" MaxLength="255" />
-    <Property Name="Nombres" Type="varchar" MaxLength="255" />
-    <Property Name="Rol" Type="varchar" MaxLength="255" />
-    <Property Name="Area" Type="varchar" MaxLength="255" />
-  </EntityType>
+<Schema Namespace="DB_INNOVASCHOOLSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ActividadPlanAsignatura">
     <Key>
       <PropertyRef Name="Id_ActividadPlanAsignatura" />
@@ -24,6 +13,7 @@
     <Property Name="Id_Empleado" Type="int" />
     <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
     <Property Name="FechaModificacion" Type="datetime" />
+    <Property Name="Id_PlanAsignaturaMeta" Type="int" />
   </EntityType>
   <EntityType Name="ActividadPlanProyectoPedagogico">
     <Key>
@@ -71,7 +61,7 @@
       <PropertyRef Name="Id_PlanAsignatura" />
     </Key>
     <Property Name="Id_PlanAsignatura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Meta" Type="varchar(max)" Nullable="false" />
+    <Property Name="Meta" Type="varchar(max)" />
     <Property Name="Metodologia" Type="varchar(max)" Nullable="false" />
     <Property Name="Documento" Type="varchar" MaxLength="255" />
     <Property Name="Id_PlanArea" Type="int" />
@@ -80,6 +70,16 @@
     <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
     <Property Name="FechaModificacion" Type="datetime" />
     <Property Name="Estado" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PlanAsignaturaMeta">
+    <Key>
+      <PropertyRef Name="Id_PlanAsignaturaMeta" />
+    </Key>
+    <Property Name="Id_PlanAsignaturaMeta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_PlanAsignatura" Type="int" Nullable="false" />
+    <Property Name="Meta" Type="varchar(max)" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="FechaModificacion" Type="datetime" />
   </EntityType>
   <EntityType Name="PlanEstudio">
     <Key>
@@ -100,7 +100,7 @@
     <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
     <Property Name="Objetivos" Type="varchar(max)" Nullable="false" />
     <Property Name="Estado" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="Documento" Type="binary" MaxLength="1" />
+    <Property Name="Documento" Type="varchar" MaxLength="255" />
     <Property Name="Id_PlanEstudio" Type="int" />
     <Property Name="Id_PeriodoAcademico" Type="int" />
     <Property Name="Id_Area" Type="int" />
@@ -139,30 +139,6 @@
     <Property Name="IdCurso" Type="int" Nullable="false" />
     <Property Name="idEmpleado" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Actividad__Id_Em__29572725">
-    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
-    <End Role="ActividadPlanAsignatura" Type="Self.ActividadPlanAsignatura" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empleado">
-        <PropertyRef Name="Id_Empleado" />
-      </Principal>
-      <Dependent Role="ActividadPlanAsignatura">
-        <PropertyRef Name="Id_Empleado" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Actividad__Id_Em__2B3F6F97">
-    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
-    <End Role="ActividadPlanProyectoPedagogico" Type="Self.ActividadPlanProyectoPedagogico" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empleado">
-        <PropertyRef Name="Id_Empleado" />
-      </Principal>
-      <Dependent Role="ActividadPlanProyectoPedagogico">
-        <PropertyRef Name="Id_Empleado" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Actividad__Id_Pl__286302EC">
     <End Role="PlanAsignatura" Type="Self.PlanAsignatura" Multiplicity="0..1" />
     <End Role="ActividadPlanAsignatura" Type="Self.ActividadPlanAsignatura" Multiplicity="*" />
@@ -259,18 +235,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__PlanAsign__Id_Em__32E0915F">
-    <End Role="Empleado" Type="Self.Empleado" Multiplicity="0..1" />
-    <End Role="PlanAsignatura" Type="Self.PlanAsignatura" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empleado">
-        <PropertyRef Name="Id_Empleado" />
-      </Principal>
-      <Dependent Role="PlanAsignatura">
-        <PropertyRef Name="Id_Empleado" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__PlanAsign__Id_Pl__30F848ED">
     <End Role="PlanArea" Type="Self.PlanArea" Multiplicity="0..1" />
     <End Role="PlanAsignatura" Type="Self.PlanAsignatura" Multiplicity="*" />
@@ -331,6 +295,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PlanAsignaturaMeta_PlanAsignatura">
+    <End Role="PlanAsignatura" Type="Self.PlanAsignatura" Multiplicity="1" />
+    <End Role="PlanAsignaturaMeta" Type="Self.PlanAsignaturaMeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlanAsignatura">
+        <PropertyRef Name="Id_PlanAsignatura" />
+      </Principal>
+      <Dependent Role="PlanAsignaturaMeta">
+        <PropertyRef Name="Id_PlanAsignatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="R_24">
     <End Role="Curso" Type="Self.Curso" Multiplicity="1" />
     <End Role="CursoDocente" Type="Self.CursoDocente" Multiplicity="*" />
@@ -340,18 +316,6 @@
       </Principal>
       <Dependent Role="CursoDocente">
         <PropertyRef Name="IdCurso" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="R_25">
-    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
-    <End Role="CursoDocente" Type="Self.CursoDocente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Empleado">
-        <PropertyRef Name="Id_Empleado" />
-      </Principal>
-      <Dependent Role="CursoDocente">
-        <PropertyRef Name="idEmpleado" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -370,10 +334,14 @@
     <Parameter Name="PORCENTAJEAVANCE" Type="int" Mode="In" />
     <Parameter Name="ID_PLANASIGNATURA" Type="int" Mode="In" />
     <Parameter Name="ID_EMPLEADO" Type="int" Mode="In" />
+    <Parameter Name="ID_PLANASIGNATURAMETA" Type="int" Mode="In" />
   </Function>
   <Function Name="PA_AREA_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
   <Function Name="PA_ASIGNATURA_PLANAREA_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
     <Parameter Name="ID_PLANAREA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_CURSO_DOCENTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+    <Parameter Name="ID_CURSO" Type="int" Mode="In" />
   </Function>
   <Function Name="PA_GRADO_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
   <Function Name="PA_PERIODO_ACADEMICO_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
@@ -411,31 +379,49 @@
     <Parameter Name="PAGINA_INICIO" Type="int" Mode="In" />
     <Parameter Name="TAMANIO_PAGINA" Type="int" Mode="In" />
   </Function>
+  <Function Name="PA_PLAN_ASIGNATURA_META_ELIMINAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+    <Parameter Name="ID_PLANASIGNATURA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_PLAN_ASIGNATURA_META_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+    <Parameter Name="ID_PLANASIGNATURA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_PLAN_ASIGNATURA_META_REGISTRAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+    <Parameter Name="ID_PLANASIGNATURA" Type="int" Mode="In" />
+    <Parameter Name="META" Type="varchar(max)" Mode="In" />
+  </Function>
   <Function Name="PA_PLAN_ASIGNATURA_SEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
     <Parameter Name="ID_PLANASIGNATURA" Type="int" Mode="In" />
   </Function>
   <Function Name="PA_PLAN_ESTUDIO_SEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd" />
+  <Function Name="PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+    <Parameter Name="ID_PERIODOACADEMICO" Type="int" Mode="In" />
+    <Parameter Name="ID_AREA" Type="int" Mode="In" />
+    <Parameter Name="ID_PLANESTUDIO" Type="int" Mode="In" />
+    <Parameter Name="ID_GRADO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_PLAN_PROYECTO_PEDAGOGICO_LISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+    <Parameter Name="ID_PERIODOACADEMICO" Type="int" Mode="In" />
+    <Parameter Name="ID_GRADO" Type="int" Mode="In" />
+    <Parameter Name="ID_AREA" Type="int" Mode="In" />
+    <Parameter Name="PAGINA_INICIO" Type="int" Mode="In" />
+    <Parameter Name="TAMANIO_PAGINA" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PA_PLAN_PROYECTO_PEDAGOGICO_SEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="gd">
+    <Parameter Name="PlanProyectoPedagogicoId" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="DB_INNOVASCHOOLSModelStoreContainer">
-    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActividadPlanAsignatura" EntityType="Self.ActividadPlanAsignatura" Schema="gd" store:Type="Tables" />
     <EntitySet Name="ActividadPlanProyectoPedagogico" EntityType="Self.ActividadPlanProyectoPedagogico" Schema="gd" store:Type="Tables" />
     <EntitySet Name="PeriodoAcademico" EntityType="Self.PeriodoAcademico" Schema="gd" store:Type="Tables" />
     <EntitySet Name="PlanArea" EntityType="Self.PlanArea" Schema="gd" store:Type="Tables" />
     <EntitySet Name="PlanAsignatura" EntityType="Self.PlanAsignatura" Schema="gd" store:Type="Tables" />
+    <EntitySet Name="PlanAsignaturaMeta" EntityType="Self.PlanAsignaturaMeta" Schema="gd" store:Type="Tables" />
     <EntitySet Name="PlanEstudio" EntityType="Self.PlanEstudio" Schema="gd" store:Type="Tables" />
     <EntitySet Name="PlanProyectoPedagogico" EntityType="Self.PlanProyectoPedagogico" Schema="gd" store:Type="Tables" />
     <EntitySet Name="AreaCurricular" EntityType="Self.AreaCurricular" Schema="gp" store:Type="Tables" />
     <EntitySet Name="Curso" EntityType="Self.Curso" Schema="gp" store:Type="Tables" />
     <EntitySet Name="Grado" EntityType="Self.Grado" Schema="gp" store:Type="Tables" />
     <EntitySet Name="CursoDocente" EntityType="Self.CursoDocente" Schema="gsp" store:Type="Tables" />
-    <AssociationSet Name="FK__Actividad__Id_Em__29572725" Association="Self.FK__Actividad__Id_Em__29572725">
-      <End Role="Empleado" EntitySet="Empleado" />
-      <End Role="ActividadPlanAsignatura" EntitySet="ActividadPlanAsignatura" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Actividad__Id_Em__2B3F6F97" Association="Self.FK__Actividad__Id_Em__2B3F6F97">
-      <End Role="Empleado" EntitySet="Empleado" />
-      <End Role="ActividadPlanProyectoPedagogico" EntitySet="ActividadPlanProyectoPedagogico" />
-    </AssociationSet>
     <AssociationSet Name="FK__Actividad__Id_Pl__286302EC" Association="Self.FK__Actividad__Id_Pl__286302EC">
       <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
       <End Role="ActividadPlanAsignatura" EntitySet="ActividadPlanAsignatura" />
@@ -468,10 +454,6 @@
       <End Role="Curso" EntitySet="Curso" />
       <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
     </AssociationSet>
-    <AssociationSet Name="FK__PlanAsign__Id_Em__32E0915F" Association="Self.FK__PlanAsign__Id_Em__32E0915F">
-      <End Role="Empleado" EntitySet="Empleado" />
-      <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
-    </AssociationSet>
     <AssociationSet Name="FK__PlanAsign__Id_Pl__30F848ED" Association="Self.FK__PlanAsign__Id_Pl__30F848ED">
       <End Role="PlanArea" EntitySet="PlanArea" />
       <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
@@ -492,12 +474,12 @@
       <End Role="PlanEstudio" EntitySet="PlanEstudio" />
       <End Role="PlanProyectoPedagogico" EntitySet="PlanProyectoPedagogico" />
     </AssociationSet>
+    <AssociationSet Name="FK_PlanAsignaturaMeta_PlanAsignatura" Association="Self.FK_PlanAsignaturaMeta_PlanAsignatura">
+      <End Role="PlanAsignatura" EntitySet="PlanAsignatura" />
+      <End Role="PlanAsignaturaMeta" EntitySet="PlanAsignaturaMeta" />
+    </AssociationSet>
     <AssociationSet Name="R_24" Association="Self.R_24">
       <End Role="Curso" EntitySet="Curso" />
-      <End Role="CursoDocente" EntitySet="CursoDocente" />
-    </AssociationSet>
-    <AssociationSet Name="R_25" Association="Self.R_25">
-      <End Role="Empleado" EntitySet="Empleado" />
       <End Role="CursoDocente" EntitySet="CursoDocente" />
     </AssociationSet>
   </EntityContainer>

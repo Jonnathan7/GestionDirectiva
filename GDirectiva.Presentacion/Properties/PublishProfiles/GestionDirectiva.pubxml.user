@@ -10,106 +10,106 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:03</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>09/07/2016 18:55:05</publishTime>
+      <publishTime>07/09/2016 18:55:05</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>09/07/2016 18:55:05</publishTime>
+      <publishTime>07/09/2016 18:55:05</publishTime>
     </File>
     <File Include="bin/GDirectiva.Core.Entities.dll">
-      <publishTime>11/09/2016 17:28:25</publishTime>
+      <publishTime>09/24/2016 00:12:39</publishTime>
     </File>
     <File Include="bin/GDirectiva.Cross.Core.dll">
-      <publishTime>11/09/2016 17:28:25</publishTime>
+      <publishTime>09/11/2016 17:28:25</publishTime>
     </File>
     <File Include="bin/GDirectiva.Domain.Main.dll">
-      <publishTime>11/09/2016 17:28:27</publishTime>
+      <publishTime>09/24/2016 00:12:40</publishTime>
     </File>
     <File Include="bin/GDirectiva.Infraestructure.Data.Sql.dll">
-      <publishTime>11/09/2016 17:28:26</publishTime>
+      <publishTime>09/24/2016 00:12:40</publishTime>
     </File>
     <File Include="bin/GDirectiva.Presentacion.Core.dll">
-      <publishTime>11/09/2016 17:28:27</publishTime>
+      <publishTime>09/24/2016 00:12:41</publishTime>
     </File>
     <File Include="bin/GDirectiva.Presentacion.Resource.dll">
-      <publishTime>11/09/2016 17:28:26</publishTime>
+      <publishTime>09/24/2016 00:12:40</publishTime>
     </File>
     <File Include="bin/GDirectiva.Presentacion.Web.dll">
-      <publishTime>11/09/2016 18:01:34</publishTime>
+      <publishTime>09/24/2016 00:34:30</publishTime>
     </File>
     <File Include="bin/log4net.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:03</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:07</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:07</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:07</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Google.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:12</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:12</publishTime>
     </File>
     <File Include="bin/Owin.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:13</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:09</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:08</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:03</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:08</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:09</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:09</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:09</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>08/30/2016 14:59:15</publishTime>
     </File>
     <File Include="Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.js">
       <publishTime>09/07/2016 22:46:22</publishTime>
@@ -448,7 +448,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Components/GMD/Message/Message.js">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/24/2016 00:14:16</publishTime>
     </File>
     <File Include="Components/GMD/ProgressBar/Imagenes/Cargando.gif">
       <publishTime>09/07/2016 22:46:22</publishTime>
@@ -466,7 +466,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Components/GMD/TextBox/TextBox.js">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/14/2016 20:59:03</publishTime>
     </File>
     <File Include="Components/GMD/Validator/Validator.js">
       <publishTime>09/07/2016 22:46:22</publishTime>
@@ -649,7 +649,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Content/css/style.css">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/13/2016 17:05:11</publishTime>
     </File>
     <File Include="Content/font-awesome/font-awesome.css">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -757,7 +757,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Scripts/Base/Layout/Util.js">
-      <publishTime>09/08/2016 15:46:57</publishTime>
+      <publishTime>09/14/2016 22:41:14</publishTime>
     </File>
     <File Include="Scripts/bootstrap-jquery-ui/css/custom-theme/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>09/07/2016 22:46:22</publishTime>
@@ -823,37 +823,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Scripts/General/PlanArea/FormularioRegistro/Controller.js">
-      <publishTime>09/08/2016 19:44:53</publishTime>
+      <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Scripts/General/PlanArea/Index/Controller.js">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/11/2016 18:22:21</publishTime>
     </File>
     <File Include="Scripts/General/PlanArea/Index/Index.js">
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Scripts/General/PlanAsignatura/FormularioRegistro/Controller.js">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/14/2016 01:39:24</publishTime>
     </File>
     <File Include="Scripts/General/PlanAsignatura/Index/Controller.js">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/15/2016 20:28:25</publishTime>
     </File>
     <File Include="Scripts/General/PlanAsignatura/Index/Index.js">
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Scripts/General/PlanAsignaturaCronograma/FormularioRegistro/Controller.js">
-      <publishTime>09/08/2016 17:02:37</publishTime>
+      <publishTime>09/15/2016 20:18:26</publishTime>
     </File>
     <File Include="Scripts/General/PlanAsignaturaCronograma/FormularioRegistroActividad/Controller.js">
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Scripts/General/PlanAsignaturaCronograma/Index/Controller.js">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/15/2016 04:52:42</publishTime>
     </File>
     <File Include="Scripts/General/PlanAsignaturaCronograma/Index/Index.js">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/15/2016 01:39:04</publishTime>
     </File>
     <File Include="Scripts/General/PlanProyectoPedagogico/FormularioRegistro/Controller.js">
-      <publishTime>09/15/2016 02:49:51</publishTime>
+      <publishTime>09/15/2016 03:17:35</publishTime>
+    </File>
+    <File Include="Scripts/General/PlanProyectoPedagogico/Index/Controller.js">
+      <publishTime>09/15/2016 03:06:32</publishTime>
+    </File>
+    <File Include="Scripts/General/PlanProyectoPedagogico/Index/Index.js">
+      <publishTime>09/14/2016 01:50:22</publishTime>
     </File>
     <File Include="Scripts/jquery/jquery-1.11.1.js">
       <publishTime>09/07/2016 22:46:22</publishTime>
@@ -940,31 +946,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Views/PlanArea/FormularioRegistro.cshtml">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/13/2016 10:19:21</publishTime>
     </File>
     <File Include="Views/PlanArea/Index.cshtml">
-      <publishTime>10/09/2016 19:30:56</publishTime>
+      <publishTime>09/10/2016 19:30:56</publishTime>
     </File>
     <File Include="Views/PlanAsignatura/FormularioRegistro.cshtml">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/14/2016 01:38:34</publishTime>
     </File>
     <File Include="Views/PlanAsignatura/Index.cshtml">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/13/2016 13:20:49</publishTime>
     </File>
     <File Include="Views/PlanAsignaturaCronograma/FormularioRegistro.cshtml">
-      <publishTime>09/07/2016 22:46:22</publishTime>
+      <publishTime>09/15/2016 19:55:59</publishTime>
     </File>
     <File Include="Views/PlanAsignaturaCronograma/FormularioRegistroActividad.cshtml">
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Views/PlanAsignaturaCronograma/Index.cshtml">
-      <publishTime>09/08/2016 14:42:52</publishTime>
+      <publishTime>09/13/2016 16:03:30</publishTime>
+    </File>
+    <File Include="Views/PlanProyectoPedagogico/FormularioRegistro.cshtml">
+      <publishTime>09/15/2016 03:22:05</publishTime>
+    </File>
+    <File Include="Views/PlanProyectoPedagogico/Index.cshtml">
+      <publishTime>09/15/2016 03:02:52</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/09/2016 17:57:54</publishTime>
+      <publishTime>09/15/2016 03:57:16</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>09/07/2016 22:46:22</publishTime>
@@ -976,7 +988,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2016 22:46:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/09/2016 17:28:28</publishTime>
+      <publishTime>09/24/2016 00:22:41</publishTime>
     </File>
   </ItemGroup>
 </Project>

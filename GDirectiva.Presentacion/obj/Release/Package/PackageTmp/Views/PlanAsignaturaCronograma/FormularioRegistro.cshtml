@@ -7,6 +7,9 @@
     ViewBag.Title = "FormularioRegistro";
 }
 @Html.Hidden("hdnFormularioRegistroCodigo", Model.planAsignatura.ID_PLANASIGNATURA, new { id = "hdnFormularioRegistroCodigo" })
+@Html.Hidden("hdnFormularioRegistroCodigoCurso", Model.planAsignatura.ID_ASIGNATURA, new { id = "hdnFormularioRegistroCodigoCurso" })
+@Html.Hidden("hdnFormularioRegistroFechaInicio", Model.fechaInicioPeriodo, new { id = "hdnFormularioRegistroFechaInicio" })
+@Html.Hidden("hdnFormularioRegistroFechaFin", Model.fechaFinPeriodo, new { id = "hdnFormularioRegistroFechaFin" })
 <div class="content-body">
     <div class="main-colum">
         <form id="frmPlanAsignaturaCronogramaBusqueda" action="@Url.Action("General", "PlanAsignaturaCronograma")">
@@ -35,16 +38,10 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6">
-                                <div class="form-group">
-                                    <label>@PlanAsignaturaResource.EtiquetaMetas:</label>
-                                    <textarea class="form-control" rows="4" cols="4000" type="text" disabled="disabled" readonly="readonly">@Model.planAsignatura.META</textarea>
-                                </div>
-                            </div>
-                            <div class="col-xs-6">
+                            <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>@PlanAsignaturaResource.EtiquetaMetodologias:</label>
-                                    <textarea class="form-control" rows="4" cols="4000" type="text" disabled="disabled" readonly="readonly">@Model.planAsignatura.METODOLOGIA</textarea>
+                                    <textarea class="form-control" rows="6" cols="4000" type="text" disabled="disabled" readonly="readonly">@Model.planAsignatura.METODOLOGIA</textarea>
                                 </div>
                             </div>
                         </div>

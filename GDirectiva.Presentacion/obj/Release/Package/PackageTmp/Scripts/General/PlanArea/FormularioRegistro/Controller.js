@@ -39,13 +39,32 @@ GDirectiva.Presentacion.General.PlanArea.FormularioRegistro.Controller = functio
             var value = $ufile.val();
             if (value != "") {
                 if (!(/\.(doc|docx)$/i.test(value))) {
+                    base.Control.NombreArchivo = null;
+                    base.Control.ContenidoArchivo = null;
 
                     alert(GDirectiva.Presentacion.General.PlanArea.Resource.ErrorDeExtension);
                     base.Control.TxtFile().val('');
-
+                    
                     return false;
+                } else {
+                    var txtFile = document.getElementById("txtFile");
+                    var txt = "";
+                    if ('files' in txtFile) {
+                        var file = txtFile.files[0];
+                        base.Control.NombreArchivo = file.name;
+                    }
+
+                    if (txtFile.files && txtFile.files[0]) {
+                        var fileReader = new FileReader();
+                        fileReader.onload = function (e) {
+                            base.Control.ContenidoArchivo = e.target.result;
+                        };
+                        fileReader.readAsDataURL(txtFile.files[0]);
+                    }
                 }
             } else {
+                base.Control.NombreArchivo = null;
+                base.Control.ContenidoArchivo = null;
                 alert(GDirectiva.Presentacion.General.PlanArea.Resource.MensajeDebeSeleccionarArchivoWord);
                 return false;
             }
@@ -74,22 +93,30 @@ GDirectiva.Presentacion.General.PlanArea.FormularioRegistro.Controller = functio
         HdnFormularioCodigoPlanEstudio: function () { return $('#hdnFormularioCodigoPlanEstudio'); },
         HdnCodigo: function () { return $('#hdnFormularioRegistroCodigo'); },
         TxtFile: function () { return $('#txtFile'); },
+        NombreArchivo: null,
+        ContenidoArchivo: null,
         ajaxform: function () { return $('#ajaxform_Archivo'); }
     };
 
     base.Event = {
         BtnGrabarClick: function () {
             if (base.Control.ValRegistro.isValid()) {
+                
+
                 base.Ajax.AjaxRegistrar.data = {
-                    Id_PlanArea: base.Control.HdnCodigo().val(),
-                    Nombre: base.Control.TxtNombreForm().val(),
-                    Objetivos: base.Control.TxtObjetivosForm().val(),
-                    Criterios: base.Control.TxtCriteriosForm().val(),
-                    Requisitos: base.Control.TxtRequisitosForm().val(),
-                    Id_PeriodoAcademico: base.Control.SlcPeriodoAcademicoForm().val(),
-                    Id_PlanEstudio: base.Control.HdnFormularioCodigoPlanEstudio().val(),
-                    Id_Grado: base.Control.SlcGradoForm().val(),
-                    Id_Area: base.Control.SlcAreaForm().val()
+                    planArea: {
+                        Id_PlanArea: base.Control.HdnCodigo().val(),
+                        Nombre: base.Control.TxtNombreForm().val(),
+                        Objetivos: base.Control.TxtObjetivosForm().val(),
+                        Criterios: base.Control.TxtCriteriosForm().val(),
+                        Requisitos: base.Control.TxtRequisitosForm().val(),
+                        Id_PeriodoAcademico: base.Control.SlcPeriodoAcademicoForm().val(),
+                        Id_PlanEstudio: base.Control.HdnFormularioCodigoPlanEstudio().val(),
+                        Id_Grado: base.Control.SlcGradoForm().val(),
+                        Id_Area: base.Control.SlcAreaForm().val(),
+                        Documento: base.Control.NombreArchivo
+                    },
+                    contenidoArchivo: base.Control.ContenidoArchivo
                 };
                 base.Ajax.AjaxRegistrar.submit();
             }

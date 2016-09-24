@@ -88,7 +88,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Documento.
+        ///   Looks up a localized string similar to Documento Plan de Área.
         /// </summary>
         public static string EtiquetaDocumento {
             get {
@@ -142,7 +142,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Periodo académico.
+        ///   Looks up a localized string similar to Periodo Académico.
         /// </summary>
         public static string EtiquetaPeriodoAcademico {
             get {

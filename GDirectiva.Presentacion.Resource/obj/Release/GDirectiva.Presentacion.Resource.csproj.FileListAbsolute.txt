@@ -10,3 +10,4 @@ D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentaci
 D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.csproj.GenerateResource.Cache
 D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.dll
 D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.pdb
+D:\CodeGitHub\GDirectiva.Presentacion.Resource\obj\Release\GDirectiva.Presentacion.Resource.General.PlanProyectoPedagogicoResource.resources

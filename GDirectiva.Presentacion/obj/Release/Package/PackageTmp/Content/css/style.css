@@ -1750,3 +1750,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     width: 179px;
     margin-left: 30px;
 }
+
+#circleRed {
+      width: 22px;
+      height: 22px;
+      -webkit-border-radius: 11px;
+      -moz-border-radius: 11px;
+      border-radius: 11px;
+      background: red;
+    }
+
+#circleGreen {
+      width: 22px;
+      height: 22px;
+      -webkit-border-radius: 11px;
+      -moz-border-radius: 11px;
+      border-radius: 11px;
+      background: green;
+    }

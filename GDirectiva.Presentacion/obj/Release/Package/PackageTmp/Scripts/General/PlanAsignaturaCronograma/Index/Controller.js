@@ -161,7 +161,6 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.Index.Controller = func
             
             var listaOpciones = new Array();
             listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Calendario, event: { on: 'click', callBack: base.Event.BtnGridEditarClick } });
-            listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.DeleteActividades, event: { on: 'click', callBack: base.Event.BtnGridEliminarClick } });
 
             columns.push({
                 data: null,

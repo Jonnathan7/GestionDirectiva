@@ -154,6 +154,16 @@ GDirectiva.Presentacion.Web.Components.TextBox = {
                 roundToDecimalPlace: 0,
                 eventOnDecimalsEntered: true
             });
+
+            var input = options.input[0];
+
+            $.each(input.attributes, function (i, item) {
+                if (item.name.toLowerCase() == "maxvalue") {
+                    if (parseInt(item.value) < parseInt(input.value)) {
+                        input.value = item.value;
+                    }
+                }
+            });
         }
     },
     Event: {

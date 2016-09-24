@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="DB_INNOVASCHOOLSModelStoreContainer" CdmEntityContainer="DB_INNOVASCHOOLSEntities">
-    <EntitySetMapping Name="Empleado">
-      <EntityTypeMapping TypeName="DB_INNOVASCHOOLSModel.Empleado">
-        <MappingFragment StoreEntitySet="Empleado">
-          <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
-          <ScalarProperty Name="ApePaterno" ColumnName="ApePaterno" />
-          <ScalarProperty Name="ApeMaterno" ColumnName="ApeMaterno" />
-          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
-          <ScalarProperty Name="Rol" ColumnName="Rol" />
-          <ScalarProperty Name="Area" ColumnName="Area" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ActividadPlanAsignatura">
       <EntityTypeMapping TypeName="DB_INNOVASCHOOLSModel.ActividadPlanAsignatura">
         <MappingFragment StoreEntitySet="ActividadPlanAsignatura">
@@ -25,6 +13,7 @@
           <ScalarProperty Name="Id_Empleado" ColumnName="Id_Empleado" />
           <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
           <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="Id_PlanAsignaturaMeta" ColumnName="Id_PlanAsignaturaMeta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -88,6 +77,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="PlanAsignaturaMeta">
+      <EntityTypeMapping TypeName="DB_INNOVASCHOOLSModel.PlanAsignaturaMeta">
+        <MappingFragment StoreEntitySet="PlanAsignaturaMeta">
+          <ScalarProperty Name="Id_PlanAsignaturaMeta" ColumnName="Id_PlanAsignaturaMeta" />
+          <ScalarProperty Name="Id_PlanAsignatura" ColumnName="Id_PlanAsignatura" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PlanEstudio">
       <EntityTypeMapping TypeName="DB_INNOVASCHOOLSModel.PlanEstudio">
         <MappingFragment StoreEntitySet="PlanEstudio">
@@ -143,14 +143,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="CursoDocente" TypeName="DB_INNOVASCHOOLSModel.CursoDocente" StoreEntitySet="CursoDocente">
-      <EndProperty Name="Curso">
-        <ScalarProperty Name="Id_Asignatura" ColumnName="IdCurso" />
-      </EndProperty>
-      <EndProperty Name="Empleado">
-        <ScalarProperty Name="Id_Empleado" ColumnName="idEmpleado" />
-      </EndProperty>
-    </AssociationSetMapping>
+    <EntitySetMapping Name="CursoDocente">
+      <EntityTypeMapping TypeName="DB_INNOVASCHOOLSModel.CursoDocente">
+        <MappingFragment StoreEntitySet="CursoDocente">
+          <ScalarProperty Name="IdCurso" ColumnName="IdCurso" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PA_ACTIVIDAD_PLAN_ASIGNATURA_ELIMINAR" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_ACTIVIDAD_PLAN_ASIGNATURA_ELIMINAR" />
+    <FunctionImportMapping FunctionImportName="PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA_Result">
+          <ScalarProperty Name="RegistrosPagina" ColumnName="RegistrosPagina" />
+          <ScalarProperty Name="FilasTotal" ColumnName="FilasTotal" />
+          <ScalarProperty Name="NumeroFila" ColumnName="NumeroFila" />
+          <ScalarProperty Name="TamanioPagina" ColumnName="TamanioPagina" />
+          <ScalarProperty Name="ID_ACTIVIDADPLANASIGNATURA" ColumnName="ID_ACTIVIDADPLANASIGNATURA" />
+          <ScalarProperty Name="ACTIVIDAD" ColumnName="ACTIVIDAD" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="FECHAINICIO" ColumnName="FECHAINICIO" />
+          <ScalarProperty Name="FECHAFIN" ColumnName="FECHAFIN" />
+          <ScalarProperty Name="PORCENTAJE" ColumnName="PORCENTAJE" />
+          <ScalarProperty Name="ID_PLANASIGNATURAMETA" ColumnName="ID_PLANASIGNATURAMETA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_ACTIVIDAD_PLAN_ASIGNATURA_REGISTRAR" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_ACTIVIDAD_PLAN_ASIGNATURA_REGISTRAR" />
     <FunctionImportMapping FunctionImportName="PA_AREA_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_AREA_LISTA">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_AREA_LISTA_Result">
@@ -164,6 +183,15 @@
         <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_ASIGNATURA_PLANAREA_LISTA_Result">
           <ScalarProperty Name="ID_ASIGNATURA" ColumnName="ID_ASIGNATURA" />
           <ScalarProperty Name="NOMBRE_ASIGNATURA" ColumnName="NOMBRE_ASIGNATURA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_CURSO_DOCENTE" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_CURSO_DOCENTE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_CURSO_DOCENTE_Result">
+          <ScalarProperty Name="IDCURSO" ColumnName="IDCURSO" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="NOMBRES" ColumnName="NOMBRES" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -196,6 +224,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_PLAN_AREA_EXISTE" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_AREA_EXISTE" />
     <FunctionImportMapping FunctionImportName="PA_PLAN_AREA_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_AREA_LISTA">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_AREA_LISTA_Result">
@@ -272,35 +301,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="PA_PLAN_ASIGNATURA_SEL" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ASIGNATURA_SEL">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_ASIGNATURA_SEL_Result">
-          <ScalarProperty Name="ID_PLANASIGNATURA" ColumnName="ID_PLANASIGNATURA" />
-          <ScalarProperty Name="META" ColumnName="META" />
-          <ScalarProperty Name="METODOLOGIA" ColumnName="METODOLOGIA" />
-          <ScalarProperty Name="DOCUMENTO_PLANASIGNATURA" ColumnName="DOCUMENTO_PLANASIGNATURA" />
-          <ScalarProperty Name="ID_PLANAREA" ColumnName="ID_PLANAREA" />
-          <ScalarProperty Name="ID_ASIGNATURA" ColumnName="ID_ASIGNATURA" />
-          <ScalarProperty Name="NOMBRE_ASIGNATURA" ColumnName="NOMBRE_ASIGNATURA" />
-          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
-          <ScalarProperty Name="ID_PERIODOACADEMICO" ColumnName="ID_PERIODOACADEMICO" />
-          <ScalarProperty Name="NOMBRE_PLANAREA" ColumnName="NOMBRE_PLANAREA" />
-          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
-          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="PA_PLAN_ESTUDIO_SEL" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ESTUDIO_SEL">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_ESTUDIO_SEL_Result">
-          <ScalarProperty Name="ID_PLANESTUDIO" ColumnName="ID_PLANESTUDIO" />
-          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-          <ScalarProperty Name="ANIO" ColumnName="ANIO" />
-          <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="PA_PLAN_AREA_EXISTE" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_AREA_EXISTE" />
     <FunctionImportMapping FunctionImportName="PA_PLAN_ASIGNATURA_LISTA_VIGENTE" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ASIGNATURA_LISTA_VIGENTE">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_ASIGNATURA_LISTA_VIGENTE_Result">
@@ -324,23 +324,88 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA">
+    <FunctionImportMapping FunctionImportName="PA_PLAN_ASIGNATURA_META_ELIMINAR" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ASIGNATURA_META_ELIMINAR" />
+    <FunctionImportMapping FunctionImportName="PA_PLAN_ASIGNATURA_META_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ASIGNATURA_META_LISTA">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_ACTIVIDAD_PLAN_ASIGNATURA_LISTA_Result">
+        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_ASIGNATURA_META_LISTA_Result">
+          <ScalarProperty Name="Id_PlanAsignaturaMeta" ColumnName="Id_PlanAsignaturaMeta" />
+          <ScalarProperty Name="Id_PlanAsignatura" ColumnName="Id_PlanAsignatura" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_PLAN_ASIGNATURA_META_REGISTRAR" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ASIGNATURA_META_REGISTRAR" />
+    <FunctionImportMapping FunctionImportName="PA_PLAN_ASIGNATURA_SEL" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ASIGNATURA_SEL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_ASIGNATURA_SEL_Result">
+          <ScalarProperty Name="ID_PLANASIGNATURA" ColumnName="ID_PLANASIGNATURA" />
+          <ScalarProperty Name="META" ColumnName="META" />
+          <ScalarProperty Name="METODOLOGIA" ColumnName="METODOLOGIA" />
+          <ScalarProperty Name="DOCUMENTO_PLANASIGNATURA" ColumnName="DOCUMENTO_PLANASIGNATURA" />
+          <ScalarProperty Name="ID_PLANAREA" ColumnName="ID_PLANAREA" />
+          <ScalarProperty Name="ID_ASIGNATURA" ColumnName="ID_ASIGNATURA" />
+          <ScalarProperty Name="NOMBRE_ASIGNATURA" ColumnName="NOMBRE_ASIGNATURA" />
+          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="ID_PERIODOACADEMICO" ColumnName="ID_PERIODOACADEMICO" />
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="NOMBRE_PLANAREA" ColumnName="NOMBRE_PLANAREA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_PLAN_ESTUDIO_SEL" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_ESTUDIO_SEL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_ESTUDIO_SEL_Result">
+          <ScalarProperty Name="ID_PLANESTUDIO" ColumnName="ID_PLANESTUDIO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ANIO" ColumnName="ANIO" />
+          <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_PLAN_PROYECTO_PEDAGOGICO_LISTA" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_PROYECTO_PEDAGOGICO_LISTA">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_PROYECTO_PEDAGOGICO_LISTA_Result">
           <ScalarProperty Name="RegistrosPagina" ColumnName="RegistrosPagina" />
           <ScalarProperty Name="FilasTotal" ColumnName="FilasTotal" />
           <ScalarProperty Name="NumeroFila" ColumnName="NumeroFila" />
           <ScalarProperty Name="TamanioPagina" ColumnName="TamanioPagina" />
-          <ScalarProperty Name="ID_ACTIVIDADPLANASIGNATURA" ColumnName="ID_ACTIVIDADPLANASIGNATURA" />
-          <ScalarProperty Name="ACTIVIDAD" ColumnName="ACTIVIDAD" />
-          <ScalarProperty Name="FECHAINICIO" ColumnName="FECHAINICIO" />
-          <ScalarProperty Name="FECHAFIN" ColumnName="FECHAFIN" />
-          <ScalarProperty Name="PORCENTAJE" ColumnName="PORCENTAJE" />
-          <ScalarProperty Name="ID_EMPLEADO" ColumnName="ID_EMPLEADO" />
+          <ScalarProperty Name="ID_PLANPROYECTOPEDAGOGICO" ColumnName="ID_PLANPROYECTOPEDAGOGICO" />
+          <ScalarProperty Name="NOMBRE_PLANPROYECTOPEDAGOGICO" ColumnName="NOMBRE_PLANPROYECTOPEDAGOGICO" />
+          <ScalarProperty Name="OBJETIVOS" ColumnName="OBJETIVOS" />
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="ID_PERIODOACADEMICO" ColumnName="ID_PERIODOACADEMICO" />
+          <ScalarProperty Name="PERIODO" ColumnName="PERIODO" />
+          <ScalarProperty Name="ID_PLANESTUDIO" ColumnName="ID_PLANESTUDIO" />
+          <ScalarProperty Name="ID_GRADO" ColumnName="ID_GRADO" />
+          <ScalarProperty Name="NOMBRE_GRADO" ColumnName="NOMBRE_GRADO" />
+          <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+          <ScalarProperty Name="NOMBRE_AREA" ColumnName="NOMBRE_AREA" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="PA_ACTIVIDAD_PLAN_ASIGNATURA_ELIMINAR" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_ACTIVIDAD_PLAN_ASIGNATURA_ELIMINAR" />
-    <FunctionImportMapping FunctionImportName="PA_ACTIVIDAD_PLAN_ASIGNATURA_REGISTRAR" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_ACTIVIDAD_PLAN_ASIGNATURA_REGISTRAR" />
+    <FunctionImportMapping FunctionImportName="PA_PLAN_PROYECTO_PEDAGOGICO_SEL" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_PROYECTO_PEDAGOGICO_SEL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_INNOVASCHOOLSModel.PA_PLAN_PROYECTO_PEDAGOGICO_SEL_Result">
+          <ScalarProperty Name="ANIO_PLANESTUDIO" ColumnName="ANIO_PLANESTUDIO" />
+          <ScalarProperty Name="ID_PLANESTUDIO" ColumnName="ID_PLANESTUDIO" />
+          <ScalarProperty Name="DESCRIPCION_PLANESTUDIO" ColumnName="DESCRIPCION_PLANESTUDIO" />
+          <ScalarProperty Name="DOCUMENTO_PLANESTUDIO" ColumnName="DOCUMENTO_PLANESTUDIO" />
+          <ScalarProperty Name="ID_PLANPROYECTOPEDAGOGICO" ColumnName="ID_PLANPROYECTOPEDAGOGICO" />
+          <ScalarProperty Name="NOMBRE_PLANPROYECTOPEDAGOGICO" ColumnName="NOMBRE_PLANPROYECTOPEDAGOGICO" />
+          <ScalarProperty Name="OBJETIVOS" ColumnName="OBJETIVOS" />
+          <ScalarProperty Name="ESTADO_PLANPROYECTOPEDAGOGICO" ColumnName="ESTADO_PLANPROYECTOPEDAGOGICO" />
+          <ScalarProperty Name="DOCUMENTO_PLANPROYECTOPEDAGOGICO" ColumnName="DOCUMENTO_PLANPROYECTOPEDAGOGICO" />
+          <ScalarProperty Name="ID_PERIODOACADEMICO" ColumnName="ID_PERIODOACADEMICO" />
+          <ScalarProperty Name="ID_GRADO" ColumnName="ID_GRADO" />
+          <ScalarProperty Name="ID_AREA" ColumnName="ID_AREA" />
+          <ScalarProperty Name="DESCRIPCION_PLANPROYECTOPEDAGOGICO" ColumnName="DESCRIPCION_PLANPROYECTOPEDAGOGICO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE" FunctionName="DB_INNOVASCHOOLSModel.Store.PA_PLAN_PROYECTO_PEDAGOGICO_EXISTE" />
   </EntityContainerMapping>
 </Mapping>

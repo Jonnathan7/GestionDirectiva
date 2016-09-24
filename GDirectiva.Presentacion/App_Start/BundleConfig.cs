@@ -10,6 +10,7 @@ namespace GDirectiva.Presentacion.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.IgnoreList.Clear();
             bundles.Add(new ScriptBundle("~/Components/JQuery").Include(
                         "~/Components/JQuery/jquery-1.11.2.js",
                         "~/Components/JQuery/jquery-ui-1.10.4.custom.js",
