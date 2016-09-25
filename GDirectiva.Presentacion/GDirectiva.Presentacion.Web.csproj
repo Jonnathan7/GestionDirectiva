@@ -374,6 +374,8 @@
     <Content Include="Scripts\General\PlanProyectoPedagogico\FormularioRegistro\Controller.js" />
     <Content Include="Scripts\General\PlanProyectoPedagogico\Index\Controller.js" />
     <Content Include="Scripts\General\PlanProyectoPedagogico\Index\Index.js" />
+    <Content Include="Scripts\General\ReportePlanAsignatura\Index\Controller.js" />
+    <Content Include="Scripts\General\ReportePlanAsignatura\Index\Index.js" />
     <Content Include="Scripts\jquery\jquery-1.11.1.js" />
     <Content Include="Theme\app\box.css" />
     <Content Include="Theme\app\comp.css" />
@@ -439,6 +441,7 @@
     <None Include="Properties\PublishProfiles\GestionDirectiva.pubxml" />
     <Content Include="Views\PlanProyectoPedagogico\Index.cshtml" />
     <Content Include="Views\PlanProyectoPedagogico\FormularioRegistro.cshtml" />
+    <Content Include="Views\ReportePlanAsignatura\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GDirectiva.Presentacion.Resource\GDirectiva.Presentacion.Resource.csproj">

@@ -88,7 +88,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Documento Plan de Área.
+        ///   Looks up a localized string similar to Documento de Plan de Área.
         /// </summary>
         public static string EtiquetaDocumento {
             get {

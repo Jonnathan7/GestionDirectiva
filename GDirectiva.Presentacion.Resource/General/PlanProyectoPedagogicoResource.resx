@@ -130,7 +130,7 @@
     <value>Requisitos</value>
   </data>
   <data name="EtiquetaDocumento" xml:space="preserve">
-    <value>Documento</value>
+    <value>Documento de Plan de Proyecto Pedagógico</value>
   </data>
   <data name="EtiquetaEstado" xml:space="preserve">
     <value>Estado</value>
@@ -148,7 +148,7 @@
     <value>Objetivos</value>
   </data>
   <data name="EtiquetaPeriodoAcademico" xml:space="preserve">
-    <value>Periodo académico</value>
+    <value>Periodo Académico</value>
   </data>
   <data name="EtiquetaResultadosBusqueda" xml:space="preserve">
     <value>Resultado de la búsqueda</value>

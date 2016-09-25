@@ -272,7 +272,7 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.FormularioRegistro.Cont
         CrearGrid: function () {
             var columns = new Array();
             columns.push({
-                data: 'ID_PLANASIGNATURAMETA', title: GDirectiva.Presentacion.General.PlanAsignaturaCronograma.Resource.EtiquetaNombreActividad, 'mRender': function (data, type, full) {
+                data: 'ID_PLANASIGNATURAMETA', title: GDirectiva.Presentacion.General.PlanAsignaturaCronograma.Resource.EtiquetaMeta, 'mRender': function (data, type, full) {
                     base.Control.UltimoRegistro++;
                     
                     var opcion = '';
@@ -292,7 +292,7 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.FormularioRegistro.Cont
             });
             columns.push({
                     data: 'ACTIVIDAD', title: GDirectiva.Presentacion.General.PlanAsignaturaCronograma.Resource.EtiquetaNombreActividad, 'mRender': function (data, type, full) {
-                        return '<input style="width:250px" class="form-control" type="text" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '" name="Actividad" value="' + full.ACTIVIDAD + '">';
+                        return '<input maxlength="255" style="width:250px" class="form-control" type="text" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '" name="Actividad" value="' + full.ACTIVIDAD + '">';
                 }
             });
             columns.push({
@@ -309,12 +309,31 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.FormularioRegistro.Cont
                 }
             });
             columns.push({
-                data: 'PORCENTAJE', title: GDirectiva.Presentacion.General.PlanAsignaturaCronograma.Resource.EtiquetaPorcentaje+('(%)'), 'mRender': function (data, type, full) {
-                    return '<input size="3" class="form-control" type="text" Mask="integer" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '" name="Procentaje" value="' + full.PORCENTAJE + '" maxlength="3" maxValue="100">';
+                data: 'PORCENTAJE', title: GDirectiva.Presentacion.General.PlanAsignaturaCronograma.Resource.EtiquetaPorcentaje, 'mRender': function (data, type, full) {
+                    return '<input size="3" class="form-control" type="text" Mask="integer" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '" name="Procentaje" value="' + full.PORCENTAJE + '" maxlength="3" maxValue="100">' + ' %';
                 }
             });
             columns.push({
-                data: 'PORCENTAJE', title: 'Estado',"sClass": "center", 'mRender': function (data, type, full) {
+                data: 'ID_EMPLEADO', title: GDirectiva.Presentacion.General.PlanAsignaturaCronograma.Resource.EtiquetaResponsables, 'mRender': function (data, type, full) {
+
+                    var opcion = '';
+
+                    for (var i = 0; i < base.Control.ListaEmpleado.length; i++) {
+                        var empleado = base.Control.ListaEmpleado[i];
+                        opcion += '<option value="' + empleado.ID_EMPLEADO + '"' + ((empleado.ID_EMPLEADO == full.ID_EMPLEADO) ? 'selected' : '') + '>' + empleado.NOMBRES + '</option>';
+                    }
+
+                    var resultado = '<select class="form-control" name="Id_Empleado" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '>'
+                           + '<option value="0">--SELECCIONE--</option> <option value="0">--SELECCIONE--</option>'
+                           + opcion
+                           + '</select>';
+
+                    base.Function.FormatearInput();
+                    return resultado;
+                }
+            });
+            columns.push({
+                data: 'ESTADO', title: 'Estado',"sClass": "center", 'mRender': function (data, type, full) {
                     var resultado = '';
 
                     var dateString = GDirectiva.Presentacion.Web.Components.Util.ConvertirFechaACadena(full.FECHAFIN);
@@ -338,25 +357,7 @@ GDirectiva.Presentacion.General.PlanAsignaturaCronograma.FormularioRegistro.Cont
                     return resultado;
                 }
             });
-            columns.push({
-                data: 'ID_EMPLEADO', title: 'Empleado', 'mRender': function (data, type, full) {
-
-                    var opcion = '';
-                    
-                    for (var i = 0; i < base.Control.ListaEmpleado.length; i++) {
-                        var empleado = base.Control.ListaEmpleado[i];
-                        opcion += '<option value="' + empleado.ID_EMPLEADO + '"' + ((empleado.ID_EMPLEADO == full.ID_EMPLEADO) ? 'selected' : '')  + '>' + empleado.NOMBRES + '</option>';
-                    }
-
-                    var resultado = '<select class="form-control" name="Id_Empleado" id_actividadplanasignatura="' + full.ID_ACTIVIDADPLANASIGNATURA + '>'
-                           + '<option value="0">--SELECCIONE--</option> <option value="0">--SELECCIONE--</option>'
-                           + opcion
-                           + '</select>';
-
-                    base.Function.FormatearInput();
-                    return resultado;
-                }
-            });
+            
 
             var listaOpciones = new Array();
             listaOpciones.push({ type: GDirectiva.Presentacion.Web.Components.GridAction.Delete, event: { on: 'click', callBack: base.Event.BtnGridEliminarActividadClick } });

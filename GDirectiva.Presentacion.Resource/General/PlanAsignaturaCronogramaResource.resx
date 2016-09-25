@@ -151,7 +151,7 @@
     <value>Regla</value>
   </data>
   <data name="EtiquetaResponsables" xml:space="preserve">
-    <value>Responsables</value>
+    <value>Responsable</value>
   </data>
   <data name="EtiquetaResultadosBusqueda" xml:space="preserve">
     <value>Resultado de la búsqueda</value>
@@ -160,7 +160,7 @@
     <value>Seleccionar una regla.</value>
   </data>
   <data name="EtiquetaTituloFormulario" xml:space="preserve">
-    <value>Formulario de Cronograma</value>
+    <value>Formulario de Registro de Cronograma de Plan de Asignatura</value>
   </data>
   <data name="EtiquetaTituloFormularioActividad" xml:space="preserve">
     <value>Formulario de Actividad</value>

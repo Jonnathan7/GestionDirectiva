@@ -58,13 +58,20 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-9">
             <div class="form-group">
                 <label for="txtAsignatura">@PlanAsignaturaResource.EtiquetaMetas</label>
                 <input type="text" class="form-control" id="txtMeta" @((Model.planAsignatura.ESTADO == "ELIMINADO") ? "disabled" : "") />
             </div>
+        </div>
+        <div class="col-sm-3">
             <div class="form-group">
-                <button class="btn-s btn-add" id="btnFrmAgregarMeta">@GenericResource.BotonAgregar</button>
+                <label>&nbsp;</label>
+                @{
+                    if(Model.planAsignatura.ESTADO != "ELIMINADO") {
+                        <button class="btn-s btn-add" id="btnFrmAgregarMeta">@GenericResource.BotonAgregar</button>
+                    }
+                }
             </div>
         </div>
     </div>
@@ -94,5 +101,9 @@
 </form>
 <div class="comp-Modal-footer">
     <button class="btn btn-default" id="btnFrmCancelar">@GenericResource.BotonCerrar</button>
-    <button class="btn-s btn-add" id="btnFrmGrabar">@GenericResource.BotonGrabar</button>
+    @{
+        if(Model.planAsignatura.ESTADO != "ELIMINADO"){
+            <button class="btn-s btn-add" id="btnFrmGrabar">@GenericResource.BotonGrabar</button>
+        }
+    }
 </div>

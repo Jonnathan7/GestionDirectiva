@@ -9,11 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>@GenericResource.EtiquetaTituloSistema > @ViewBag.Title</title>
+    
+    <link href="~/Components/JQuery/jquery-ui-1.10.0.custom.css" rel="stylesheet" type="text/css" />
+
     <link href="~/Components/Gmd/ProgressBar/ProgressBar.css" rel="stylesheet" type="text/css" />
     <link href="~/Components/Gmd/Dialog/Dialog.css" rel="stylesheet" type="text/css" />
     <link href="~/Components/Gmd/Message/Message.css" rel="stylesheet" type="text/css" />
 
-    <link href="~/Components/JQuery/jquery-ui-1.10.0.custom.css" rel="stylesheet" type="text/css" />
+    
 
     <link href="~/Components/DataTables/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
     <link href="~/Components/DataTables/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
@@ -34,13 +37,13 @@
     <link href="~/Components/Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="~/Components/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="~/Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
-
+    
 
     @*@Styles.Render("~/FrameworkStyle/css")
     @Styles.Render("~/Template/css")
-    @Styles.Render("~/Components/JQueryCss")*@
-    @*@Styles.Render("~/Components/GmdCss")*@
-    @*@Styles.Render("~/Components/DataTablesCss")*@
+    @Styles.Render("~/Components/JQueryCss")
+    @Styles.Render("~/Components/GmdCss")
+    @Styles.Render("~/Components/DataTablesCss")*@
     @RenderSection("css", required: false)
     <link href="../Content/css/style.css" rel="stylesheet" type="text/css" />
     <link href="../Content/css/justified-nav.css" rel="stylesheet" type="text/css" />
@@ -128,13 +131,13 @@
     <script type="text/javascript" src="~/Components/Bootstrap/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
     
 
-    @*@Scripts.Render("~/Components/JQuery")*@
-    @*@Scripts.Render("~/FrameworkStyle/js")*@
-    @*@Scripts.Render("~/Components/Codemaleon")*@
-    @*@Scripts.Render("~/Components/DataTables")*@
-    @*@Scripts.Render("~/Components/Gmd")*@
-    @*@Scripts.Render("~/Scripts/baselayout")*@
-    @*@Scripts.Render("~/Components/Charts")*@
+    @*@Scripts.Render("~/Components/JQuery")
+    @Scripts.Render("~/FrameworkStyle/js")
+    @Scripts.Render("~/Components/Codemaleon")
+    @Scripts.Render("~/Components/DataTables")
+    @Scripts.Render("~/Components/Gmd")
+    @Scripts.Render("~/Scripts/baselayout")
+    @Scripts.Render("~/Components/Charts")*@
     <script src="~/Scripts/Base/Layout/common.js"></script>
     <script type="text/javascript">
         ns('GDirectiva.Presentacion.Web.Formato')

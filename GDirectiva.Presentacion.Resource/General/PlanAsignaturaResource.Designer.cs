@@ -115,7 +115,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Periodo académico.
+        ///   Looks up a localized string similar to Periodo Académico.
         /// </summary>
         public static string EtiquetaPeriodoAcademico {
             get {
@@ -124,7 +124,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Plan área.
+        ///   Looks up a localized string similar to Plan Área.
         /// </summary>
         public static string EtiquetaPlanArea {
             get {

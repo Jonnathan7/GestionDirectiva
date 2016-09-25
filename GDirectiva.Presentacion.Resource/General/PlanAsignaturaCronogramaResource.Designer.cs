@@ -160,7 +160,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Responsables.
+        ///   Looks up a localized string similar to Responsable.
         /// </summary>
         public static string EtiquetaResponsables {
             get {
@@ -187,7 +187,7 @@ namespace GDirectiva.Presentacion.Resource.General {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Formulario de Cronograma.
+        ///   Looks up a localized string similar to Formulario de Registro de Cronograma de Plan de Asignatura.
         /// </summary>
         public static string EtiquetaTituloFormulario {
             get {

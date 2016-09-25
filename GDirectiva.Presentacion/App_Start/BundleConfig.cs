@@ -12,7 +12,7 @@ namespace GDirectiva.Presentacion.Web
         {
             bundles.IgnoreList.Clear();
             //bundles.Add(new ScriptBundle("~/Components/JQuery").Include(
-            //            //"~/Components/JQuery/jquery-1.11.2.js",
+            //            "~/Components/JQuery/jquery-1.11.2.js",
             //            "~/Components/JQuery/jquery-ui-1.10.4.custom.js",
             //            "~/Components/JQuery/jquery.validate.js",
             //            "~/Components/JQuery/jquery.validate.additional-methods.js",
@@ -54,21 +54,21 @@ namespace GDirectiva.Presentacion.Web
             //));
 
 
-            /*bundles.Add(new StyleBundle("~/Components/GmdCss").Include(
-                        "~/Components/Gmd/ProgressBar/ProgressBar.css",
-                        "~/Components/Gmd/Dialog/Dialog.css",
-                        "~/Components/Gmd/Message/Message.css"
-            ));
+            //bundles.Add(new StyleBundle("~/Components/GmdCss").Include(
+            //            "~/Components/Gmd/ProgressBar/ProgressBar.css",
+            //            "~/Components/Gmd/Dialog/Dialog.css",
+            //            "~/Components/Gmd/Message/Message.css"
+            //));
 
-            bundles.Add(new StyleBundle("~/Components/JQueryCss").Include(
-            "~/Components/JQuery/jquery-ui-1.10.0.custom.css"
-            ));
+            //bundles.Add(new StyleBundle("~/Components/JQueryCss").Include(
+            //"~/Components/JQuery/jquery-ui-1.10.0.custom.css"
+            //));
 
-            bundles.Add(new ScriptBundle("~/Components/DataTablesCss").Include(
-                        "~/Components/DataTables/css/jquery.dataTables.css"
-                        , "~/Components/DataTables/css/dataTables.bootstrap.css"
-                        , "~/Components/DataTables/css/dataTables.responsive.css"
-            ));*/
+            //bundles.Add(new ScriptBundle("~/Components/DataTablesCss").Include(
+            //            "~/Components/DataTables/css/jquery.dataTables.css"
+            //            , "~/Components/DataTables/css/dataTables.bootstrap.css"
+            //            , "~/Components/DataTables/css/dataTables.responsive.css"
+            //));
 
             //bundles.Add(new StyleBundle("~/Template/css").Include(
             //            "~/Theme/app/main.css",

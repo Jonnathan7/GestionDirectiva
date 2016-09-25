@@ -1,0 +1,111 @@
+﻿@using GDirectiva.Presentacion.Resource.Base
+@using GDirectiva.Presentacion.Resource.General
+@using GDirectiva.Presentacion.Core.Helpers
+@model GDirectiva.Presentacion.Core.ViewModel.General.ReportePlanAsignaturaBusquedaModel
+@{
+    ViewBag.Title = "Cronograma Plan Asignatura";
+}
+<div class="content-body">
+    <div class="main-colum">
+        <form id="frmReportePlanAsignaturaBusqueda" action="@Url.Action("General", "ReportePlanAsignatura")">
+            <!-- wrap -->
+            <div class="box-wrap-main">
+                <div class="box-wrap-header">
+                    <div class="pull-left">
+                        <div class="title-main">
+                            REPORTE DE PLAN DE ASIGNATURA - BÚSQUEDA
+                        </div>
+                    </div>
+                </div>
+                <div class="box-wrap-body">
+                    <h3 class="title-form">FILTROS DE BÚSQUEDA</h3>
+                    <div class="box-form">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaResource.EtiquetaPeriodoAcademico:</label>
+                                    <select id="slcPeriodoAcademico" name="value" class="form-control">
+                                        <option value="0">@GenericResource.EtiquetaSeleccionar</option>
+                                        @{
+                                            if (Model.ListaPeriodoAcademico != null)
+                                            {
+                                                foreach (var item in Model.ListaPeriodoAcademico)
+                                                {
+                                                    <option value="@item.ID_PERIODOACADEMICO">@item.PERIODO</option>
+                                                }
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaResource.EtiquetaPlanArea:</label>
+                                    <select id="slcPlanArea" name="value" class="form-control">
+                                        <option value="0">@GenericResource.EtiquetaSeleccionar</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label>@PlanAsignaturaResource.EtiquetaAsignatura:</label>
+                                    <select id="slcAsignatura" name="value" class="form-control">
+                                        <option value="0">@GenericResource.EtiquetaSeleccionar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-acciones">
+                        <div class="pull-right">
+                            <button type="button" id="btnBuscar" class="btn-s btn-search">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cierra wrap -->
+        </form>
+    </div>
+    <div id="divGrdResult">
+    </div>
+
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+
+    ns('GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions')
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.Buscar = '@Url.Action("Buscar", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.BuscarActividades = '@Url.Action("BuscarActividades", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.FormularioRegistro = '@Url.Action("FormularioRegistro", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.FormularioRegistroActividad = '@Url.Action("FormularioRegistroActividad", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.Registrar = '@Url.Action("Registrar", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.RegistrarActividad = '@Url.Action("RegistrarActividad", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.Eliminar = '@Url.Action("Eliminar", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.EliminarActividad = '@Url.Action("EliminarActividad", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.Activar = '@Url.Action("Activar", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.BuscarPlanArea = '@Url.Action("BuscarPlanArea", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.BuscarAsignatura = '@Url.Action("BuscarAsignatura", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.BuscarDocente = '@Url.Action("BuscarDocente", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.ListarEmpleado = '@Url.Action("ListarEmpleado", "PlanAsignaturaCronograma", new { Area = "General" })';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Actions.ListarMeta = '@Url.Action("ListarMeta", "PlanAsignaturaCronograma", new { Area = "General" })';
+
+
+    ns('GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource')
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaTituloFormulario = '@PlanAsignaturaCronogramaResource.EtiquetaTituloFormulario';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaTituloFormularioActividad = '@PlanAsignaturaCronogramaResource.EtiquetaTituloFormularioActividad';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaPeriodoAcademico = '@PlanAsignaturaCronogramaResource.EtiquetaPeriodoAcademico';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaPlanArea = '@PlanAsignaturaCronogramaResource.EtiquetaPlanArea';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaDocente = '@PlanAsignaturaCronogramaResource.EtiquetaDocente';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaAsignatura = '@PlanAsignaturaCronogramaResource.EtiquetaAsignatura';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaMeta = '@PlanAsignaturaCronogramaResource.EtiquetaMetas';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaMetodologias = '@PlanAsignaturaCronogramaResource.EtiquetaMetodologias';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaNombreActividad = '@PlanAsignaturaCronogramaResource.EtiquetaNombreActividad';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaFechaInicio = '@PlanAsignaturaCronogramaResource.EtiquetaFechaInicio';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaFechaFin = '@PlanAsignaturaCronogramaResource.EtiquetaFechaFin';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaPorcentaje = '@PlanAsignaturaCronogramaResource.EtiquetaPorcentaje';
+    GDirectiva.Presentacion.General.ReportePlanAsignatura.Resource.EtiquetaResponsables = '@PlanAsignaturaCronogramaResource.EtiquetaResponsables';
+</script>
+    @CustomHtmlHelper.RenderViewJs("generalreporteplanasignaturaformularioregistro")
+    @CustomHtmlHelper.RenderViewJs("generalreporteplanasignaturaformularioregistroactividad")
+}
